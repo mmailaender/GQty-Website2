@@ -1,15 +1,23 @@
 {
-  "index": "Introduction",
+  "index": {
+    "type": "page",
+    "display": "hidden"
+  },
+  "docs": "Introduction",
   "another": "Another Page",
   "advanced": "Advanced (A Folder)",
+  "documentation": {
+    "title": "Documentation",
+    "type": "page",
+    "href": "/docs"
+  },
   "about": {
     "title": "About",
     "type": "page"
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "Support Us",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
-    "newWindow": true
+    "href": "/#support-us"
   }
 }
