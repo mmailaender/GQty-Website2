@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "gqty-website",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "GQty Website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,23 +9,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/gqty-dev/gqty"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Micha Mailaender <micha@mailaender.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/gqty-dev/gqty/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://gqty.dev",
   "dependencies": {
-    "next": "^13.0.6",
+    "next": "^13.2.4",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.11.10",
-    "typescript": "^4.9.3"
+    "@types/node": "^18.15.3",
+    "typescript": "^4.9.5"
   }
 }
