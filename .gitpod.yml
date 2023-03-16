@@ -32,3 +32,4 @@ vscode:
     - meganrogge.template-string-converter
     - Gruntfuggly.todo-tree
     - unifiedjs.vscode-mdx
+    - bradlc.vscode-tailwindcss
