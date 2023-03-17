@@ -9,7 +9,38 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          light: "",
+          dark: "",
+        },
+        secondary: {
+          light: "",
+          dark: "",
+        },
+        tertiary: {
+          light: "",
+          dark: "",
+        },
+        success: {
+          light: "",
+          dark: "",
+        },
+        warning: {
+          light: "",
+          dark: "",
+        },
+        error: {
+          light: "",
+          dark: "",
+        },
+        surface: {
+          light: "",
+          dark: "",
+        },
+      },
+    },
   },
   plugins: [],
 };
