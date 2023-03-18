@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Text } from "reshaped/bundle";
 
 export default function Read() {
   return (
@@ -6,11 +7,11 @@ export default function Read() {
       <div className="flex h-96 flex-row gap-4">
         <div className="grid basis-1/3 items-stretch">
           <div className="flex flex-col gap-6">
-            <div className="text-3xl font-bold">Read</div>
-            <div className="font-medium">
+            <Text variant="title-1">Read</Text>
+            <Text variant="body-1">
               Fetch data by writing simple type-based orientated code, and GQty
               creates the GraphQL query on the fly.
-            </div>
+            </Text>
           </div>
           <div className="self-end pb-6 text-lg font-semibold">
             Try this feature →

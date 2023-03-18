@@ -3,18 +3,19 @@ import { Direction } from "readline";
 import { Skeleton, Text, View } from "reshaped/bundle";
 import { Responsive } from "reshaped/types/global";
 
-export default function Write() {
+export default function Cache() {
   return (
     <>
-      <View direction="row-reverse" gap={15}>
-        <View.Item columns={4} grow={true}>
+      <View direction="row" gap={15}>
+        <View.Item columns={4}>
           <View direction="column" paddingTop={5} gap={6}>
-            <Text variant="title-1">Write</Text>
+            <Text variant="title-1">Performance optimized</Text>
             <Text variant="body-1">
-              Create, Update, Delete? Call the function - that’s it...
+              Cache Built-In, which you can also use quite easily as state
+              management!
             </Text>
           </View>
-          <View paddingBottom={8} direction="row" align="end">
+          <View direction="column" paddingBottom={8} justify="end">
             <Text variant="body-strong-1">Try this feature →</Text>
           </View>
         </View.Item>
@@ -24,9 +25,16 @@ export default function Write() {
             <Image
               src="/Hexagon.svg"
               alt="Hexagon"
-              width={85}
-              height={85}
-              className="absolute bottom-32 left-[-40px] -rotate-45"
+              width={134}
+              height={134}
+              className="absolute bottom-8 left-[-67px] rotate-45 blur-[2px]"
+            />
+            <Image
+              src="/Hexagon.svg"
+              alt="Hexagon"
+              width={36}
+              height={36}
+              className="absolute top-12 right-[-20px] rotate-12"
             />
           </View>
         </View.Item>
