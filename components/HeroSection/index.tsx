@@ -1,16 +1,16 @@
 import PlayIcon from "../Icons/Play";
 
-export default function TestComponent() {
+export default function HeroSection() {
   return (
     <>
-      <div class="relative flex flex-col gap-y-28 overflow-hidden  bg-surface-light-50">
-        <div class="flex flex-col items-center gap-y-12">
-          <div class=" grid grid-cols-12">
-            <h1 class="col-span-10 col-start-2 text-center text-6xl font-bold text-surface-light-900">
+      <div className="relative flex flex-col gap-y-28 overflow-hidden  bg-surface-light-50">
+        <div className="flex flex-col items-center gap-y-12">
+          <div className=" grid grid-cols-12">
+            <h1 className="col-span-10 col-start-2 text-center text-6xl font-bold text-surface-light-900">
               The first No-GraphQL GraphQL client
             </h1>
           </div>
-          <button class="flex-inline flex items-center gap-x-2 rounded-full bg-surface-light-100 py-4 px-5 text-lg font-semibold text-surface-light-900 transition duration-300 hover:bg-surface-light-200">
+          <button className="flex-inline flex items-center gap-x-2 rounded-full bg-surface-light-100 py-4 px-5 text-lg font-semibold text-surface-light-900 transition duration-300 hover:bg-surface-light-200">
             <svg
               width="24"
               height="24"
@@ -26,15 +26,15 @@ export default function TestComponent() {
             Playground
           </button>
         </div>
-        <div class="grid grid-cols-12">
-          <div class="absolute inset-x-0 bottom-0 box-content h-32 w-full bg-gradient-to-t from-surface-light-50 via-surface-light-50/70"></div>
-          <div class="col-span-5">
-            <img class="aspect-[1/1] w-full" src="/before.png"></img>
+        <div className="grid grid-cols-12">
+          <div className="absolute inset-x-0 bottom-0 box-content h-32 w-full bg-gradient-to-t from-surface-light-50 via-surface-light-50/70"></div>
+          <div className="col-span-5">
+            <img className="aspect-[1/1] w-full" src="/before.png"></img>
           </div>
 
-          <div class="col-span-2 items-start text-center">
+          <div className="col-span-2 items-start text-center">
             <svg
-              class="w-full  py-6"
+              className="w-full  py-6"
               width="133"
               height="136"
               viewBox="0 0 133 136"
@@ -55,8 +55,8 @@ export default function TestComponent() {
               />
             </svg>
           </div>
-          <div class="col-span-5">
-            <img class="aspect-[1/1] w-full" src="/before.png"></img>
+          <div className="col-span-5">
+            <img className="aspect-[1/1] w-full" src="/before.png"></img>
           </div>
         </div>
       </div>
