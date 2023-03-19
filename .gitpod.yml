@@ -30,6 +30,8 @@ vscode:
     - christian-kohler.path-intellisense
     - aaron-bond.better-comments
     - meganrogge.template-string-converter
+    - leodevbro.blockman
     - Gruntfuggly.todo-tree
     - unifiedjs.vscode-mdx
     - bradlc.vscode-tailwindcss
+    - PulkitGangwar.nextjs-snippets
