@@ -15,14 +15,7 @@ module.exports = {
           light: "#EF46BC",
           dark: "#E767C0",
         },
-        secondary: {
-          light: "",
-          dark: "",
-        },
-        tertiary: {
-          light: "",
-          dark: "",
-        },
+
         success: {
           light: "#23A30F",
           dark: "#85F273",
