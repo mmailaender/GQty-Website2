@@ -6,7 +6,7 @@ import { Responsive } from "reshaped/types/global";
 export default function Write() {
   return (
     <>
-      <View direction="row-reverse" gap={15} height={100}>
+      <View direction="row-reverse" gap={15} align="stretch">
         <View.Item columns={4} grow>
           <View direction="column" height="100%">
             <View.Item grow>
