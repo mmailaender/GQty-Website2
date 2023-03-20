@@ -1,0 +1,6 @@
+{
+  "read": "Read",
+  "write": "Write",
+  "subscription": "Subscription",
+  "cache": "Cache"
+}

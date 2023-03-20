@@ -3,9 +3,9 @@
     "type": "page",
     "display": "hidden"
   },
-  "docs": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "docs": "Getting Started",
+  "react": "React",
+  "javascript": "Javascript",
   "documentation": {
     "title": "Documentation",
     "type": "page",

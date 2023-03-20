@@ -35,3 +35,4 @@ vscode:
     - unifiedjs.vscode-mdx
     - bradlc.vscode-tailwindcss
     - PulkitGangwar.nextjs-snippets
+    - PKief.material-icon-theme
