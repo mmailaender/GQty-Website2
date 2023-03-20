@@ -23,7 +23,7 @@ export default function HeroSection() {
           <View direction="row" gap={4}>
             <View.Item columns={2}></View.Item>
             <View.Item columns={8}>
-              <Text variant="display-2" color="neutral-faded" align="center">
+              <Text variant="display-2" align="center">
                 The first No-GraphQL GraphQL client
               </Text>
             </View.Item>

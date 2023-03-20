@@ -8,7 +8,7 @@ import type {
 
 const Contributor = () => {
   return (
-    <View gap={8}>
+    <View gap={12}>
       <View align="center" justify="start">
         <Text variant="display-3" align="center">
           Contributors
@@ -26,19 +26,19 @@ const Contributor = () => {
               align="center"
               justify="center"
             >
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
-              <Avatar size={20} color="primary" squared={false} />
+              <Avatar size={20} initials="BK" squared={false} />
+              <Avatar size={20} initials="MM" squared={false} />
+              <Avatar size={20} initials="MK" squared={false} />
+              <Avatar size={20} initials="AV" squared={false} />
+              <Avatar size={20} initials="MB" squared={false} />
+              <Avatar size={20} initials="MS" squared={false} />
+              <Avatar size={20} initials="BK" squared={false} />
+              <Avatar size={20} initials="MM" squared={false} />
+              <Avatar size={20} initials="MK" squared={false} />
+              <Avatar size={20} initials="AV" squared={false} />
+              <Avatar size={20} initials="MB" squared={false} />
+              <Avatar size={20} initials="MS" squared={false} />
+              <Avatar size={20} initials="MS" squared={false} />
             </View>
           </View.Item>
           <View.Item columns={1}></View.Item>

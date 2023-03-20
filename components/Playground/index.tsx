@@ -12,10 +12,10 @@ const Playground = () => {
   return (
     <View direction="column" align="center" gap={10}>
       <View>
-        <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-6xl font-extrabold text-transparent">
+        <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-5xl font-extrabold text-transparent">
           Play
         </span>
-        <Text as="span" variant="display-2">
+        <Text as="span" variant="display-3">
           ground
         </Text>
       </View>
