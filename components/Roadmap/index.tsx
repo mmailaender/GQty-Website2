@@ -7,6 +7,7 @@ import {
   Radio,
   RadioGroup,
   Icon,
+  Progress,
 } from "reshaped/bundle";
 import type {
   TimelineProps,
@@ -17,15 +18,16 @@ import type {
   CheckboxProps,
   RadioProps,
   RadioGroupProps,
+  ProgressProps,
 } from "reshaped";
 
-const Progress = () => {
+const Roadmap = () => {
   return (
-    <View direction="row" gap={5}>
+    <View direction="row" gap={5} align="stretch">
       <View.Item columns={9}>
-        <View direction="column" gap={12} width="100%">
+        <View direction="column" gap={12}>
           <Text variant="title-2">Our Roadmap</Text>
-          <View direction="row" gap={5} width="100%">
+          <View direction="row" gap={5}>
             <View.Item columns={4}>
               <View direction="column" gap={8}>
                 <Text variant="title-3">Shipped</Text>
@@ -136,73 +138,81 @@ const Progress = () => {
           </View>
         </View>
       </View.Item>
-      <View.Item columns={3}>
+      <View.Item columns={3} grow={true}>
         <View
-          backgroundColor="elevated"
-          width="100%"
+          backgroundColor="neutral-faded"
+          height="100%"
           direction="column"
           borderRadius="large"
           borderColor="neutral-faded"
           padding={5}
         >
-          <View direction="row" align="stretch" height="320px">
-            <View direction="column" gap={7}>
+          <View.Item grow={true}>
+            <View height="100%" justify="start" gap={8}>
+              {/* Card title */}
               <View direction="column" gap={1}>
                 <Text variant="caption-1" color="neutral-faded">
                   Funding goal
                 </Text>
                 <Text variant="title-2">Working full time on GQty</Text>
               </View>
-              <View direction="column" gap={2} width="100%">
+
+              {/* Progress section */}
+              <View direction="column">
                 <Text variant="caption-1" color="neutral-faded">
                   Raised so far
                 </Text>
-                <View direction="column" width="100%">
-                  <View direction="row" width="100%" align="baseline">
-                    <View.Item columns={6}>
+
+                {/* from to */}
+                <View direction="row" gap={1} align="baseline" paddingTop={3}>
+                  <View.Item columns={6}>
+                    <View>
                       <Text variant="title-2">$250</Text>
-                    </View.Item>
-                    <View.Item columns={6}>
-                      <View justify="end">
-                        <Text
-                          variant="body-strong-2"
-                          color="neutral-faded"
-                          align="end"
-                        >
-                          of $5000
-                        </Text>
-                      </View>
-                    </View.Item>
-                  </View>
+                    </View>
+                  </View.Item>
+                  <View.Item columns={6}>
+                    <View justify="end">
+                      <Text
+                        variant="caption-1"
+                        color="neutral-faded"
+                        align="end"
+                      >
+                        of $5000
+                      </Text>
+                    </View>
+                  </View.Item>
+                </View>
+
+                {/* Progress indicator */}
+                <View paddingTop={1}>
+                  <Progress value={20} color="white" size="small" />
                 </View>
               </View>
             </View>
-            <View
-              direction="column"
-              width="100%"
-              gap={2}
-              align="center"
-              justify="end"
-            >
-              <Button
-                color="white"
-                size="xlarge"
-                rounded={true}
-                fullWidth={true}
-              >
-                Join Funding
-              </Button>
-              <View direction="row" gap={1} align="center">
-                <Text variant="caption-1" align="center" color="neutral-faded">
+          </View.Item>
+
+          <View.Item grow={true}>
+            <View height="100%" justify="end">
+              {/* Call to action */}
+              <View direction="column" gap={2}>
+                <Button
+                  color="primary"
+                  rounded={true}
+                  size="xlarge"
+                  fullWidth={true}
+                >
+                  Join Funding
+                </Button>
+                <Text variant="caption-1" color="neutral-faded" align="center">
                   13 people funded
                 </Text>
               </View>
             </View>
-          </View>
+          </View.Item>
         </View>
       </View.Item>
     </View>
   );
 };
 
-export default Progress;
+export default Roadmap;
