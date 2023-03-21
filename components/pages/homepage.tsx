@@ -2,7 +2,7 @@ import { View } from "reshaped/bundle";
 import Contributor from "../Contributor";
 import HeroSection from "../HeroSection";
 import Playground from "../Playground";
-import Progress from "../Progress";
+import Roadmap from "../Roadmap";
 import USP from "../USP";
 
 const Homepage = () => {
@@ -30,7 +30,7 @@ const Homepage = () => {
       </View>
       <Playground />
       <Contributor />
-      <Progress />
+      <Roadmap />
     </View>
   );
 };
