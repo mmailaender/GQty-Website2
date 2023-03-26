@@ -3,14 +3,17 @@
     "type": "page",
     "display": "hidden"
   },
-  "docs": "Getting Started",
+  "getting-started": "Getting Started",
   "react": "React",
-  "javascript": "Javascript",
+  "core": "Core",
   "documentation": {
     "title": "Documentation",
     "type": "page",
-    "href": "/docs"
+    "href": "/getting-started"
   },
+  "guides": "Use Cases",
+  "integrations": "Integrations",
+  "api-reference": "API",
   "about": {
     "title": "About",
     "type": "page"

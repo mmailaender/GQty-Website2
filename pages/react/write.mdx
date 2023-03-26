@@ -1,1 +1,60 @@
-# Write
+# Sending Mutations
+
+Mutations are created via the `useMutation()` hook.
+
+```tsx filename="src/ProfileEdit.tsx"
+import { useMutation, Mutation } from "../gqty";
+
+export default function LoginForm() {
+  const [login, { isLoading }] = useMutation((mutation, args) =>
+    mutation.login(args)
+  );
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+
+        login({
+          username: e.currentTarget.email.value,
+          password: e.currentTarget.password.value,
+        });
+      }}
+    >
+      <input type="email" name="email" />
+      <input type="password" name="password" />
+      <button type="submit" disabled={isLoading}>
+        Login
+      </button>
+    </form>
+  );
+}
+```
+
+Think of `useMutation()` as a specialized version of `useQuery()`, where queries
+do not immediately triggers upon render, instead you acquire the returned
+callback and call it later upon user interactions.
+
+You may also provide different inputs to the mutation each time you call it.
+
+## Sharing Selections
+
+**Fragments** is an important concept in GraphQL, and especially Relay. It helps
+separation of concern, grouping components into the data it needs, while
+retaining the ability to combine multiple fragments into one single fetch.
+
+Another benefit of fragments is that it allows automatic updates for other
+components querying the same data, either by another query, a mutation or
+updates from subscriptions.
+
+With normalized cache and cache subscriptions under the hood, GQty does all that
+for you with greatly reduced maintenance cost.
+
+```md
+Best practises for refetching:
+
+1. export the prepare of releted queries
+1. use `assignSelection()`
+```
+
+## Optimistic Updates

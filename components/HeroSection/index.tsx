@@ -1,42 +1,22 @@
-import PlayIcon from "../Icons/Play";
-import { Button, View, Text, Image } from "reshaped/bundle";
-import type {
-  TextProps,
-  ViewItemProps,
-  ViewProps,
-  ButtonProps,
-  ImageProps,
-} from "reshaped/bundle";
+import { Image, Text, View } from "reshaped/bundle";
 
 export default function HeroSection() {
   return (
     <>
       <View
         direction="column"
-        backgroundColor="page"
         align="center"
         justify="start"
         gap={26}
         paddingTop={12}
       >
-        <View direction="column" align="center" gap={12}>
-          <View direction="row" gap={4}>
-            <View.Item columns={2}></View.Item>
-            <View.Item columns={8}>
-              <Text variant="display-2" align="center">
-                The first No-GraphQL GraphQL client
-              </Text>
-            </View.Item>
-            <View.Item columns={2}></View.Item>
-          </View>
-          <Button
-            startIcon={<PlayIcon />}
-            size="large"
-            rounded={true}
-            color="neutral"
-          >
-            Playground
-          </Button>
+        <View direction="column" align="center" gap={5}>
+          <Text variant="display-2" align="center">
+            The No-GraphQL client
+          </Text>
+          <Text variant="featured-1" align="center">
+            for TypeScript
+          </Text>
         </View>
         <div className="relative">
           <View direction="row" gap={5} width="100%">

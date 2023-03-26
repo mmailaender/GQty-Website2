@@ -1,3 +1,324 @@
-Read
+import Alert from "../../components/TailwindUI/Alert";
 
-# Read
+# Querying Data
+
+Querying data via GraphQL in GQty is seamless and automatic. Imagine the
+following schema and a component after user login.
+
+```graphql filename="schema.graphql"
+type Query {
+  me: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+}
+```
+
+```tsx filename="src/Profile.tsx"
+import { useQuery } from "./gqty";
+
+export default function Profile() {
+  const { me } = useQuery();
+
+  return (
+    <>
+      <h1>Hello {me.name}!</h1>
+    </>
+  );
+}
+```
+
+<Alert title="Under the hood">
+  You are actually rendering off of the cached data. GQty captures what is being
+  accessed while rendering, combines what is being accessed into a single
+  GraphQL query, fetches them, and then triggers a re-render for you.
+</Alert>
+
+### Arrays
+
+Rendering array in GQty is similar to rendering normal arrays in React.
+
+```graphql {2} filename="schema.graphql"
+type User {
+  friends: [User!]!
+}
+```
+
+```tsx {9-13} filename="src/Profile.tsx"
+import { useQuery } from "./gqty";
+
+export function Profile() {
+  const { me } = useQuery();
+
+  return (
+    <>
+      <h1>Hello {me.name}!</h1>
+      <ol>
+        {me.friends().map((user) => (
+          <li key={user.id ?? "0"}>{user.name}</li>
+        ))}
+      </ol>
+    </>
+  );
+}
+```
+
+Notice the `user.id ?? "0"` statement. Without Suspense, `user.id` will be
+`undefined` until GQty successfully fetches data from your API endpoint. We
+temporarily give it a `"0"` as the key for React to correctly replace the array
+item when the actual data arrives.
+
+<Alert className="mt-5" title="Keep arrays immutable">
+  When you start learning React, it may be tempting to mutate the arrays during
+  render, such as sorting or filtering. You should avoid them because it is easy
+  to create pitfalls hard to notice. Instead, let the API do it from the
+  backend.
+
+See how to pass GraphQL inputs in GQty in the next section.
+
+</Alert>
+
+### Inputs
+
+Passing inputs in GQty is a simple function call.
+
+```graphql {2} filename="schema.graphql"
+type User {
+  friends(limit: Int, offset: Int): [User!]!
+}
+```
+
+```tsx {10} filename="src/Profile.tsx"
+import { useQuery } from "./gqty";
+
+export function Profile() {
+  const { me } = useQuery();
+
+  return (
+    <>
+      <h1>Hello {me.name}!</h1>
+      <ol>
+        {me.friends({ offset: 10, limit: 20 }).map((user) => (
+          <li key={user.id ?? "0"}>{user.name}</li>
+        ))}
+      </ol>
+    </>
+  );
+}
+```
+
+When designing a GraphQL API, inputs are a great way to tell your backend to do
+some work before returning the data. Filtering, sorting and pagination are common
+use cases for queries.
+
+You will see more examples with inputs in [`mutations`](/react/write).
+
+### Interfaces and Unions
+
+Interfaces and unions in GQty are syntactically similar to an actual GraphQL
+query, with type specific fields behind an `$on` property from the parent type.
+
+```graphql {2,5-17} filename="schema.graphql"
+type User {
+  pets: [Pet!]!
+}
+
+interface Pet {
+  name: String!
+}
+
+type Cat implements Pet {
+  name: String!
+  meows: Boolean!
+}
+
+type Dog implements Pet {
+  name: String!
+  barks: Boolean!
+}
+```
+
+```tsx {9-17} filename="src/Profile.tsx"
+import { useQuery } from "./gqty";
+
+export function Profile() {
+  const { me } = useQuery();
+
+  return (
+    <>
+      <h1>Hello {me.name}, you have these pets:</h1>
+      <ol>
+        {me.pets.map((pet) => (
+          <li key={pet.id ?? "0"}>
+            {pet.name} is a {pet.__typename}
+            {pet.$on.Cat.meows && " and it meows!"}
+            {pet.$on.Dog.barks && " and it barks!"}
+          </li>
+        ))}
+      </ol>
+    </>
+  );
+}
+```
+
+### Transforming on Render
+
+Not to be confused to altering on render, re-formatting is instead a handy way
+to hand-off localization works to browsers.
+
+```graphql {2}
+type User {
+  updatedAt: Int!
+}
+```
+
+```tsx {9} filename="src/Profile.tsx"
+import { useQuery } from "./gqty";
+
+export function Profile() {
+  const { me } = useQuery();
+
+  return (
+    <>
+      <h1>Hello {me.name}!</h1>
+      <p>Last updated at {new Date(me.updatedAt).toLocaleString()}</p>
+    </>
+  );
+}
+```
+
+## Loading State
+
+### Data Skeletons
+
+When rendering before data is fetched without Suspense, GQty gives you data
+placeholders that matches the schema data structure. It comes in handy when you
+want to display skeleton/glimmer loaders that matches your UI with no extra
+efforts.
+
+Data skeletons for arrays come with a single element.
+
+```tsx {3} / ?? nameSkeleton/ filename="src/Profile.tsx"
+import { useQuery } from "./gqty";
+
+const nameSkeleton = <Skeleton type="text" width={50} />;
+
+export default function Profile() {
+  return (
+    <>
+      <h1>Hello, {user.name ?? nameSkeleton}!</h1>
+      <ol>
+        {user.friends().map((user) => (
+          <li key={user.id ?? "0"}>{user.name ?? nameSkeleton}</li>
+        ))}
+      </ol>
+    </>
+  );
+}
+```
+
+### Suspense
+
+GQty supports Suspense for Data Fetching out of the box, you may easily switch
+it on by using settings the `suspense` option to `true` in your `useQuery()`.
+
+```tsx {4} filename="src/Profile.tsx"
+import { useQuery } from "./gqty";
+
+export function Profile() {
+  const { me } = useQuery({ suspense: true });
+
+  // ...
+}
+```
+
+On the surface it looks like your `<Suspense />` already caught the fetch, so it
+is tempting to stop here and call it a day. But enabling `suspense` without
+`prepare` actually forces GQty to trigger one more render before it fetches,
+just to fake a suspense.
+
+The correct way to use suspense is to tell GQty what to fetch via `prepare`,
+such that it trigger suspense before the first render takes place.
+
+```tsx {5-10} filename="src/Profile.tsx"
+import { useQuery } from "./gqty";
+
+export function Profile() {
+  const { me } = useQuery({
+    prepare({ query: { me } }) {
+      me.name;
+      me.friends({ limit: 10, offset: 20 }).map((user) => {
+        user.name;
+      });
+    },
+    suspense: true,
+  });
+
+  // ...
+}
+```
+
+## Error Handling
+
+`useQuery()` returns a `$state` property where you can access the last error
+returned during data fetch via `$state.error`.
+
+```tsx {4-6} filename="src/Profile.tsx"
+export default function Profile() {
+  const { me, $state } = useQuery();
+
+  if ($state.error) {
+    return <p>Something went wrong: {$state.error.message}</p>;
+  }
+
+  // ...
+}
+```
+
+### Suspense
+
+With Suspense enabled, errors during data fetch will be thrown in the next
+render. This encourages [Error Boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary),
+where you think more in terms of the component tree as in `<Suspense>` more than
+in conditional rendering.
+
+<Alert className="mt-5" title="The Suspense mindset">
+  Starting from React 18, it is recommended that you structure your app as
+  suspendable layers. Loading states and errors should be handled by React
+  instead of repeating these internal states in every single component.
+</Alert>
+
+## Refetching
+
+Besides `$state`, `useQuery()` also returns a `$refetch()` method for refetching
+selections made from this hook.
+
+```tsx {7} filename="src/Profile.tsx"
+export default function Profile() {
+  const { me, $refetch } = useQuery();
+
+  return (
+    <>
+      <h1>Hello, {me.name}!</h1>
+      <button onClick={() => $refetch()}>Reload</button>
+    </>
+  );
+}
+```
+
+## Legacy Hooks
+
+There are other fetch hooks that are considered deprecated because they don't
+match the new API design approach. But they are specifically kept functional
+in the new core because they are useful in some cases.
+
+You may learn more about them in the API reference.
+
+1. [`useTransactionQuery()`](/api-reference/use-transaction-query)
+1. [`useLazyQuery()`](/api-reference/use-lazy-query)
+1. [`usePaginatedQuery()`](/api-reference/use-paginated-query)
+
+If you have thoughts about these legacy hooks, please don't hesitate to chime in
+our Discord server.

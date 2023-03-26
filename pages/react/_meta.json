@@ -1,6 +1,9 @@
 {
   "read": "Read",
   "write": "Write",
-  "subscription": "Subscription",
-  "cache": "Cache"
+  "subs": "Subscription",
+  "cache": "Cache",
+  "ssr": "Server Side Rendering",
+  "ssg": "Static Site Generation",
+  "rsc": "Server Components"
 }

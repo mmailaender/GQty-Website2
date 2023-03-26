@@ -20,19 +20,22 @@
   "dependencies": {
     "@stackblitz/sdk": "^1.8.2",
     "next": "^13.2.4",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
+    "nextra": "^2.2.19",
+    "nextra-theme-docs": "^2.2.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
     "reshaped": "file:node_modules_offline/reshaped-react-v1.13.2.tgz"
   },
   "devDependencies": {
+    "@twind/next": "^1.0.10",
     "@types/node": "^18.15.3",
-    "autoprefixer": "^10.4.14",
+    "@types/react": "^18.0.28",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
-    "prettier-plugin-tailwindcss": "^0.2.4",
+    "prettier-plugin-tailwindcss": "^0.2.5",
     "tailwindcss": "^3.2.7",
+    "twind": "^0.16.19",
     "typescript": "^4.9.5"
   }
 }

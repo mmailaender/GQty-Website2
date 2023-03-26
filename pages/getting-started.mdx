@@ -1,0 +1,58 @@
+import Alert from "/components/TailwindUI/Alert";
+import { Tab, Tabs } from "nextra-theme-docs";
+import Image from "next/image";
+
+# Quickstart
+
+To start using GQty, run `@gqty/cli` with your favourite packager.
+
+<Alert className="mt-5" severity="info" title="Even Quicker Start!">
+  Use your API endpoint as a CLI argument to skip the interactive setup and jump
+  right in!
+</Alert>
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+
+    ```bash copy
+    > npx @gqty/cli
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```bash copy
+    > yarn dlx @gqty/cli
+    ```
+
+  </Tab>
+
+  <Tab>
+
+    ```bash copy
+    > pnpm dlx @gqty/cli
+    ```
+
+  </Tab>
+</Tabs>
+
+If you find yourself running the above command frequently, feel free to install
+`@gqty/cli` into your project.
+
+You should now see the following three files in your project:
+
+```
+.
+├─ gqty
+│  ├─ index.ts
+│  └─ schema.generated.ts
+└─ gqty.config.ts
+```
+
+You are all set! Head over to [React](/react/read) or the [core](/core/resolve)
+to create your first fetching component!
+
+<Alert className="mt-5" severity="info" title="Didn't get what you want?">
+  Head over to [configuration](/configuration) or [cli](/advanced/cli) for more
+  options!
+</Alert>

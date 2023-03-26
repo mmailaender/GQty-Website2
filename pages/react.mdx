@@ -1,0 +1,40 @@
+import Alert from "../components/TailwindUI/Alert";
+
+# React
+
+<Alert title="Intended Level: Intermediate">
+  This section descibes the defailt of the React client. If you are just getting
+  started, don't care about the details here. Skip to [read](/react/read) and
+  start playing around!
+</Alert>
+
+This page is written mainly for power users, or those who want to maintain
+multiple client configurations in one project. Read on if one of the following
+conditionss hits:
+
+1. You have multiple GraphQL endpoints in one project and federation is not an option.
+1. You are a user of GQty v2 and want to progressively migrate.
+1. You are doing codegen with customizations not yet supported by us.
+1. You are REALLY curious.
+
+## The React Client
+
+The React client is a wrapper that builds on top of the [core](/core), adding
+React hooks and hooks related internal mechanism for some hooks such as query
+batching and global cache subscribers.
+
+This page assumes you already have a core client and a generated schema, if you
+don't already have a core client, head over to the [core](/core) landing page
+and create one.
+
+The most simply way to create a new React client,
+
+```ts
+import { createReactClient } from "@gqty/react";
+
+// Assuming you already have the core client created here.
+import { client, GeneratedSchema } from "./gqty/core";
+
+export const { useQuery, useMutation, useSubscription } =
+  createReactClient<GeneratedSchema>(client);
+```

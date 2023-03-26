@@ -1,0 +1,116 @@
+import Alert from "/components/TailwindUI/Alert";
+import { Tab, Tabs } from "nextra-theme-docs";
+
+# CLI
+
+<Alert
+  className="mt-5"
+  severity="info"
+  title="You don't need to read this section, unless..."
+  >
+
+1. You are curious
+1. We missed something in the interactive setup [seriously, let us know!](https://github.com/gqty-dev/gqty/issues/new)
+1. You are a devOp or a sysadmin
+
+</Alert>
+
+## Basic Usage
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tab>
+
+    ```bash copy
+    > npx @gqty/cli [options] <endpoint>
+    ```
+
+  </Tab>
+  <Tab>
+
+    ```bash copy
+    > yarn dlx @gqty/cli [options] <endpoint>
+    ```
+
+  </Tab>
+
+  <Tab>
+
+    ```bash copy
+    > pnpm dlx @gqty/cli [options] <endpoint>
+    ```
+
+  </Tab>
+</Tabs>
+
+### TODO
+
+1. Explain the arguments
+   1. All arguments will be treated as endpoints.
+   1. Endpoints can be URLs or path to a file.
+1. With arguments and/or options
+   1. When called with one or more argument, URLs are fetched, files are read. The
+      results will be merged with schema stitching.
+   1. Client will be generated, otherwise an error is thrown.
+      1. (Do not fallback to interactive mode because headless setups don't like it)
+1. Interactive (Without arguments)
+   1. Introspection starts right after endpoint question is answered,
+      next question depends on this result.
+   1. When introspection fails with HTTP 401, ask for authentication method.
+   1. On other errors, ask if user wants to retry or exit.
+
+## Interactive Setup
+
+## Options
+
+### `-H`, `--header`
+
+Add custom header during introspection, useful when your endpoint requires authentication.
+
+```bash copy
+> npx @gqty/cli -H "Authorization: Bearer <token>"
+```
+
+### `--client`
+
+Regenerates the client, overwritting the existing one.
+
+When run without this option, client generation will be skipped if target client
+file already exists. You may specify a value as the path target for the generated
+client, defaults to `--client=gqty/index.ts`.
+
+### `--react`
+
+Forces React client generation regardless if you are using it.
+
+Defaults to `true` if `react` is found in the dependencis in your `package.json`,
+`false` otherwise.
+
+### `--subscriptions`
+
+Initialize a subscription client during code generation.
+
+You may also specify `--subscriptions=graphql-sse` if your GraphQL server uses
+Server Side Events for subscriptions.
+
+Defaults to `graphql-ws` if subscriptions are found during introspection,
+otherwise subscription client will be skipped.
+
+### `--typescript`
+
+Forces a TypeScript client to be generated over a JavaScript one.
+
+Defaults to `true` if `typescript` is found in the dependencis in your
+`package.json`.
+
+### `-w`, `--watch`
+
+Watches for changes in specified endpoints, regenerates the schema when changes
+are detected.
+
+URL endpoints will be polled with a dynamic interval derived as a running
+average of the last few regeneration, this prevents hanging up the machine when
+working with huge schemas.
+
+You may override the polling interval by specifying a time unit comptiable with
+`ms` as the option value, e.g. `--watch="1 minute"` or `-w5s`. This interval is
+ignored when watching local files.
