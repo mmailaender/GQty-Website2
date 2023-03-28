@@ -1,11 +1,10 @@
-import type { JSX } from "react";
-import { memo } from "react";
+import { memo, type ButtonHTMLAttributes } from "react";
 import type { Accents } from "./Accents";
 import type { Breakpoints } from "./Breakpoints";
 
 const IS_BROWSER = typeof window !== "undefined";
 
-export type Props = Omit<JSX.HTMLAttributes<HTMLButtonElement>, "size"> & {
+export type Props = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "size"> & {
   accent?: Accents;
   size?: Breakpoints;
   rounded?: boolean;
@@ -15,7 +14,6 @@ export const Button = ({
   accent = "primary",
   size = "md",
   rounded,
-  class: classProp = "",
   className = "",
   disabled,
   ...props
@@ -24,7 +22,7 @@ export const Button = ({
     type="button"
     disabled={!IS_BROWSER || disabled}
     className={`
-      ${classProp} ${className}
+      ${className}
       inline-flex items-center border font-medium shadow-sm
       focus:(outline-none ring(2 indigo-500 offset-2))
       ${

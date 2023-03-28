@@ -1,18 +1,13 @@
-import type { JSX } from "react";
-export type Props = Omit<JSX.HTMLAttributes<HTMLDivElement>, "size"> & {
+import { type HTMLAttributes } from "react";
+
+export type Props = Omit<HTMLAttributes<HTMLDivElement>, "size"> & {
   fluid?: boolean;
 };
 
-export const Container = ({
-  className,
-  class: classProp,
-  fluid,
-  ...props
-}: Props) => (
+export const Container = ({ className, fluid, ...props }: Props) => (
   <div
     className={`${[
       className ?? "",
-      classProp ?? "",
       fluid ? `max-w-full` : `container`,
       `mx-auto sm:px-6 lg:px-8`,
     ]

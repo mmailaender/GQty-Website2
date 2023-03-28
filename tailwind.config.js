@@ -9,6 +9,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
+  mode: "silent",
   theme: {
     extend: {
       colors: {

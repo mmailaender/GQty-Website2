@@ -1,15 +1,17 @@
-import type { FunctionComponent, JSX } from "react";
+import type { FunctionComponent, PropsWithChildren } from "react";
 import { memo } from "react";
 
-export const Sidebar: FunctionComponent<{
-  logo?: {
-    src: string;
-    alt: string;
-  };
-  header?: JSX.Element | JSX.Element[] | string;
-  footer?: JSX.Element[];
-  location?: Location;
-}> = ({ header, footer, children }) => {
+export const Sidebar: FunctionComponent<
+  PropsWithChildren<{
+    logo?: {
+      src: string;
+      alt: string;
+    };
+    header?: JSX.Element | JSX.Element[] | string;
+    footer?: JSX.Element[];
+    location?: Location;
+  }>
+> = ({ header, footer, children }) => {
   return (
     <div
       className="

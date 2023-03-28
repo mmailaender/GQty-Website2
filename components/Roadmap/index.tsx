@@ -1,25 +1,12 @@
 import {
-  View,
-  Timeline,
-  Text,
-  Checkbox,
   Button,
-  Radio,
-  RadioGroup,
-  Icon,
+  Checkbox,
   Progress,
+  Radio,
+  Text,
+  Timeline,
+  View,
 } from "reshaped/bundle";
-import type {
-  TimelineProps,
-  TimelineItemProps,
-  ViewItemProps,
-  ViewProps,
-  TextProps,
-  CheckboxProps,
-  RadioProps,
-  RadioGroupProps,
-  ProgressProps,
-} from "reshaped";
 
 const Roadmap = () => {
   return (
@@ -95,7 +82,11 @@ const Roadmap = () => {
                   <Timeline.Item
                     markerSlot={
                       <View overflow="hidden">
-                        <Radio hasError={true} defaultChecked={false}></Radio>
+                        <Radio
+                          hasError={true}
+                          defaultChecked={false}
+                          value="1"
+                        ></Radio>
                       </View>
                     }
                   >
@@ -113,7 +104,7 @@ const Roadmap = () => {
                   <Timeline.Item
                     markerSlot={
                       <View overflow="hidden">
-                        <Radio defaultChecked={false}></Radio>
+                        <Radio defaultChecked={false} value="1"></Radio>
                       </View>
                     }
                   >
@@ -124,7 +115,7 @@ const Roadmap = () => {
                   <Timeline.Item
                     markerSlot={
                       <View overflow="hidden">
-                        <Radio defaultChecked={false}></Radio>
+                        <Radio defaultChecked={false} value="1"></Radio>
                       </View>
                     }
                   >

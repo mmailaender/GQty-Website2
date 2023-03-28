@@ -1,8 +1,8 @@
-import { FunctionComponent, JSX, memo } from "react";
+import { FunctionComponent, memo, type InputHTMLAttributes } from "react";
 
 export type AddOnElement = JSX.Element[] | JSX.Element | string;
 
-export type Props = Omit<JSX.HTMLAttributes<HTMLInputElement>, "rows"> & {
+export type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "rows"> & {
   name: string;
   type?: string;
   label?: string;
@@ -36,7 +36,6 @@ export const Input: FunctionComponent<Props> = ({
   value,
   disabled = false,
   rounded = false,
-  class: classProp = "",
   className = "",
   addOns,
   icons,
@@ -150,7 +149,7 @@ export const Input: FunctionComponent<Props> = ({
               )
               disabled:(cursor-not-allowed border-gray-200 bg-gray-50 text-gray-500)
               sm:text-sm
-              ${classProp} ${className}`}
+              ${className}`}
           placeholder={placeholder}
           value={value}
           disabled={disabled}

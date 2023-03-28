@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { DocsThemeConfig } from "nextra-theme-docs";
-import gqtyLogo from "./components/icons/gqty/logo.svg";
 
 const config: DocsThemeConfig = {
-  logo: <Image src={gqtyLogo} alt="GQty Logo" width={86} height={45} />,
+  logo: <Image src="/logo/gqty.svg" alt="GQty Logo" width={86} height={45} />,
   project: {
     link: "https://github.com/gqty-dev/gqty",
   },

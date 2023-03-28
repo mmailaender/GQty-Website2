@@ -1,6 +1,6 @@
-import type { FunctionComponent, JSX } from "react";
+import type { AnchorHTMLAttributes, FunctionComponent } from "react";
 
-export type Props = JSX.HTMLAttributes<HTMLAnchorElement> & {
+export type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
   icon?: JSX.Element;
   active?: boolean;
 };
@@ -9,7 +9,6 @@ export const SidebarItem: FunctionComponent<Props> = ({
   active,
   icon,
   children,
-  class: classProp,
   className,
   href,
   id = href,
@@ -18,7 +17,7 @@ export const SidebarItem: FunctionComponent<Props> = ({
   <a
     id={id}
     href={href}
-    className={`${classProp} ${className}
+    className={`${className}
     group flex items-center px-2 py-2 text-base rounded-md
     ${
       active

@@ -191,3 +191,4 @@ buck-out/
 
 # Local notes
 .*.md
+.vercel

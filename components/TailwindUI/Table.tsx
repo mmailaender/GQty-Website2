@@ -1,7 +1,7 @@
-import type { JSX, JSXInternal } from "react";
+import { type ColHTMLAttributes } from "react";
 
 export type ColumnDefinition<T = any> =
-  JSXInternal.HTMLAttributes<HTMLTableColElement> & {
+  ColHTMLAttributes<HTMLTableColElement> & {
     label?: string;
     /** key of the data object */
     key: string;
