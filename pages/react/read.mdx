@@ -32,8 +32,8 @@ export default function Profile() {
 
 <Alert title="Under the hood">
   You are actually rendering off of the cached data. GQty captures what is being
-  accessed while rendering, combines what is being accessed into a single
-  GraphQL query, fetches them, and then triggers a re-render for you.
+  accessed while rendering, combines them into a single GraphQL query, fetches
+  them, and then triggers a re-render for you.
 </Alert>
 
 ### Arrays
@@ -165,7 +165,7 @@ export function Profile() {
 
 ### Transforming on Render
 
-Not to be confused to altering on render, re-formatting is instead a handy way
+Not to be confused with altering on render, re-formatting is instead a handy way
 to hand-off localization works to browsers.
 
 ```graphql {2}
@@ -194,9 +194,8 @@ export function Profile() {
 ### Data Skeletons
 
 When rendering before data is fetched without Suspense, GQty gives you data
-placeholders that matches the schema data structure. It comes in handy when you
-want to display skeleton/glimmer loaders that matches your UI with no extra
-efforts.
+placeholders that matches the schema data structure. It helps creating
+UI-matching skeleton/glimmer loaders with no extra efforts.
 
 Data skeletons for arrays come with a single element.
 
@@ -206,11 +205,13 @@ import { useQuery } from "../gqty";
 const nameSkeleton = <Skeleton type="text" width={50} />;
 
 export default function Profile() {
+  const { me } = useQuery();
+
   return (
     <>
-      <h1>Hello, {user.name ?? nameSkeleton}!</h1>
+      <h1>Hello, {me.name ?? nameSkeleton}!</h1>
       <ol>
-        {user.friends().map((user) => (
+        {me.friends().map((user) => (
           <li key={user.id ?? "0"}>{user.name ?? nameSkeleton}</li>
         ))}
       </ol>
@@ -234,8 +235,8 @@ export function Profile() {
 }
 ```
 
-On the surface it looks like your `<Suspense />` already caught the fetch, so it
-is tempting to stop here and call it a day. But enabling `suspense` without
+At the first glance, it looks like your `<Suspense />` already caught the fetch,
+it is tempting to stop here and call it a day. But enabling `suspense` without
 `prepare` actually forces GQty to trigger one more render before it fetches,
 just to fake a suspense.
 
@@ -290,9 +291,9 @@ export default function Profile() {
 
 ### Suspense
 
-With Suspense enabled, errors during data fetch will be thrown in the next
+With Suspense enabled, errors during data fetch will be thrown during next
 render. This encourages [Error Boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary),
-where you think more in terms of the component tree as in `<Suspense>` more than
+where you think of the component tree in terms of suspendable layers more than
 in conditional rendering.
 
 <Alert className="mt-5" title="The Suspense mindset">
@@ -323,7 +324,7 @@ export default function Profile() {
 
 There are other fetch hooks that are considered deprecated because they don't
 match the new API design approach. But they are specifically kept functional
-in the new core because they are useful in some cases.
+in the new core for certain convensional coding styles.
 
 You may learn more about them in the API reference.
 
@@ -331,5 +332,6 @@ You may learn more about them in the API reference.
 1. [`useLazyQuery()`](/api-reference/use-lazy-query)
 1. [`usePaginatedQuery()`](/api-reference/use-paginated-query)
 
-If you have thoughts about these legacy hooks, please don't hesitate to chime in
-our Discord server.
+GQty is shaped by the community. If you have thoughts about these legacy hooks,
+or want to discuss the API in general, please don't hesitate to chime in our
+Discord server.

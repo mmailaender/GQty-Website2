@@ -5,8 +5,8 @@ import Alert from "../../components/TailwindUI/Alert";
 Mutations are created via the `useMutation()` hook.
 
 Think of `useMutation()` as a specialized version of `useQuery()`, where queries
-do not immediately triggers upon render, instead you invoke mutations in
-response to user interactions.
+do not immediately trigger upon render, instead you invoke mutations in response
+to user interactions.
 
 ```graphql filename="schema.graphql"
 type Mutation {
@@ -49,9 +49,8 @@ export default function ProfileEdit() {
 ## Fragments
 
 **Fragments** is an important concept in GraphQL, they are especially emphasized
-in Relay. It declares reusable units in GraphQL for components for shared use
-amongst components, while retaining the ability to be combined into one single
-fetch.
+in Relay. It declares reusable units in GraphQL for shared use amongst
+components, while retaining the ability to be combined into one single fetch.
 
 In GQty you enjoy the same benefit without having to manage fragments yourself,
 individual selections are managed and combined automatically while rendering.
@@ -96,8 +95,8 @@ loading state in place, you don't have to care about what selections to make.
 
 <Alert className="mt-5" title="Reuse query components">
   Reusing loading states for the read component helps you make exactly the same
-  selections that the query component needs. This makes sure we are making the
-  exact same selections, keeping the normalized cache fresh and consistent.
+  selections it needs when users visit again. This makes sure the cache is
+  fresh, complete and consistent.
 </Alert>
 
 ## Optimistic Updates
@@ -122,7 +121,7 @@ Object.assign(user, {
 });
 ```
 
-This chart shows the flow of data when performing an optimistic updates.
+This chart shows the flow of data when performing optimistic updates.
 
 ```mermaid
 graph LR
@@ -171,5 +170,5 @@ export default function ProfileEdit() {
 }
 ```
 
-Try to make selections with a `prepare` function shared with query components,
-read more about Suspense on queries [here](/react/read#suspense).
+Try to make selections with a function shared with query components, read more
+about Suspense on queries [here](/react/read#suspense).
