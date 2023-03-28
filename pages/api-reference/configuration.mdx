@@ -3,19 +3,17 @@
 We aim to minimize the necessity of this page, relying on auto-detection
 and interactive setup for most cases.
 
-If you think your use case is possible without a configuration file, tell us in
+If you think your use case is possible without a configuration file, tell us on
 Discord or GitHub!
 
 ## Where?
 
-We use `cosmiconfig`, so we search for configuration files in the following
-order:
+With `cosmiconfig`, GQty look for configurations in the following order:
 
 1. A `gqty` property in your `package.json`, or
 1. `.gqtyrc` in JSON or YAML format, or
 1. `.gqtyrc.json`, `.gqtyrc.yaml`, `.gqtyrc.yml`, `.gqtyrc.js` or `.gqtyrc.cjs`, or
-1. In the directory `.config/`, the file `gqtyrc`, `gqtyrc.json`, `gqtyrc.yaml`,
-   `gqtyrc.yml`, `gqtyrc.js` or `gqtyrc.cjs`, or
+1. files above, but inside `.config/`, or
 1. A `gqty.config.js` or `gqty.config.cjs` CommonJS module exporting an object.
 
 ## What?

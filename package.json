@@ -25,6 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
+    "remark-mermaid-nextra": "^0.0.4",
     "reshaped": "file:node_modules_offline/reshaped-react-v1.13.2.tgz"
   },
   "devDependencies": {
