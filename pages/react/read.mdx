@@ -31,9 +31,9 @@ export default function Profile() {
 ```
 
 <Alert title="Under the hood">
-  You are actually rendering off of the cached data. GQty captures what is being
-  accessed while rendering, combines them into a single GraphQL query, fetches
-  them, and then triggers a re-render for you.
+  When rendering from `useQuery()`, you are actually reading from the cache.
+  GQty combines the fields being accessed and into a GraphQL query, fetch from
+  your endpoint, updates the cache, then re-renders the component.
 </Alert>
 
 ### Arrays
@@ -71,13 +71,9 @@ temporarily give it a `"0"` as the key for React to correctly replace the array
 item when the actual data arrives.
 
 <Alert className="mt-5" title="Keep arrays immutable">
-  When you start learning React, it may be tempting to mutate the arrays during
-  render, such as sorting or filtering. You should avoid them because it is easy
-  to create pitfalls hard to notice. Instead, let the API do it from the
-  backend.
-
-See how to pass GraphQL inputs in GQty in the next section.
-
+  Avoid mutating the arrays directly during rendering, such as `.sort()` and
+  `.filter()`, instead fetch the data from your server in the way you need it.
+  See the next section on how to send inputs.
 </Alert>
 
 ### Inputs
@@ -86,7 +82,7 @@ Passing inputs in GQty is a simple function call.
 
 ```graphql {2} filename="schema.graphql"
 type User {
-  friends(limit: Int, offset: Int): [User!]!
+  friends(offset: Int, limit: Int): [User!]!
 }
 ```
 
@@ -198,6 +194,12 @@ placeholders that matches the schema data structure. It helps creating
 UI-matching skeleton/glimmer loaders with no extra efforts.
 
 Data skeletons for arrays come with a single element.
+
+```graphql filename="schema.graphql"
+type Query {
+  me: User!
+}
+```
 
 ```tsx {3} / ?? nameSkeleton/ filename="src/Profile.tsx"
 import { useQuery } from "../gqty";

@@ -1,0 +1,70 @@
+import Alert from "../../components/TailwindUI/Alert";
+
+# `subscribe()` - The Asynchronous Generator
+
+In complementry with `resolve()`, the promise interface, `subscribe()` provides
+an asynchronous generator experience for continuous data streams.
+
+Here is a simple example for a streaming data in SvelteKit:
+
+```html filename="src/routes/index.svelte"
+<script>
+  import { subscribe } from "$lib/gqty";
+
+  let messages = [];
+
+  for await (const { data } of subscribe(
+    ({ subscription: { onNewMessage } }) => {}
+  )) {
+    messages = [...messages, data.onNewMessage];
+  }
+</script>
+
+<p>Messages</p>
+
+<ol>
+  {#each messages as message}
+  <li>{message}</li>
+  {/each}
+</ol>
+```
+
+<Alert title="Subscriptions on the Cache">
+  The `subscribe()` function is streaming updates from the client cache instead
+  of any active GraphQL subscriptions. This allows subscribing not only to
+  subscriptions, but also cache changes on query and mutations made elsewhere in
+  the application.
+</Alert>
+
+## Unsubscribe
+
+```html filename="src/routes/index.svelte"
+<script>
+  import { subscribe } from "$lib/gqty";
+  import { onMount } from "svelte";
+
+  let messages = [];
+
+  onMount(() => {
+    const subscription = subscribe(({ subscription: { onNewMessage } }) => {});
+
+    doStreamData(sub);
+
+    return sub.unsubscribe;
+  });
+
+  async function doStreamData(sub) {
+    for await (const { data } of sub) {
+      messages = [...messages, data.onNewMessage];
+    }
+  }
+</script>
+
+<p>Messages</p>
+
+<ol>
+  {#each messages as message}
+  <li>{message}</li>
+  {/each}
+</ol>
+```

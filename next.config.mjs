@@ -5,11 +5,12 @@ import { remarkMermaid } from "remark-mermaid-nextra";
  * @type {import("nextra").NextraConfig}
  */
 const nextraConfig = {
-  theme: "nextra-theme-docs",
-  themeConfig: "./theme.config.tsx",
+  latex: true,
   mdxOptions: {
     remarkPlugins: [remarkMermaid],
   },
+  theme: "nextra-theme-docs",
+  themeConfig: "./theme.config.tsx",
 };
 
 const withNextra = nextra(nextraConfig);
