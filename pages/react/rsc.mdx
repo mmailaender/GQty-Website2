@@ -1,3 +1,5 @@
+import Alert from "../../components/TailwindUI/Alert";
+
 # React Server Components (RSC)
 
 Server Components are asynchronous components that renders on the server,
@@ -11,3 +13,45 @@ authentication keys.
 
 Fetching data from the edge, right where your data is located, may also reduce
 overall latency and safes at least one multi-hop fetch from the client side.
+
+```tsx filename="app/profile/page.tsx"
+import { GQtyError, resolve } from "../gqty";
+import { type User } from "../gqty/schema.generated";
+import Profile from "./Profile";
+
+export const prepare = ({
+  firstName,
+  middleNames,
+  lastName,
+  image: { alt, src },
+  lastLogin,
+  birthday,
+  friends,
+}: User) => {
+  friends({ first: 10 }).map(
+    ({ firstName, lastName, image: { alt, src } }) => {}
+  );
+};
+
+export default async function ProfilePage() {
+  const { data, errors } = await resolve(({ query: { me } }) => {
+    prepare(me);
+  });
+
+  // Error boundaries
+  if (errors) {
+    throw GQtyError.fromGraphQLErrors(errors);
+  }
+
+  return <Profile user={data?.me} />;
+}
+```
+
+We recommend always exporting your selection function, read more about this
+in [Querying with Suspense](/react/read#suspense);
+
+<Alert className="mt-5" title="Avoid hooks on Server Components">
+  Hooks and Server Components do not play well together. Until there is a way
+  for a seamless implementation for both, we recommend sticking with the GQty
+  core at the moment.
+</Alert>

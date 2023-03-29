@@ -247,11 +247,13 @@ such that suspense happens right at the first render.
 import { useQuery } from "../gqty";
 import { type User } from "../gqty/schema.generated";
 
-export const prepare = (user: User) => {
-  user.name;
-  user.friends({ limit: 10, offset: 20 }).map((user) => {
-    user.name;
-  });
+export const prepare = ({
+  firstName,
+  middleNames,
+  lastName,
+  friends,
+}: User) => {
+  friends({ limit: 10, offset: 20 }).map(({ name }) => {});
 };
 
 export function Profile() {

@@ -3,7 +3,6 @@
   "write": "Write",
   "subs": "Subscription",
   "cache": "Cache",
-  "ssr": "Server Side Rendering",
-  "ssg": "Static Site Generation",
+  "ssr-ssg": "SSR & SSG",
   "rsc": "Server Components"
 }

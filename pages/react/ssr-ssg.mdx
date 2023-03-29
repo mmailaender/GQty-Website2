@@ -1,0 +1,56 @@
+import Alert from "../../components/TailwindUI/Alert";
+
+# SSR & SSG
+
+GQty handles Server Side Rendering (SSR) and Static Site Generation (SSG) out
+of the box. Although these two concepts differs a little bit in Next.js,
+fetching in GQty is very much the same thing.
+
+When fetching data at server side, you use `prepareReactRender` and
+`useHydrateCache`.
+
+The following example shows a simple page in Next.js 13.
+
+```tsx filename="pages/user/[id].tsx"
+import { type PropsWithServerCache } from "@gqty/react";
+import { useRouter } from "next/router";
+import { prepareReactRender, useHydrateCache, useQuery } from "../gqty";
+import Profile from "../components/Profile";
+
+type Props = PropsWithServerCache<{
+  // Other page props here.
+}>;
+
+// For SSR, just use `getServerSideProps` instead of `getStaticProps`.
+export const getStaticProps = async (context) => {
+  const { user } = useQuery();
+  const { cacheSnapshot } = await prepareReactRender(
+    <Profile user={user({ id: context.params.id })} />
+  );
+
+  return {
+    props: {
+      cacheSnapshot,
+    },
+  };
+};
+
+export default function Page({ cacheSnapshot }: Props) {
+  const router = useRouter();
+  const { user } = useQuery();
+
+  useHydrateCache({ cacheSnapshot });
+
+  return (
+    <>
+      <Profile user={user({ id: router.query.id })} />
+    </>
+  );
+}
+```
+
+<Alert title="Suspense is supported">
+  The hook `prepareReactRender` uses
+  [`react-ssr-prepass`](https://github.com/FormidableLabs/react-ssr-prepass),
+  under the hood, so it already works with Suspense.
+</Alert>
