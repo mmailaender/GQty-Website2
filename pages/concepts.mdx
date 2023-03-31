@@ -61,6 +61,16 @@ GraphQL Subscriptions involved. This allows most of the normalization magic
 happens when a seemingly unrelated changes or fetch from other components
 arrives, all components reaching such objects will also be updated.
 
+## Refetching
+
+Refetching in GQty does not necessarily means a network request. A refetch first
+checks the cache freshness of accessed data, it fetches only when cache data
+needs it AND the current cache policy allows it.
+
+Since it is only a validity check, this allows more frequent refetching
+strategy. Window focus refetching, reconnect refetching and interval refetching
+are a good example of this behavior.
+
 ## Cache Policy
 
 When designing an expiring cache with stale-while-revalidate (SWR) support,

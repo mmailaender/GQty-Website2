@@ -1,4 +1,4 @@
-import Alert from "../../components/TailwindUI/Alert";
+import Alert from "../../../components/TailwindUI/Alert";
 
 # Sending Mutations
 
@@ -139,8 +139,9 @@ graph LR
 
 ## Suspense
 
-In Suspense mode, mutations selections should, instead, be made inside a
-callback function.
+In Suspense mode, the `useMutation()` hook allows you to pass a selection
+function as the first argument. It is a good idea to reuse the prepare function
+from related query components here.
 
 ```tsx {2,9,11,19} filename="src/ProfileEdit.tsx"
 import { useMutation } from "../gqty";
@@ -170,5 +171,30 @@ export default function ProfileEdit() {
 }
 ```
 
-Try to make selections with a function shared with query components, read more
-about Suspense on queries [here](/react/read#suspense).
+You can read more about Suspense on queries [here](./read#suspense).
+
+## Refetching
+
+Sometimes it is more convenient to simply refetch a few related queries rather
+than meticulously craft shared components to ensure cache updates are correctly
+propagating through normalized objects.
+
+Post-mutation refetching can be done via `onError()` and `onComplete()` options.
+
+```tsx filename="src/ProfileEdit.tsx"
+import { resolve, useMutation } from "../gqty";
+import { prepare } from "./Profile";
+
+export default function Component() {
+  const [mutation, { isLoading }] = useMutation({
+    onComplete() {
+      await resolve(({ query: { me } }) => prepare(me), {
+        cachePolicy: "no-cache",
+      });
+    },
+  });
+}
+```
+
+Due to the imperative nature of such callbacks, the core function `resolve`
+should be used in place of hooks.

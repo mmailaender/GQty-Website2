@@ -1,0 +1,126 @@
+# useQuery()
+
+```tsx
+function useQuery(options): GeneratedSchema["query"] & {
+  $state: {
+    isLoading: boolean;
+    error?: GQtyError;
+  };
+  $refetch: () => Promise<unknown>;
+};
+```
+
+## Options
+
+### `cachePolicy`
+
+The cache policy to use for the current query, defaults to `default`. You can
+read more about cache policy options in [Concepts](/concepts#cache-policy).
+
+### `fetchPolicy`
+
+Legacy option kept for backward compatability, ignored when `cachePolicy` is
+in use.
+
+| Value               | Description                                   |
+| :------------------ | :-------------------------------------------- |
+| `cache-first`       | Translates to the cache policy `force-cache`. |
+| `cache-and-network` | Translates to the cache policy `default`.     |
+| `network-only`      | Translates to the cache policy `no-cache`.    |
+| `no-cache`          | Translates to the cache policy `no-store`.    |
+
+### `notifyOnNetworkStatusChange`
+
+Updates loading state or triggers suspense during refetch, does not affect
+initial fetch.
+
+Defaults to `true`.
+
+### `onError`
+
+Optional error callback, called when a fetch error happends.
+
+### `operationName`
+
+Optional GraphQL operation name, useful for debugging and testing.
+
+### `prepare`
+
+Optional selection function to run before the first render happens, useful to
+skip the first render in Suspense mode. Encourages the isolation of [shareable
+fragments](/guides/react/write#fragments) for mutation, SSR and SSG.
+
+### `refetchOnWindowVisible`
+
+[Refetches](/concepts#refetching) the query when the window becomes visible
+again.
+
+Defaults to `true`.
+
+### `refetchInterval`
+
+Optional [refetch](/concepts#refetching) interval in milliseconds, skip this
+option to disable.
+
+### `refetchIntervalInBackground`
+
+When `refetchInterval` is enabled, this option decides whether fetch stops
+when the window is not visible.
+
+Defaults to `false`.
+
+### `refetchOnReconnect`
+
+[Refetches](/concepts#refetching) the query when it is
+[online](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event).
+
+### `retryPolicy`
+
+Failing queries can be automatically retried, this option allows you to
+customize the retrying behavior, or disabling it altogether.
+
+| Retry Policy                 | Description                                                                  |
+| :--------------------------- | :--------------------------------------------------------------------------- |
+| `true`                       | Enables auto retry with the default options.                                 |
+| `false`                      | Disables auto retry.                                                         |
+| `number`                     | Enables auto retry with the default options and a custom `maxRetries` count. |
+| `{ maxRetries, retryDelay }` | Enables auto retry with custom options.                                      |
+
+When you specify retryPolicy as an object, the following properties are available.
+
+#### `maxRetries`
+
+The maximum number of times to retry a failed query, defaults to `3`.
+
+#### `retryDelay`
+
+| Retry Delay                   | Description                                                                                                                                                   |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `number`                      | A fixed number of milliseconds to wait between retries.                                                                                                       |
+| `(attempt: number) => number` | A function that returns the number of milliseconds to wait between retries, the default is an exponential backoff function: $min({2^x}, 30) * 1000\text{ms}$. |
+
+### `suspense`
+
+Use `true` to enable [Suspense mode](/guides/react/read#suspense).
+
+## Return Value
+
+The return value is an object proxying the client cache, typed with the Query
+type in the generated schema.
+
+The following additional properties are also included.
+
+### `$state`
+
+| Property    | Type      | Description                                            |
+| :---------- | :-------- | :----------------------------------------------------- |
+| `error`     | `Error`   | The error that happened during the last fetch, if any. |
+| `isLoading` | `boolean` | Whether the query is currently fetching.               |
+
+### `$refetch`
+
+A function that refetches the query, returns a promise that resolves to the
+query result.
+
+Depending on the freshness of the cache data being accessed, a fetch may or
+may not happen. Read more about refetching [here](/concepts#refetching).

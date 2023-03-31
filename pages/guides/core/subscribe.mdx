@@ -1,9 +1,13 @@
-import Alert from "../../components/TailwindUI/Alert";
+import Alert from "../../../components/TailwindUI/Alert";
 
 # `subscribe()` - The Asynchronous Generator
 
-In complementry with `resolve()`, the promise interface, `subscribe()` provides
-an asynchronous generator experience for continuous data streams.
+In complementry with `resolve()`, `subscribe()` is an asynchronous generator
+for continuous data streams.
+
+When you call `subscribe()`, it starts subscriptions and fetches for queries and
+mutations depending on the selections made. The generator then yield on
+relevant changes to the cache until it is unsubscribed.
 
 Here is a simple example for a streaming data in SvelteKit:
 
@@ -29,14 +33,15 @@ Here is a simple example for a streaming data in SvelteKit:
 </ol>
 ```
 
-<Alert title="Subscriptions on the Cache">
-  The `subscribe()` function is streaming updates from the client cache instead
-  of any active GraphQL subscriptions. This allows subscribing not only to
-  subscriptions, but also cache changes on query and mutations made elsewhere in
-  the application.
+<Alert title="Query and Mutation also works">
+  `subscribe` is not only made for subscriptions. It also fetches once on query
+  and mutations, then listening for cache changes made elsewhere in your app.
 </Alert>
 
 ## Unsubscribe
+
+The `subscribe()` function returns an object with an `unsubscribe` function
+where you can close the subscription at any time.
 
 ```html filename="src/routes/index.svelte"
 <script>
@@ -48,12 +53,12 @@ Here is a simple example for a streaming data in SvelteKit:
   onMount(() => {
     const subscription = subscribe(({ subscription: { onNewMessage } }) => {});
 
-    doStreamData(sub);
+    doStreamData(subscription);
 
-    return sub.unsubscribe;
+    return subscription.unsubscribe;
   });
 
-  async function doStreamData(sub) {
+  async function doStreamData(subscription) {
     for await (const { data } of sub) {
       messages = [...messages, data.onNewMessage];
     }
@@ -68,3 +73,5 @@ Here is a simple example for a streaming data in SvelteKit:
   {/each}
 </ol>
 ```
+
+For more options, check out the [API Reference](/api-reference/core/subscribe).

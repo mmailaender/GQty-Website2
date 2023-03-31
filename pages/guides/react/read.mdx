@@ -1,4 +1,4 @@
-import Alert from "../../components/TailwindUI/Alert";
+import Alert from "../../../components/TailwindUI/Alert";
 
 # Querying Data
 
@@ -34,6 +34,19 @@ export default function Profile() {
   When rendering from `useQuery()`, you are actually reading from the cache.
   GQty combines the fields being accessed and into a GraphQL query, fetch from
   your endpoint, updates the cache, then re-renders the component.
+
+The above component generates this query:
+
+```graphql
+query {
+  me {
+    __typename
+    id
+    name
+  }
+}
+```
+
 </Alert>
 
 ### Arrays
@@ -109,7 +122,7 @@ When designing a GraphQL API, inputs are a great way to tell your backend to do
 some work before returning the data. Filtering, sorting and pagination are common
 use cases for queries.
 
-You will see more examples with inputs in [`mutations`](/react/write).
+You will see more examples with inputs in [`mutations`](/guides/react/write).
 
 ### Interfaces and Unions
 
@@ -306,6 +319,53 @@ in conditional rendering.
   instead of repeating these internal states in every single component.
 </Alert>
 
+## Batching
+
+GQty uses a technique called "proxy-based query batching" to batch selections
+from multiple components into one single GraphQL query, even without server
+support.
+
+To combine multiple levels of components into one single fetch, pass the query
+object down as props.
+
+```tsx filename="src/Profile.tsx"
+import { type FC } from "react";
+import { useQuery } from "../gqty";
+import { type User } from "../gqty/schema.generated";
+
+const Avatar: FC<{ user: User }> = ({ profilePic, name, email }) => (
+  <div>
+    <img alt={profilePic.alt} src={profilePic.src} />
+    <div>{name}</div>
+    <a href={`mailto:${email}`}>{email}</a>
+  </div>
+);
+
+const FriendsList: FC<{ user: User }> = ({ friends }) => (
+  <ol>
+    {friends().map((user) => (
+      <Avatar key={user.id ?? "0"} user={user} />
+    ))}
+  </ol>
+);
+
+export default function Profile() {
+  const { me } = useQuery();
+
+  return (
+    <>
+      <h1>Hello, {me.name}!</h1>
+      <Pets />
+    </>
+  );
+}
+```
+
+<Alert title="Enhanced Batching Soon™">
+  GQty has plans to add support for combining selections made in multiple
+  `useQuery()` scopes, removing the need to manually prop-drill.
+</Alert>
+
 ## Refetching
 
 Besides `$state`, `useQuery()` also returns a `$refetch()` method for refetching
@@ -332,9 +392,9 @@ in the new core for certain convensional coding styles.
 
 You may learn more about them in the API reference.
 
-1. [`useTransactionQuery()`](/api-reference/use-transaction-query)
-1. [`useLazyQuery()`](/api-reference/use-lazy-query)
-1. [`usePaginatedQuery()`](/api-reference/use-paginated-query)
+1. [`useTransactionQuery()`](/api-reference/react/use-transaction-query)
+1. [`useLazyQuery()`](/api-reference/react/use-lazy-query)
+1. [`usePaginatedQuery()`](/api-reference/react/use-paginated-query)
 
 GQty is shaped by the community. If you have thoughts about these legacy hooks,
 or want to discuss the API in general, please don't hesitate to chime in our
