@@ -54,3 +54,34 @@ export default function Page({ cacheSnapshot }: Props) {
   [`react-ssr-prepass`](https://github.com/FormidableLabs/react-ssr-prepass),
   under the hood, so it already works with Suspense.
 </Alert>
+
+## Performance Optimization
+
+`prepareReactRender` renders your app twice for data fetching, which is
+necessary without a separate selection function. When your app has grown out of
+the period of rapid iteration, it will be a good idea to start factoring out
+selection functions and skip the first render.
+
+See [Suspense on Read](/guides/react/read#suspense) on how to export a reusable
+selection function.
+
+```tsx filename="pages/user/[id].tsx"
+import { resolve } from "../gqty";
+import { prepare } from "./Profile.tsx";
+
+export const getStaticProps = async (context) => {
+  const { data } = await resolve(({ query: { user } }) =>
+    prepare(user({ id: context.params.id }))
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+export default function Page({ data }) {
+  // ... Skipped for brevity
+}
+```

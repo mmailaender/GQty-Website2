@@ -1,10 +1,13 @@
 # resolve
 
 ```tsx
-async function resolve(fn, options): Promise<ExecutionResult>;
+async function resolve(
+  fn: QueryFunction,
+  options?: Options
+): Promise<ExecutionResult>;
 ```
 
-## fn
+## QueryFunction
 
 A function accessing scalar needed from the schema object.
 
@@ -12,7 +15,7 @@ A function accessing scalar needed from the schema object.
 (schema: TSchema) => TData;
 ```
 
-## options
+## Options
 
 ### `awaitsFetch`
 

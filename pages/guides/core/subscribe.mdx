@@ -2,14 +2,14 @@ import Alert from "../../../components/TailwindUI/Alert";
 
 # `subscribe()` - The Asynchronous Generator
 
-In complementry with `resolve()`, `subscribe()` is an asynchronous generator
-for continuous data streams.
+In contrast with the one-off nature of [`resolve()`](/guides/core/resolve),
+`subscribe()` is an asynchronous generator for continuous data streams.
 
 When you call `subscribe()`, it starts subscriptions and fetches for queries and
 mutations depending on the selections made. The generator then yield on
 relevant changes to the cache until it is unsubscribed.
 
-Here is a simple example for a streaming data in SvelteKit:
+Here is a simple example in SvelteKit:
 
 ```html filename="src/routes/index.svelte"
 <script>
@@ -36,12 +36,14 @@ Here is a simple example for a streaming data in SvelteKit:
 <Alert title="Query and Mutation also works">
   `subscribe` is not only made for subscriptions. It also fetches once on query
   and mutations, then listening for cache changes made elsewhere in your app.
+  This powers the `useQuery` hook in our React package, triggering re-renders on
+  cache updates.
 </Alert>
 
 ## Unsubscribe
 
-The `subscribe()` function returns an object with an `unsubscribe` function
-where you can close the subscription at any time.
+`subscribe()` returns an object with an `unsubscribe` method for closing the
+subscription.
 
 ```html filename="src/routes/index.svelte"
 <script>

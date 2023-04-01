@@ -2,12 +2,12 @@
 
 ```ts
 async function* subscribe<TSchema>(
-  fn,
-  options
+  fn: QueryFunction,
+  options?: Options
 ): AsyncGenerator<ExecutionResult>;
 ```
 
-## fn
+## QueryFunction
 
 A function accessing scalar needed from the schema object.
 
@@ -15,7 +15,7 @@ A function accessing scalar needed from the schema object.
 (schema: TSchema) => TData;
 ```
 
-## options
+## Options
 
 ### `cachePolicy`
 
