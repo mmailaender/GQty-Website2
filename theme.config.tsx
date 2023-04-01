@@ -11,7 +11,7 @@ const config: DocsThemeConfig = {
     link: "https://discord.gg/NZ9U3XjW",
   },
   darkMode: true,
-  docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
+  docsRepositoryBase: "https://github.com/gqty-dev/GQty-Website",
   footer: {
     text: (
       <span>
