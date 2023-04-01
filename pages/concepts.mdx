@@ -1,9 +1,13 @@
 import Alert from "../components/TailwindUI/Alert";
 import Image from "next/image";
 import svgNormalization1 from "../components/concepts/cache/normalization/pic1.svg";
+import svgNormalization1Dark from "../components/concepts/cache/normalization/pic1d.svg";
 import svgNormalization2 from "../components/concepts/cache/normalization/pic2.svg";
+import svgNormalization2Dark from "../components/concepts/cache/normalization/pic2d.svg";
 import svgNormalization3 from "../components/concepts/cache/normalization/pic3.svg";
+import svgNormalization3Dark from "../components/concepts/cache/normalization/pic3d.svg";
 import svgNormalization4 from "../components/concepts/cache/normalization/pic4.svg";
+import svgNormalization4Dark from "../components/concepts/cache/normalization/pic4d.svg";
 
 # Concepts
 
@@ -105,11 +109,29 @@ Cache normalization is best explained with sketches.
 
 Given two data trees in cache, both containing node "a".
 
-<Image src={svgNormalization1} alt="fig1: Cache Normalization Step 1" />
+<Image
+  className="dark:hidden"
+  src={svgNormalization1}
+  alt="fig1: Cache Normalization Step 1"
+/>
+<Image
+  className="hidden dark:block"
+  src={svgNormalization1Dark}
+  alt="fig1: Cache Normalization Step 1"
+/>
 
 They will be merged into the same object reference, and kept in a global store.
 
-<Image src={svgNormalization2} alt="fig2: Cache Normalization Step 2" />
+<Image
+  className="dark:hidden"
+  src={svgNormalization2}
+  alt="fig2: Cache Normalization Step 2"
+/>
+<Image
+  className="hidden dark:block"
+  src={svgNormalization2Dark}
+  alt="fig2: Cache Normalization Step 2"
+/>
 
 This global store will be serialised along with the main data cache during
 persistence and rehydration.
@@ -119,7 +141,16 @@ persistence and rehydration.
 When a node is part of an updating tree, subscribers of other trees referencing
 the same node will also be notified.
 
-<Image src={svgNormalization3} alt="fig3: Cache Normalization Step 3" />
+<Image
+  className="dark:hidden"
+  src={svgNormalization3}
+  alt="fig3: Cache Normalization Step 3"
+/>
+<Image
+  className="hidden dark:block"
+  src={svgNormalization3Dark}
+  alt="fig3: Cache Normalization Step 3"
+/>
 
 ### Stable Object References
 
@@ -129,4 +160,13 @@ query caches will be a proxy of the actual data inside the global store.
 When objects are updated or replaced, references to the proxies won't change
 only underlying objects are swapped.
 
-<Image src={svgNormalization4} alt="fig4: Cache Normalization Step 4" />
+<Image
+  className="dark:hidden"
+  src={svgNormalization4}
+  alt="fig4: Cache Normalization Step 4"
+/>
+<Image
+  className="hidden dark:block"
+  src={svgNormalization4Dark}
+  alt="fig4: Cache Normalization Step 4"
+/>
