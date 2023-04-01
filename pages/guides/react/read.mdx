@@ -235,7 +235,7 @@ export default function Profile() {
 }
 ```
 
-### Suspense
+### Suspense on Data Fetching
 
 GQty supports Suspense for Data Fetching out of the box, you may easily switch
 it on by using settings the `suspense` option to `true` in your `useQuery()`.
@@ -256,9 +256,9 @@ it is tempting to stop here and call it a day. But enabling `suspense` without
 just to fake a suspense.
 
 The correct way to use suspense is to tell GQty what to fetch via `prepare`,
-such that suspense happens right at the first render.
+such that suspense happens at first render.
 
-```tsx {2, 4-9, 13-15} filename="src/Profile.tsx"
+```tsx {4-11, 16} filename="src/Profile.tsx"
 import { useQuery } from "../gqty";
 import { type User } from "../gqty/schema.generated";
 
@@ -284,9 +284,10 @@ export function Profile() {
 ```
 
 <Alert title="Export your selection functions">
-  When structuring your Query components, it is always a good idea to export
-  your selection functions. It helps isolating selections right from the start,
-  comes in handy for mutations and Server-side Rendering (SSR).
+  When structuring your Query components, it is a good idea to export your
+  selection functions. It helps isolating selections into reusable fragments,
+  and will comes in handy for [mutations](/guides/react/write#fragments) and
+  [Server-side Rendering (SSR)](/guides/next/ssr-ssg#performance-optimization).
 </Alert>
 
 ## Error Handling
@@ -306,10 +307,10 @@ export default function Profile() {
 }
 ```
 
-### Suspense
+### Suspense on Error
 
 With Suspense enabled, errors during data fetch will be thrown during next
-render. This encourages [Error Boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary),
+render. This encourages [error boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary),
 where you think of the component tree in terms of suspendable layers more than
 in conditional rendering.
 
