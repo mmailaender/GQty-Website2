@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { DocsThemeConfig } from "nextra-theme-docs";
+import { useRouter } from "next/router";
 
 const config: DocsThemeConfig = {
   logo: <Image src="/logo/gqty.svg" alt="GQty Logo" width={86} height={45} />,
@@ -18,6 +19,14 @@ const config: DocsThemeConfig = {
         <a href="https://gqty.dev">GQty</a>.
       </span>
     ),
+  },
+  useNextSeoProps: () => {
+    const { asPath } = useRouter();
+
+    return {
+      titleTemplate: asPath === "/" ? "GQty" : "%s - GQty",
+      description: "A No-GraphQL Client for TypeScript",
+    };
   },
 };
 
