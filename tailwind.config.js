@@ -1,7 +1,6 @@
-/** @type {import('twind').Configuration} */
-
 const { getTheme } = require("reshaped/config/tailwind");
 
+/** @type {import('twind').Configuration} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
