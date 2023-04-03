@@ -21,5 +21,8 @@
   "workbench.colorCustomizations": {
     "editor.lineHighlightBorder": "#9fced11f",
     "editor.lineHighlightBackground": "#1073cf2d"
-  }
+  },
+
+  // MDX IntelliSense
+  "mdx.experimentalLanguageServer": true
 }
