@@ -55,49 +55,32 @@ components, while retaining the ability to be combined into one single fetch.
 In GQty you enjoy the same benefit without having to manage fragments yourself,
 individual selections are managed and combined automatically while rendering.
 
-```tsx {3,10,22} filename="src/ProfileEdit.tsx"
-import { useState } from "react";
-import { useMutation, Mutation } from "../gqty";
-import Profile from "../components/Profile";
+See how to reuse the selection function from a related query components below.
+
+```tsx {2,8,16} filename="src/ProfileEdit.tsx"
+import { useMutation } from "../gqty";
+import { prepare } from "./Profile";
 
 export default function ProfileEdit() {
-  const [mutation, { isLoading }] = useMutation();
-  const [user, setUser] = useState();
+  const [updateProfile, { isLoading }] = useMutation((mutation, inputs) => {
+    const user = mutation.updateProfile(inputs);
 
-  if (user) {
-    return <Profile user={user} />;
-  }
+    prepare(user); // Reuse the same `prepare` function from queries
+  });
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
 
-        const user = mutation.updateProfile({
-          newName: e.target.name.value,
-        });
-
-        setUser(user);
+        await updateProfile({ newName: e.target.name.value });
       }}
     >
-      <input type="name" name="name" />
-      <button type="submit" disabled={isLoading}>
-        Save
-      </button>
+      {/* form controls ... */}
     </form>
   );
 }
 ```
-
-Notice the `<Profile />` component used above, it is the same component when
-visiting the profile page. Because the component already has all the skeleton
-loading state in place, you don't have to care about what selections to make.
-
-<Alert className="mt-5" title="Reuse query components">
-  Reusing loading states for the read component helps you make exactly the same
-  selections it needs when users visit again. This makes sure the cache is
-  fresh, complete and consistent.
-</Alert>
 
 ## Optimistic Updates
 
@@ -137,49 +120,17 @@ graph LR
   reflect the current state of data.
 </Alert>
 
-## Suspense
-
-In Suspense mode, the `useMutation()` hook allows you to pass a selection
-function as the first argument. It is a good idea to reuse the prepare function
-from related query components here.
-
-```tsx {2,9,11,19} filename="src/ProfileEdit.tsx"
-import { useMutation } from "../gqty";
-import { prepare } from "./Profile";
-
-export default function ProfileEdit() {
-  const [updateProfile, { isLoading }] = useMutation(
-    (mutation, inputs) => {
-      const user = mutation.updateProfile(inputs);
-
-      prepare(user); // Reuse the same `prepare` function from queries
-    },
-    { suspense: true }
-  );
-
-  return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-
-        await updateProfile({ newName: e.target.name.value });
-      }}
-    >
-      {/* form controls ... */}
-    </form>
-  );
-}
-```
-
-You can read more about Suspense on queries [here](./read#suspense).
-
 ## Refetching
 
 Sometimes it is more convenient to simply refetch a few related queries rather
 than meticulously craft shared components to ensure cache updates are correctly
 propagating through normalized objects.
 
-Post-mutation refetching can be done via `onError()` and `onComplete()` options.
+Post-mutation refetching can be done via `onError()` and `onComplete()`
+options.
+
+For `onComplete()`, you may return a promise to have the mutation hold on the
+loading state until your refetch is complete.
 
 ```tsx filename="src/ProfileEdit.tsx"
 import { resolve, useMutation } from "../gqty";
@@ -187,7 +138,7 @@ import { prepare } from "./Profile";
 
 export default function Component() {
   const [mutation, { isLoading }] = useMutation({
-    onComplete() {
+    async onComplete() {
       await resolve(({ query: { me } }) => prepare(me), {
         cachePolicy: "no-cache",
       });
