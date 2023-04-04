@@ -73,14 +73,6 @@ Add custom header during introspection, useful when your endpoint requires authe
 > npx @gqty/cli -H "Authorization: Bearer <token>"
 ```
 
-### `--client`
-
-Regenerates the client, overwritting the existing one.
-
-When run without this option, client generation will be skipped if target client
-file already exists. You may specify a value as the path target for the generated
-client, defaults to `--client=gqty/index.ts`.
-
 ### `--react`
 
 Forces React client generation regardless if you are using it.
@@ -97,6 +89,21 @@ Server Side Events for subscriptions.
 
 Defaults to `graphql-ws` if subscriptions are found during introspection,
 otherwise subscription client will be skipped.
+
+### `--target`
+
+Target path for the generated client.
+
+Client generation will be skipped if target file already exists. To regenerate
+the client, delete your existing one or specify a new target.
+
+You may specify a value as the path target for the generated client, e.g.
+`--target=gqty/client.generated.ts`.
+
+A schema file `schema.generated.ts` will also be generated in the same
+directory, running this command will always regenerate this schema file.
+
+Defaults to `gqty/index.ts`.
 
 ### `--typescript`
 
