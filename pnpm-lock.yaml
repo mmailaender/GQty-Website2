@@ -61,7 +61,7 @@ devDependencies:
     specifier: ^4.9.5
     version: 4.9.5
   vercel:
-    specifier: ^28.18.2
+    specifier: ^28.18.3
     version: 28.18.3(@types/node@18.15.11)
 
 packages:
