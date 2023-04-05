@@ -21,14 +21,14 @@ import { Tab, Tabs } from "nextra-theme-docs";
   <Tab>
 
     ```bash copy
-    > npx @gqty/cli [options] <endpoint>
+    > npx @gqty/cli [options] [endpoint...]
     ```
 
   </Tab>
   <Tab>
 
     ```bash copy
-    > yarn dlx @gqty/cli [options] <endpoint>
+    > yarn dlx @gqty/cli [options] [endpoint...]
     ```
 
   </Tab>
@@ -36,32 +36,11 @@ import { Tab, Tabs } from "nextra-theme-docs";
   <Tab>
 
     ```bash copy
-    > pnpm dlx @gqty/cli [options] <endpoint>
+    > pnpm dlx @gqty/cli [options] [endpoint...]
     ```
 
   </Tab>
 </Tabs>
-
-### TODO
-
-1. Explain the arguments
-   1. All arguments will be treated as endpoints.
-   1. Endpoints can be URLs or path to a file.
-1. With arguments and/or options
-   1. When called with one or more argument, URLs are fetched, files are read. The
-      results will be merged with schema stitching.
-   1. Client will be generated, otherwise an error is thrown.
-      1. Fallback to interactive mode when
-         1. stdin is a TTY
-         1. Introspection fails with 401 or 403
-1. Interactive (Without arguments)
-   1. Introspection starts right after endpoint question is answered,
-      next question depends on this result.
-   1. When introspection fails with HTTP 401, ask for authentication method,
-      then retry the step above.
-   1. On other errors, ask if user wants to start over or exit.
-
-## Interactive Setup
 
 ## Options
 
