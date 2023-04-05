@@ -1,41 +1,19 @@
-import Alert from "../../components/TailwindUI/Alert";
+# resolve
 
-# `resolve()` - The Promise Interface
-
-In GQty core, the `resolve` method gives you a promise interface to work with
-GraphQL queries, it allows the usage of Query, Mutation and Subscription.
-
-A simple example route `/profile` for SvelteKit would look like this.
-
-```js filename="src/routes/profile/+page.js"
-import { resolve } from "$lib/gqty";
-
-/** @type {import('./$types').PageLoad} */
-export async function load({ params }) {
-  const { data } = await resolve(
-    ({
-      query: {
-        me: {
-          firstName,
-          lastName,
-          email,
-          image: { src, alt },
-        },
-      },
-    }) => {}
-  );
-
-  return {
-    user: data?.me,
-  };
-}
+```tsx
+async function resolve(
+  fn: QueryFunction,
+  options?: Options
+): Promise<ExecutionResult>;
 ```
 
-<Alert title="Subscriptions">
-  The resolve function wraps GraphQL subscriptions into a promise-like
-  interface. Subscriptions created via `resolve()` will be closed upon first
-  data receival (the first `next` message).
-</Alert>
+## QueryFunction
+
+A function accessing scalar needed from the schema object.
+
+```ts
+(schema: TSchema) => TData;
+```
 
 ## Options
 
@@ -76,16 +54,10 @@ The maximum number of times to retry a failed query, defaults to `3`.
 
 #### `retryDelay`
 
-| Retry Delay                   | Description                                                                                                 |
-| :---------------------------- | :---------------------------------------------------------------------------------------------------------- |
-| `number`                      | A fixed number of milliseconds to wait between retries.                                                     |
-| `(attempt: number) => number` | A function that returns the number of milliseconds to wait between retries, useful for exponential backoff. |
-
-The default delay is an exponential backoff function:
-
-$\text{Let } x=\text{Current }\text{attempt}.$
-
-$d = min({2^x}, 30) * 1000\text{ms}$
+| Retry Delay                   | Description                                                                                                                                                   |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `number`                      | A fixed number of milliseconds to wait between retries.                                                                                                       |
+| `(attempt: number) => number` | A function that returns the number of milliseconds to wait between retries, the default is an exponential backoff function: $min({2^x}, 30) * 1000\text{ms}$. |
 
 ### `onFetch()`
 

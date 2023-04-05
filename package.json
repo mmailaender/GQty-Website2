@@ -20,13 +20,13 @@
   "dependencies": {
     "@stackblitz/sdk": "^1.8.2",
     "next": "^13.2.4",
-    "nextra": "^2.2.19",
-    "nextra-theme-docs": "^2.2.19",
+    "nextra": "^2.3.0",
+    "nextra-theme-docs": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "remark-mermaid-nextra": "^0.0.4",
-    "reshaped": "file:node_modules_offline/reshaped-react-v1.13.2.tgz"
+    "reshaped": "file:node_modules_offline/reshaped-react-v1.14.0.tgz"
   },
   "devDependencies": {
     "@twind/next": "^1.0.10",

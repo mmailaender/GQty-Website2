@@ -1,0 +1,40 @@
+import Alert from "../../../components/TailwindUI/Alert";
+
+# `resolve()` - The Promise Interface
+
+In GQty core, the `resolve()` method gives you a promise interface to work with
+GraphQL queries, it allows the usage of Query, Mutation and Subscription.
+
+A simple example route `/profile` for SvelteKit would look like this.
+
+```js filename="src/routes/profile/+page.js"
+import { resolve } from "$lib/gqty";
+
+/** @type {import('./$types').PageLoad} */
+export async function load({ params }) {
+  const { data } = await resolve(
+    ({
+      query: {
+        me: {
+          firstName,
+          lastName,
+          email,
+          image: { src, alt },
+        },
+      },
+    }) => {}
+  );
+
+  return {
+    user: data?.me,
+  };
+}
+```
+
+<Alert title="Subscriptions">
+  The resolve function wraps GraphQL subscriptions into a promise-like
+  interface. Subscriptions created via `resolve()` will be closed upon first
+  data receival (the first `next` message).
+</Alert>
+
+For more options, check out the [API Reference](/api-reference/core/resolve).

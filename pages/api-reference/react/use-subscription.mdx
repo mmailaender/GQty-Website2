@@ -1,0 +1,21 @@
+# useSubscription()
+
+```tsx
+function useSubscription(options?: Options): GeneratedSchema["subscription"];
+```
+
+## Options
+
+### `onError`
+
+Optional callback to be called when subscription returns an error. If omitted,
+errors will be thrown and active subscriptions will be closed.
+
+### `operationName`
+
+Optional GraphQL operation name, useful for debugging and testing.
+
+### `renderThrottleDelay`
+
+Optional throttle delay for each re-render, prevents busy subscriptions from
+hanging the UI.

@@ -1,9 +1,9 @@
-import Alert from "../../components/TailwindUI/Alert";
+import Alert from "../../../components/TailwindUI/Alert";
 
-# React Server Components (RSC)
+# Server Components
 
-Server Components are asynchronous components that renders on the server,
-sending only the generated mark ups to client side with potentially zero
+React Server Components (RSC) are asynchronous components that renders on the
+server, sending only the generated mark ups to client side with potentially zero
 JavaScript.
 
 With RSC, data fetching from protected backends no longer requires a separate
@@ -48,10 +48,10 @@ export default async function ProfilePage() {
 ```
 
 We recommend always exporting your selection function, read more about this
-in [Querying with Suspense](/react/read#suspense);
+in [Querying with Suspense](/guides/react/read#suspense);
 
 <Alert className="mt-5" title="Avoid hooks on Server Components">
   Hooks and Server Components do not play well together. Until there is a way
-  for a seamless implementation for both, we recommend sticking with the GQty
-  core at the moment.
+  for a seamless implementation for both, we recommend sticking with GQty core
+  at the moment.
 </Alert>
