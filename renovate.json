@@ -1,6 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base"],
+  "ignoreDeps": ["pnpm"],
+  "ignorePaths": ["**/node_modules/**"],
+  "packageRules": [
+    {
+      "matchPackagePrefixes": ["@types/", "@graphql-ez/"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "platformAutomerge": true
+    }
+  ],
+  "rangeStrategy": "bump"
 }
