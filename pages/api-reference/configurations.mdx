@@ -1,4 +1,4 @@
-# Configuration
+# Configurations
 
 We aim to minimize the necessity of this page, relying on auto-detection
 and interactive setup for most cases.
@@ -8,7 +8,8 @@ Discord or GitHub!
 
 ## Where?
 
-With `cosmiconfig`, GQty look for configurations in the following order:
+GQty looks for its configurations in these locations, stopping on the first one
+found:
 
 1. A `gqty` property in your `package.json`, or
 1. `.gqtyrc` in JSON or YAML format, or
@@ -18,14 +19,34 @@ With `cosmiconfig`, GQty look for configurations in the following order:
 
 ## What?
 
-### `introspection` `<object>`
+### `introspections` `<object>`
 
-An object customizing the introspection query.
+An object specifying additional information for introspection queries.
 
-| Key        | Type       | Description                                                                           |
-| ---------- | ---------- | ------------------------------------------------------------------------------------- |
-| `endpoint` | `<string>` | Endpoint of the remote GraphQL API or schema file, can be overidden by CLI arguments. |
-| `headers`  | `<object>` | Specify headers for the introspection, defaults to `{}`                               |
+```ts
+type Introspections = {
+  [endpoint: string]: {
+    headers?: Record<string, string>;
+  };
+};
+```
+
+For example, you may specify an authorization header like this:
+
+```json filename="package.json"
+{
+  // ... other fields skipped for brevity
+  "gqty": {
+    "introspections": {
+      "https://example.com/graphql": {
+        "headers": {
+          "authorization": "Bearer eyJhbGciOiJIUzI..."
+        }
+      }
+    }
+  }
+}
+```
 
 ### `destination` `<string>`
 
