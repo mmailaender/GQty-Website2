@@ -1,7 +1,9 @@
 tasks:
   - name: Start development environment
+    before: |
+      pnpm config set auto-install-peers true
     init: |
-      pnpm install
+      pnpm i
     command: |
       pnpm dev
 
