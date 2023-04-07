@@ -99,7 +99,3 @@ are detected.
 URL endpoints will be polled with a dynamic interval derived as a running
 average of the last few regeneration, this prevents hanging up the machine when
 working with huge schemas.
-
-You may override the polling interval by specifying a time unit comptiable with
-`ms` as the option value, e.g. `--watch="1 minute"` or `-w5s`. This interval is
-ignored when watching local files.
