@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { DocsThemeConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
+import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
   logo: <Image src="/logo/gqty.svg" alt="GQty Logo" width={86} height={45} />,
@@ -10,7 +10,10 @@ const config: DocsThemeConfig = {
   chat: {
     link: "https://discord.gg/NZ9U3XjW",
   },
-  darkMode: true,
+  darkMode: false,
+  nextThemes: {
+    defaultTheme: "dark",
+  },
   docsRepositoryBase: "https://github.com/gqty-dev/GQty-Website",
   footer: {
     text: (

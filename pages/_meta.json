@@ -11,7 +11,11 @@
     "href": "/getting-started"
   },
   "guides": "Use Cases",
-  "integrations": "Integrations",
+  "integrations": {
+    "title": "Integrations",
+    "type": "page",
+    "display": "hidden"
+  },
   "api-reference": "API",
   "about": {
     "title": "About",

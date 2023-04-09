@@ -1,6 +1,6 @@
 {
   "cli": "CLI",
-  "configuration": "Configuration",
+  "configurations": "Configurations",
   "react": "React",
   "core": "Core"
 }
