@@ -77,7 +77,7 @@ const voiceNames = [
 ];
 
 export const PronounciationButton = () => {
-  const [voiceName, setVoiceName] = useState();
+  const [voiceName, setVoiceName] = useState<string>();
 
   return (
     <>
