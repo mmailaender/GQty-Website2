@@ -1,18 +1,7 @@
-import {
-  Image,
-  Text,
-  View,
-  Button,
-  ButtonProps,
-  Link,
-  LinkProps,
-  useToast,
-  ToastProps,
-} from "reshaped/bundle";
-import Copy from "../Icons/Play/Copy";
-import Play from "../Icons/Play/Play";
 import React from "react";
+import { Button, Image, Link, Text, View, useToast } from "reshaped/bundle";
 import CheckPink from "../Icons/Play/CheckPing";
+import Copy from "../Icons/Play/Copy";
 
 function copyToClipboard(textToCopy: string): void {
   navigator.clipboard
