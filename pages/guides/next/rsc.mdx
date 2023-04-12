@@ -1,4 +1,4 @@
-import Alert from "../../../components/TailwindUI/Alert";
+import Alert from "/components/Reshaped/Alert";
 
 # Server Components
 
@@ -15,8 +15,7 @@ Fetching data from the edge, right where your data is located, may also reduce
 overall latency and safes at least one multi-hop fetch from the client side.
 
 ```tsx filename="app/profile/page.tsx"
-import { GQtyError, resolve } from "../gqty";
-import { type User } from "../gqty/schema.generated";
+import { GQtyError, resolve, type User } from "../gqty";
 import Profile from "./Profile";
 
 export const prepare = ({

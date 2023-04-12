@@ -1,4 +1,4 @@
-import Alert from "../../../components/TailwindUI/Alert";
+import Alert from "/components/Reshaped/Alert";
 
 # Querying Data
 
@@ -258,9 +258,8 @@ just to fake a suspense.
 The correct way to use suspense is to tell GQty what to fetch via `prepare`,
 such that suspense happens at first render.
 
-```tsx {4-11, 16} filename="src/Profile.tsx"
-import { useQuery } from "../gqty";
-import { type User } from "../gqty/schema.generated";
+```tsx {3-10, 15} filename="src/Profile.tsx"
+import { useQuery, type User } from "../gqty";
 
 export const prepare = ({
   firstName,
@@ -331,8 +330,7 @@ object down as props.
 
 ```tsx filename="src/Profile.tsx"
 import { type FC } from "react";
-import { useQuery } from "../gqty";
-import { type User } from "../gqty/schema.generated";
+import { useQuery, type User } from "../gqty";
 
 const Avatar: FC<{ user: User }> = ({ profilePic, name, email }) => (
   <div>
