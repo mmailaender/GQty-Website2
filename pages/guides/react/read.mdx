@@ -370,18 +370,27 @@ export default function Profile() {
 Besides `$state`, `useQuery()` also returns a `$refetch()` method for refetching
 selections made from this hook.
 
-```tsx {7} filename="src/Profile.tsx"
+```tsx {7-8} filename="src/Profile.tsx"
 export default function Profile() {
   const { me, $refetch } = useQuery();
 
   return (
     <>
       <h1>Hello, {me.name}!</h1>
-      <button onClick={() => $refetch()}>Reload</button>
+      <button onClick={() => $refetch()}>Reload if cache has expired</button>
+      <button onClick={() => $refetch(true)}>Reload anyways</button>
     </>
   );
 }
 ```
+
+<Alert title="Use Soft Refetches!">
+  With [soft refetches](/concepts#refetching), GQty allows aggressive refetch
+  attempts without disrupting user experience. In fact, the `useQuery()` hook
+  supports a number of [automatic
+  refetches](/api-reference/react/use-query#refetchinterval), you may not even
+  need a reload button!
+</Alert>
 
 ## Legacy Hooks
 
