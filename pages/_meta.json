@@ -5,11 +5,6 @@
   },
   "getting-started": "Getting Started",
   "concepts": "Concepts",
-  "documentation": {
-    "title": "Documentation",
-    "type": "page",
-    "href": "/getting-started"
-  },
   "guides": "Use Cases",
   "integrations": {
     "title": "Integrations",
@@ -17,13 +12,14 @@
     "display": "hidden"
   },
   "api-reference": "API",
-  "about": {
-    "title": "About",
-    "type": "page"
+  "documentation": {
+    "title": "Documentation",
+    "type": "page",
+    "href": "/getting-started"
   },
   "contact": {
-    "title": "Support Us",
+    "title": "Join The Mission",
     "type": "page",
-    "href": "/#support-us"
+    "href": "/#roadmap"
   }
 }

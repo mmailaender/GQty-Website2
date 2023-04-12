@@ -10,7 +10,7 @@ const Contributor = () => {
   return (
     <View gap={12}>
       <View align="center" justify="start">
-        <Text variant="display-3" align="center">
+        <Text variant="display-3" align="center" as="h2" attributes={{ id: "contributors" }}>
           Contributors
         </Text>
       </View>

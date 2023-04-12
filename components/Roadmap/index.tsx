@@ -13,7 +13,7 @@ const Roadmap = () => {
     <View direction="row" gap={5} align="stretch">
       <View.Item columns={9}>
         <View direction="column" gap={12}>
-          <Text variant="title-2">Our Roadmap</Text>
+          <Text variant="title-2" as="h2" attributes={{ id: "roadmap" }}>Our Roadmap</Text>
           <View direction="row" gap={5}>
             <View.Item columns={4}>
               <View direction="column" gap={8}>
