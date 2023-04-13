@@ -12,8 +12,11 @@ const USPRead = () => {
           <View direction="column" height="100%">
             <View.Item grow>
               <View direction="column" paddingTop={5} gap={6}>
-                <Text variant="title-1"></Text>
-                <Text variant="body-1"></Text>
+                <Text variant="title-1">Read</Text>
+                <Text variant="body-1">
+                  Fetch data by writing simple type-based orientated code, and
+                  GQty creates the GraphQL query on the fly.
+                </Text>
               </View>
             </View.Item>
             <View paddingBottom={8}>
@@ -24,21 +27,37 @@ const USPRead = () => {
           </View>
         </View.Item>
         <View.Item columns={8}>
-          <View width="100%" height="100%">
-            <Skeleton height={100} borderRadius="medium" />
+          <View width="100%" height="100%" position="relative">
+            <View
+              position="relative"
+              borderRadius="large"
+              borderColor="neutral-faded"
+              overflow="hidden"
+            >
+              <div className="w-full overflow-hidden">
+                <Image
+                  src="/usp_read_dark.gif"
+                  width={600}
+                  height={105}
+                  alt="USP Read"
+                  object-fit="contain"
+                  className="w-full"
+                />
+              </div>
+            </View>
             <Image
               src="/Hexagon.svg"
               alt="Hexagon"
-              width={85}
-              height={85}
-              className="absolute top-24 left-[-40px] -rotate-45 opacity-80"
+              width={30}
+              height={30}
+              className="absolute top-24 left-[-16px] -rotate-45 opacity-80"
             />
             <Image
               src="/Hexagon.svg"
               alt="Hexagon"
               width={150}
               height={150}
-              className="absolute bottom-[-30px] right-[-30px] -rotate-45 opacity-80 blur-[1px]"
+              className="absolute bottom-[-90px] right-[-122px] -rotate-45 opacity-80 blur-sm"
             />
           </View>
         </View.Item>
