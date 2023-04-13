@@ -57,7 +57,7 @@ const USPRead = () => {
               alt="Hexagon"
               width={150}
               height={150}
-              className="absolute bottom-[-90px] right-[-122px] -rotate-45 opacity-80 blur-sm"
+              className="absolute bottom-[-90px] right-[-80px] -rotate-45 opacity-80 blur-[100px]"
             />
           </View>
         </View.Item>

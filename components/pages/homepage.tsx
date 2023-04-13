@@ -8,10 +8,17 @@ import USPRead from "./USPRead";
 
 const Homepage = () => {
   return (
-    <View direction="column" gap={30}>
+    <View
+      direction="column"
+      gap={30}
+      width="100%"
+      maxWidth="1270px"
+      padding={[0, 20]}
+      align="center"
+    >
       <HeroSection />
       <View direction="column" gap={30} paddingTop={5}>
-        <USPRead/>
+        <USPRead />
         {/* <USP
           direction="row"
           title="Read"
