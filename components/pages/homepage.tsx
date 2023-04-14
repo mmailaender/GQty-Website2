@@ -8,18 +8,19 @@ import USPRead from "./USPRead";
 
 const Homepage = () => {
   return (
-    <View
-      direction="column"
-      gap={30}
-      width="100%"
-      maxWidth="1270px"
-      padding={[0, 20]}
-      align="center"
-    >
-      <HeroSection />
-      <View direction="column" gap={30} paddingTop={5}>
-        <USPRead />
-        {/* <USP
+    <View direction="column" align="center">
+      <View
+        direction="column"
+        gap={30}
+        width="100%"
+        maxWidth="1270px"
+        padding={[0, 20]}
+        align="center"
+      >
+        <HeroSection />
+        <View direction="column" gap={30} paddingTop={5}>
+          <USPRead />
+          {/* <USP
           direction="row"
           title="Read"
           content="Fetch data by writing simple type-based orientated code, and GQty
@@ -36,10 +37,11 @@ const Homepage = () => {
           content="Normalized cache built-In, which you can also use quite easily for state
         management!"
         /> */}
+        </View>
+        <Playground />
+        <Contributor />
+        <Roadmap />
       </View>
-      <Playground />
-      <Contributor />
-      <Roadmap />
     </View>
   );
 };
