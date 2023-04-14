@@ -76,7 +76,7 @@ export default function HeroSection() {
             </View.Item>
             <View.Item columns={5}>
               <View>
-                <Image src="/before.png" width="484px" height="100%"></Image>
+                <Image src="/after.png" width="484px" height="100%"></Image>
               </View>
             </View.Item>
             <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-[#111111] via-[#111111]"></div>
