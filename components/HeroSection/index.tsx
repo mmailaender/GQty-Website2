@@ -14,7 +14,7 @@ import Copy from "../Icons/Play/Copy";
 function copyToClipboard(textToCopy: string): void {
   navigator.clipboard
     .writeText(textToCopy)
-    .then(() => {})
+    .then(() => { })
     .catch((error) => {
       console.error("Failed to copy text: ", error);
     });
@@ -55,7 +55,7 @@ export default function HeroSection() {
             align="center"
             gap={3}
           >
-            <Button color="white" rounded size="large" fullWidth>
+            <Button color="white" rounded size="large" fullWidth href="/getting-started">
               Get Started
             </Button>
             <Link
