@@ -10,7 +10,7 @@ import sdk from "@stackblitz/sdk";
 
 const Playground = () => {
   return (
-    <View direction="column" align="center" gap={10}>
+    <View direction="column" align="center" gap={10} width="100%">
       <View>
         <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-5xl font-extrabold text-transparent">
           Play
