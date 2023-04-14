@@ -6,15 +6,15 @@ import {
   ButtonProps,
   Link,
   LinkProps,
+  useToast,
+  ToastProps,
 } from "reshaped/bundle";
 import Copy from "../Icons/Play/Copy";
 
 function copyToClipboard(textToCopy: string): void {
   navigator.clipboard
     .writeText(textToCopy)
-    .then(() => {
-      alert("Text copied to clipboard!");
-    })
+    .then(() => {})
     .catch((error) => {
       console.error("Failed to copy text: ", error);
     });
@@ -22,6 +22,12 @@ function copyToClipboard(textToCopy: string): void {
 
 export default function HeroSection() {
   const npmCommand = "npx @gqty/cli";
+  const toast = useToast();
+  const handleCopyClick = () => {
+    copyToClipboard(npmCommand);
+    toast.show({ text: "Copied to clipboard" });
+  };
+
   return (
     <>
       <View
@@ -53,7 +59,7 @@ export default function HeroSection() {
               Get Started
             </Button>
             <Link
-              onClick={() => copyToClipboard(npmCommand)}
+              onClick={handleCopyClick}
               color="inherit"
               variant="plain"
               icon={<Copy />}
