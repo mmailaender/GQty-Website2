@@ -10,11 +10,13 @@ const USPWrite = () => {
       <View direction="row" gap={15} align="stretch" paddingTop={24}>
         <View.Item columns={8}>
           <View width="100%" height="100%" position="relative">
+            <div className="absolute rounded-full aspect-square bottom-[-24px] right-[24px] filter blur-3xl overflow-hidden z-0">
+              <View width={40} height={40} className="bg-[#DA58B3] "></View>
+            </div>
             <View
               position="relative"
-              borderRadius="large"
               // borderColor="neutral-faded"
-              className="border border-surface-800"
+              className="border rounded-2xl border-surface-800 filter backdrop-blur-xl bg-surface-900 opacity-80"
               overflow="hidden"
             >
               <div className="w-full overflow-hidden">
@@ -24,7 +26,7 @@ const USPWrite = () => {
                   height={105}
                   alt="USP Read"
                   object-fit="contain"
-                  className="w-full"
+                  className="w-full mix-blend-lighten"
                 />
               </div>
             </View>
