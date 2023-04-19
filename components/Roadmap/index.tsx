@@ -7,13 +7,22 @@ import {
   Timeline,
   View,
 } from "reshaped/bundle";
+import Check from "../Icons/Play/Check";
 
 const Roadmap = () => {
   return (
-    <View direction="row" gap={5} align="stretch">
+    <View
+      direction="row"
+      gap={4}
+      align="stretch"
+      width="100%"
+      paddingBottom={24}
+    >
       <View.Item columns={9}>
         <View direction="column" gap={12}>
-          <Text variant="title-2" as="h2" attributes={{ id: "roadmap" }}>Our Roadmap</Text>
+          <Text variant="title-2" as="h2" attributes={{ id: "roadmap" }}>
+            Our Roadmap
+          </Text>
           <View direction="row" gap={5}>
             <View.Item columns={4}>
               <View direction="column" gap={8}>
@@ -21,12 +30,26 @@ const Roadmap = () => {
                 <Timeline>
                   <Timeline.Item
                     markerSlot={
-                      <View borderRadius="circular" overflow="hidden">
-                        <Checkbox defaultChecked={true}></Checkbox>
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        backgroundColor="primary"
+                        width={5}
+                        height={5}
+                      >
+                        <Check />
                       </View>
                     }
                   >
-                    <View direction="column" gap={1} width="100%">
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
                       <Text variant="body-medium-2">
                         Shipped feature by GQty
                       </Text>
@@ -37,12 +60,26 @@ const Roadmap = () => {
                   </Timeline.Item>
                   <Timeline.Item
                     markerSlot={
-                      <View borderRadius="circular" overflow="hidden">
-                        <Checkbox defaultChecked={true}></Checkbox>
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        backgroundColor="primary"
+                        width={5}
+                        height={5}
+                      >
+                        <Check />
                       </View>
                     }
                   >
-                    <View direction="column" gap={1} width="100%">
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
                       <Text variant="body-medium-2">
                         Shipped feature by GQty
                       </Text>
@@ -53,12 +90,26 @@ const Roadmap = () => {
                   </Timeline.Item>
                   <Timeline.Item
                     markerSlot={
-                      <View borderRadius="circular" overflow="hidden">
-                        <Checkbox defaultChecked={true}></Checkbox>
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        backgroundColor="primary"
+                        width={5}
+                        height={5}
+                      >
+                        <Check />
                       </View>
                     }
                   >
-                    <View direction="column" gap={1} width="100%">
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
                       <Text variant="body-medium-2">
                         Shipped feature by GQty
                       </Text>
@@ -81,16 +132,20 @@ const Roadmap = () => {
                 <Timeline>
                   <Timeline.Item
                     markerSlot={
-                      <View overflow="hidden">
-                        <Radio
-                          hasError={true}
-                          defaultChecked={false}
-                          value="1"
-                        ></Radio>
-                      </View>
+                      <View
+                        overflow="hidden"
+                        width={5}
+                        height={5}
+                        className="border-solid border-[#FFEB7C] rounded-full border-2	"
+                      ></View>
                     }
                   >
-                    <View direction="column" gap={1} width="100%">
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
                       <Text variant="body-medium-2">Operation names</Text>
                     </View>
                   </Timeline.Item>
@@ -108,7 +163,12 @@ const Roadmap = () => {
                       </View>
                     }
                   >
-                    <View direction="column" gap={1} width="100%">
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
                       <Text variant="body-medium-2">Development mode</Text>
                     </View>
                   </Timeline.Item>
@@ -119,7 +179,12 @@ const Roadmap = () => {
                       </View>
                     }
                   >
-                    <View direction="column" gap={1} width="100%">
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
                       <Text variant="body-medium-2">Future feature</Text>
                     </View>
                   </Timeline.Item>
