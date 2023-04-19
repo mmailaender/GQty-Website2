@@ -9,7 +9,7 @@ import USPWork from "./USPWrite";
 
 const Homepage = () => {
   return (
-    <View direction="column" align="center">
+    <View direction="column" align="center" className="bg-surface-900">
       <View
         direction="column"
         gap={30}
