@@ -200,30 +200,24 @@ const Roadmap = () => {
           height="100%"
           direction="column"
           borderRadius="large"
-          borderColor="neutral-faded"
+          className="bg-surface-800 border border-surface-700"
           padding={5}
         >
           <View.Item grow={true}>
             <View height="100%" justify="start" gap={8}>
               {/* Card title */}
               <View direction="column" gap={1}>
-                <Text variant="caption-1" color="neutral-faded">
-                  Funding goal
-                </Text>
+                <Text variant="caption-1">Funding goal</Text>
                 <Text variant="title-2">Working full time on GQty</Text>
               </View>
 
               {/* Progress section */}
               <View direction="column">
-                <Text variant="caption-1" color="neutral-faded">
-                  Raised so far
-                </Text>
-
                 {/* from to */}
                 <View direction="row" gap={1} align="baseline" paddingTop={3}>
                   <View.Item columns={6}>
                     <View>
-                      <Text variant="title-2">$250</Text>
+                      <Text variant="title-2">$214</Text>
                     </View>
                   </View.Item>
                   <View.Item columns={6}>
@@ -252,12 +246,12 @@ const Roadmap = () => {
               {/* Call to action */}
               <View direction="column" gap={2}>
                 <Button
-                  color="primary"
+                  color="white"
                   rounded={true}
                   size="xlarge"
                   fullWidth={true}
                 >
-                  Join Funding
+                  Join Us
                 </Button>
                 <Text variant="caption-1" color="neutral-faded" align="center">
                   13 people funded

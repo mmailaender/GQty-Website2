@@ -13,7 +13,8 @@ const USPWrite = () => {
             <View
               position="relative"
               borderRadius="large"
-              borderColor="neutral-faded"
+              // borderColor="neutral-faded"
+              className="border border-surface-800"
               overflow="hidden"
             >
               <div className="w-full overflow-hidden">
@@ -41,7 +42,7 @@ const USPWrite = () => {
             <View.Item grow>
               <View direction="column" paddingTop={5} gap={6}>
                 <Text variant="title-1">Write</Text>
-                <Text variant="body-1">
+                <Text variant="body-1" className="text-surface-200">
                   Create, Update, Delete? Call the function - that’s it...
                 </Text>
               </View>

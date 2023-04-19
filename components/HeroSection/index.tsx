@@ -14,7 +14,7 @@ import Copy from "../Icons/Play/Copy";
 function copyToClipboard(textToCopy: string): void {
   navigator.clipboard
     .writeText(textToCopy)
-    .then(() => { })
+    .then(() => {})
     .catch((error) => {
       console.error("Failed to copy text: ", error);
     });
@@ -31,12 +31,16 @@ export default function HeroSection() {
   return (
     <>
       <View
+        position="relative"
         direction="column"
         align="center"
         justify="start"
         gap={26}
         paddingTop={20}
       >
+        <div className="absolute rounded-full aspect-square top-[-100px] filter blur-[200px] overflow-hidden z-0">
+          <View width={90} height={40} className="bg-[#DA58B3] "></View>
+        </div>
         <View direction="column" align="center" gap={8}>
           <View direction="column" align="center" gap={4}>
             <Text variant="display-2" align="center">
@@ -55,7 +59,13 @@ export default function HeroSection() {
             align="center"
             gap={3}
           >
-            <Button color="white" rounded size="large" fullWidth href="/getting-started">
+            <Button
+              color="white"
+              rounded
+              size="large"
+              fullWidth
+              href="/getting-started"
+            >
               Get Started
             </Button>
             <Link
@@ -85,7 +95,7 @@ export default function HeroSection() {
                 <Image src="/after.png" width="484px" height="100%"></Image>
               </View>
             </View.Item>
-            <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-[#111111] via-[#111111]"></div>
+            <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div>
           </View>
         </div>
       </View>

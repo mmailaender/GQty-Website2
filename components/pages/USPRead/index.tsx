@@ -13,7 +13,7 @@ const USPRead = () => {
             <View.Item grow>
               <View direction="column" paddingTop={5} gap={6}>
                 <Text variant="title-1">Read</Text>
-                <Text variant="body-1">
+                <Text variant="body-1" className="text-surface-200">
                   Fetch data by writing simple type-based orientated code, and
                   GQty creates the GraphQL query on the fly.
                 </Text>
@@ -31,7 +31,8 @@ const USPRead = () => {
             <View
               position="relative"
               borderRadius="large"
-              borderColor="neutral-faded"
+              // borderColor="neutral-faded"
+              className="border border-surface-800"
               overflow="hidden"
             >
               <div className="w-full overflow-hidden">
@@ -50,14 +51,14 @@ const USPRead = () => {
               alt="Hexagon"
               width={30}
               height={30}
-              className="absolute top-24 left-[-16px] -rotate-45 opacity-80"
+              className="absolute  top-24 left-[-16px] -rotate-45 opacity-80"
             />
             <Image
               src="/Hexagon.svg"
               alt="Hexagon"
               width={150}
               height={150}
-              className="absolute bottom-[-90px] right-[-80px] -rotate-45 opacity-80 blur-[100px]"
+              className="absolute filter blur bottom-[-90px] right-[-80px] -rotate-45 opacity-80"
             />
           </View>
         </View.Item>

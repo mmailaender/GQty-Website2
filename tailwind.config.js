@@ -18,7 +18,7 @@ module.exports = {
       transparent: "transparent",
       black: "#000",
       white: "#fff",
-      primary: "#E767C0",
+      primaryPink: "#E767C0",
       success: "#85F273",
       warning: "#FFEB7C",
       error: "#FF8579",
