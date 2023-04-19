@@ -5,6 +5,7 @@ import Playground from "../Playground";
 import Roadmap from "../Roadmap";
 import USP from "../USP";
 import USPRead from "./USPRead";
+import USPWork from "./USPWrite";
 
 const Homepage = () => {
   return (
@@ -20,6 +21,7 @@ const Homepage = () => {
         <HeroSection />
         <View direction="column" gap={30} paddingTop={5}>
           <USPRead />
+          <USPWork />
           {/* <USP
           direction="row"
           title="Read"
