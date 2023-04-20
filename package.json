@@ -40,6 +40,6 @@
     "tailwindcss": "^3.3.1",
     "twind": "^0.16.19",
     "typescript": "^5.0.4",
-    "vercel": "^28.19.0"
+    "vercel": "^28.20.0"
   }
 }
