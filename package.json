@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@twind/next": "^1.0.10",
-    "@types/node": "^18.15.11",
+    "@types/node": "^18.15.12",
     "@types/react": "^18.0.37",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
