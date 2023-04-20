@@ -29,7 +29,11 @@ export default function HeroSection() {
   const toast = useToast();
   const handleCopyClick = () => {
     copyToClipboard(npmCommand);
-    toast.show({ text: "Copied to clipboard" });
+    toast.show({
+      text: "Copied to clipboard",
+      color: "neutral",
+      icon: <CheckPink />,
+    });
   };
 
   return (
@@ -73,13 +77,7 @@ export default function HeroSection() {
               Get Started
             </Button>
             <Link
-              onClick={(handleCopyClick) =>
-                toast.show({
-                  text: "Copied to clipboard",
-                  icon: <CheckPink />,
-                  color: "neutral",
-                })
-              }
+              onClick={handleCopyClick}
               color="inherit"
               variant="plain"
               icon={<Copy />}
