@@ -39,10 +39,10 @@ const Homepage = () => {
           content="Normalized cache built-In, which you can also use quite easily for state
         management!"
         /> */}
+          <Playground />
+          <Contributor />
+          <Roadmap />
         </View>
-        <Playground />
-        <Contributor />
-        <Roadmap />
       </View>
     </View>
   );
