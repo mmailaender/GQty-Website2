@@ -10,11 +10,28 @@ import sdk from "@stackblitz/sdk";
 
 const Playground = () => {
   return (
-    <View direction="column" align="center" gap={10} width="100%">
-      <View direction="row" align="baseline">
+    <View
+      direction="column"
+      align="center"
+      gap={10}
+      width="100%"
+      position="relative"
+    >
+      <View direction="row" className="absolute opacity-50 filter blur-sm">
         <Text
           variant="display-3"
-          className="text-gradients from-[#AB087A] to-[#F937BF]"
+          className="bg-clip-text text-transparent bg-gradient-to-r from-[#AB087A] to-[#F937BF]"
+        >
+          Play
+        </Text>
+        <Text as="span" variant="display-3">
+          ground
+        </Text>
+      </View>
+      <View direction="row">
+        <Text
+          variant="display-3"
+          className="bg-clip-text text-transparent bg-gradient-to-r from-[#AB087A] to-[#F937BF]"
         >
           Play
         </Text>
@@ -23,10 +40,13 @@ const Playground = () => {
         </Text>
       </View>
       <View
-        className="p-px rounded-2xl bg-gradient-to-b  from-[#E82FB0] to-15%"
+        className="p-px rounded-2xl bg-gradient-to-b  from-[#e82fb147] via-surface-900"
         width="100%"
-        overflow="hidden"
+        position="relative"
       >
+        <div className="absolute rounded-full aspect-square top-[-24px] right-[45%] filter blur-3xl overflow-hidden z-0">
+          <View width={40} height={40} className="bg-[#DA58B3] "></View>
+        </div>
         <View
           width="100%"
           overflow="hidden"

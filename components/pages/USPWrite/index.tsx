@@ -16,7 +16,7 @@ const USPWrite = () => {
       >
         <View.Item columns={8}>
           <View width="100%" height="100%" position="relative">
-            <div className="absolute rounded-full aspect-square bottom-[-24px] right-[24px] filter blur-3xl overflow-hidden z-0">
+            <div className="absolute rounded-full aspect-square bottom-[24px] right-[24px] filter blur-3xl overflow-hidden z-0">
               <View width={40} height={40} className="bg-[#DA58B3] "></View>
             </div>
             <View
