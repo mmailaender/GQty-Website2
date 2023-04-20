@@ -7,7 +7,13 @@ import { Responsive } from "reshaped/types/global";
 const USPWrite = () => {
   return (
     <>
-      <View direction="row" gap={15} align="stretch" paddingTop={24}>
+      <View
+        direction="row"
+        gap={15}
+        align="stretch"
+        paddingTop={24}
+        paddingBottom={16}
+      >
         <View.Item columns={8}>
           <View width="100%" height="100%" position="relative">
             <div className="absolute rounded-full aspect-square bottom-[-24px] right-[24px] filter blur-3xl overflow-hidden z-0">

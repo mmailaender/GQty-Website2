@@ -11,19 +11,34 @@ import sdk from "@stackblitz/sdk";
 const Playground = () => {
   return (
     <View direction="column" align="center" gap={10} width="100%">
-      <View>
-        <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-5xl font-extrabold text-transparent">
+      <View direction="row" align="baseline">
+        <Text
+          variant="display-3"
+          className="text-gradients from-[#AB087A] to-[#F937BF]"
+        >
           Play
-        </span>
+        </Text>
         <Text as="span" variant="display-3">
           ground
         </Text>
       </View>
-      <iframe
-        src="https://stackblitz.com/edit/nextjs-2jqmx4?embed=1&amp;file=src%2Fcomponents%2FQuery.tsx&amp;hideExplorer=1&amp;hideNavigation=1"
-        id="playground"
-        className="h-[600px] w-full rounded border-current opacity-90"
-      ></iframe>
+      <View
+        className="p-px rounded-2xl bg-gradient-to-b  from-[#E82FB0] to-15%"
+        width="100%"
+        overflow="hidden"
+      >
+        <View
+          width="100%"
+          overflow="hidden"
+          className="rounded-2xl bg-surface-900  opacity-[97%] filter backdrop-blur-xl"
+        >
+          <iframe
+            src="https://stackblitz.com/edit/nextjs-2jqmx4?embed=1&amp;file=src%2Fcomponents%2FQuery.tsx&amp;hideExplorer=1&amp;hideNavigation=1"
+            id="playground"
+            className="h-[600px] w-full rounded border-current filter  mix-blend-lighten"
+          ></iframe>
+        </View>
+      </View>
     </View>
   );
 };
