@@ -10,6 +10,9 @@ import {
   ToastProps,
 } from "reshaped/bundle";
 import Copy from "../Icons/Play/Copy";
+import Play from "../Icons/Play/Play";
+import React from "react";
+import CheckPink from "../Icons/Play/CheckPing";
 
 function copyToClipboard(textToCopy: string): void {
   navigator.clipboard
@@ -22,6 +25,7 @@ function copyToClipboard(textToCopy: string): void {
 
 export default function HeroSection() {
   const npmCommand = "npx @gqty/cli";
+  const [color, setColor] = React.useState("inverted");
   const toast = useToast();
   const handleCopyClick = () => {
     copyToClipboard(npmCommand);
@@ -69,7 +73,13 @@ export default function HeroSection() {
               Get Started
             </Button>
             <Link
-              onClick={handleCopyClick}
+              onClick={(handleCopyClick) =>
+                toast.show({
+                  text: "Copied to clipboard",
+                  icon: <CheckPink />,
+                  color: "neutral",
+                })
+              }
               color="inherit"
               variant="plain"
               icon={<Copy />}
