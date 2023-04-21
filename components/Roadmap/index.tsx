@@ -18,182 +18,105 @@ const Roadmap = () => {
       width="100%"
       paddingBottom={24}
     >
+      {/* Roadmap */}
+
       <View.Item columns={9}>
+        {/* Headline */}
         <View direction="column" gap={12}>
           <Text variant="title-2" as="h2" attributes={{ id: "roadmap" }}>
             Our Roadmap
           </Text>
-          <View direction="row" gap={5}>
+        </View>
+        {/* Statuses */}
+        <View direction="row" paddingTop={6} paddingBottom={6}>
+          <View.Item columns={4}>
+            <Text variant="title-3">Shipped</Text>
+          </View.Item>
+          <View.Item columns={4}>
+            <Text variant="title-3">In Progress</Text>
+          </View.Item>
+          <View.Item columns={4}>
+            <Text variant="title-3">To Do</Text>
+          </View.Item>
+        </View>
+
+        {/* Section topic */}
+        <View
+          padding={3}
+          className="border rounded-lg bg-surface-800 border-surface-700"
+        >
+          <View>
+            <Text variant="body-strong-2">GraphQL Functionality</Text>
+          </View>
+          {/* Tasks */}
+          <View direction="row" paddingTop={4}>
             <View.Item columns={4}>
-              <View direction="column" gap={8}>
-                <Text variant="title-3">Shipped</Text>
-                <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        backgroundColor="primary"
-                        width={5}
-                        height={5}
-                      >
-                        <Check />
-                      </View>
-                    }
-                  >
+              <Timeline>
+                <Timeline.Item
+                  markerSlot={
                     <View
+                      borderRadius="circular"
                       direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
+                      align="center"
+                      justify="center"
+                      overflow="hidden"
+                      backgroundColor="primary"
+                      width={5}
+                      height={5}
                     >
-                      <Text variant="body-medium-2">
-                        Shipped feature by GQty
-                      </Text>
-                      <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text>
+                      <Check />
                     </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        backgroundColor="primary"
-                        width={5}
-                        height={5}
-                      >
-                        <Check />
-                      </View>
-                    }
+                  }
+                >
+                  <View
+                    direction="column"
+                    gap={1}
+                    width="100%"
+                    paddingBottom={2}
                   >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">
-                        Shipped feature by GQty
-                      </Text>
-                      <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        backgroundColor="primary"
-                        width={5}
-                        height={5}
-                      >
-                        <Check />
-                      </View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">
-                        Shipped feature by GQty
-                      </Text>
-                      <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline>
-                <View>
-                  <Button rounded={true} fullWidth={false}>
-                    Show more
-                  </Button>
-                </View>
-              </View>
+                    <Text variant="body-medium-2">Scoped Query</Text>
+                    <Text variant="caption-1" color="neutral-faded">
+                      Jan 26, 2022
+                    </Text>
+                  </View>
+                </Timeline.Item>
+              </Timeline>
             </View.Item>
             <View.Item columns={4}>
-              <View direction="column" gap={8}>
-                <Text variant="title-3">In Progress</Text>
-                <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        overflow="hidden"
-                        width={5}
-                        height={5}
-                        className="border-solid border-[#FFEB7C] rounded-full border-2	"
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">Operation names</Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline>
-              </View>
+              <Text variant="title-3">In Progress</Text>
             </View.Item>
             <View.Item columns={4}>
-              <View direction="column" gap={8}>
-                <Text variant="title-3">Backlog</Text>
-                <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View overflow="hidden">
-                        <Radio defaultChecked={false} value="1"></Radio>
-                      </View>
-                    }
-                  >
+              <Timeline>
+                <Timeline.Item
+                  markerSlot={
                     <View
+                      borderRadius="circular"
                       direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">Development mode</Text>
-                    </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View overflow="hidden">
-                        <Radio defaultChecked={false} value="1"></Radio>
-                      </View>
-                    }
+                      align="center"
+                      justify="center"
+                      overflow="hidden"
+                      className="bg-surface-800 border rounded-full border-surface-500"
+                      width={5}
+                      height={5}
+                    ></View>
+                  }
+                >
+                  <View
+                    direction="column"
+                    gap={1}
+                    width="100%"
+                    paddingBottom={2}
                   >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">Future feature</Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline>
-              </View>
+                    <Text variant="body-medium-2">Directives</Text>
+                  </View>
+                </Timeline.Item>
+              </Timeline>
             </View.Item>
           </View>
         </View>
       </View.Item>
+
+      {/* Join Us Blockl*/}
       <View.Item columns={3} grow={true}>
         <View
           backgroundColor="neutral-faded"
@@ -254,7 +177,7 @@ const Roadmap = () => {
                   Join Us
                 </Button>
                 <Text variant="caption-1" color="neutral-faded" align="center">
-                  13 people funded
+                  3 people funded
                 </Text>
               </View>
             </View>
