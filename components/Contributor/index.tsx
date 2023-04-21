@@ -12,7 +12,7 @@ import type {
   ViewItemProps,
   AvatarProps,
 } from "reshaped";
-import Members from "../Members";
+import Member from "../Member";
 
 const Contributor = () => {
   return (
@@ -32,22 +32,15 @@ const Contributor = () => {
         <View direction="column" align="center">
           {/* 1st row */}
           <View direction="row" align="center" justify="center" gap={5}>
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Tooltip text="Record a message" position="top">
-              {(attributes) => <Members />}
+            <Tooltip text="Vicary" position="top">
+              {(attributes) => (
+                <Member
+                  image="/vicary.jpeg"
+                  name="Vicary"
+                  link="https://github.com/vicary"
+                  attributes={attributes}
+                />
+              )}
             </Tooltip>
           </View>
         </View>
