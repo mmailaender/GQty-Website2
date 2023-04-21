@@ -32,16 +32,11 @@ const Contributor = () => {
         <View direction="column" align="center">
           {/* 1st row */}
           <View direction="row" align="center" justify="center" gap={5}>
-            <Tooltip text="Vicary" position="top">
-              {(attributes) => (
-                <Member
-                  image="/vicary.jpeg"
-                  name="Vicary"
-                  link="https://github.com/vicary"
-                  attributes={attributes}
-                />
-              )}
-            </Tooltip>
+            <Member
+              image="/vicary.jpeg"
+              name="Vicary"
+              link="https://github.com/vicary"
+            />
           </View>
         </View>
       </View>
