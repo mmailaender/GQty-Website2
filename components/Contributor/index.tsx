@@ -1,17 +1,7 @@
 import {
   View,
   Text,
-  Avatar,
-  Tooltip,
-  TooltipProps,
-  Button,
 } from "reshaped/bundle";
-import type {
-  TextProps,
-  ViewProps,
-  ViewItemProps,
-  AvatarProps,
-} from "reshaped";
 import Member from "../Member";
 
 const Contributor = () => {

@@ -15,11 +15,11 @@ interface MyComponentProps {
   link: string;
 }
 
-const Members = ({ name, image, link, attributes }) => {
+const Members = ({ name, image, link }) => {
   return (
     <Actionable
       href={link}
-      attributes={{ ...attributes, role: "button", target: "_blank" }}
+      attributes={{ role: "button", target: "_blank" }}
     >
       <View direction="column" align="center" gap={2} position="relative">
         {/* Status ring */}
