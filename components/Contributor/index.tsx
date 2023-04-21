@@ -1,7 +1,4 @@
-import {
-  View,
-  Text,
-} from "reshaped/bundle";
+import { View, Text } from "reshaped/bundle";
 import Member from "../Member";
 
 const Contributor = () => {
@@ -77,6 +74,18 @@ const Contributor = () => {
               name="Liam Martens"
               link="https://github.com/LiamMartens"
             />
+            <Member
+              image="/micha.jpeg"
+              name="Micha Mailänder"
+              link="https://github.com/mmailaender"
+            />
+            <Member
+              image="/bohdan.jpeg"
+              name="Bohdan Karpliak"
+              link="https://github.com/bohdank1995"
+            />
+            <Member image="/finalytic.png" name="finalytic" link="#" />
+            <Member image="/dechea.png" name="Dechea" link="#" />
           </View>
         </View>
       </View>
