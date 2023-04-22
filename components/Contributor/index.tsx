@@ -20,15 +20,27 @@ const Contributor = () => {
           {/* 1st row */}
           <View direction="row" align="center" justify="center" gap={5}>
             <Member
+              image="/pablo.png"
+              name="Pablo"
+              link="https://github.com/PabloSzx"
+            />
+            <Member
               image="/vicary.jpeg"
               name="Vicary"
               link="https://github.com/vicary"
             />
             <Member
-              image="/pablo.png"
-              name="Pablo"
-              link="https://github.com/PabloSzx"
+              image="/micha.jpeg"
+              name="Micha Mailänder"
+              link="https://github.com/mmailaender"
             />
+            <Member
+              image="/bohdan.jpeg"
+              name="Bohdan Karpliak"
+              link="https://github.com/bohdank1995"
+            />
+            <Member image="/dechea.png" name="Dechea" link="#" />
+            <Member image="/finalytic.png" name="finalytic" link="#" />
             <Member
               image="/sam.jpeg"
               name="Sam Denty"
@@ -74,18 +86,6 @@ const Contributor = () => {
               name="Liam Martens"
               link="https://github.com/LiamMartens"
             />
-            <Member
-              image="/micha.jpeg"
-              name="Micha Mailänder"
-              link="https://github.com/mmailaender"
-            />
-            <Member
-              image="/bohdan.jpeg"
-              name="Bohdan Karpliak"
-              link="https://github.com/bohdank1995"
-            />
-            <Member image="/finalytic.png" name="finalytic" link="#" />
-            <Member image="/dechea.png" name="Dechea" link="#" />
           </View>
         </View>
       </View>

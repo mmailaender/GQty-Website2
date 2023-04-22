@@ -81,9 +81,9 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Scoped Query</Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -203,9 +203,9 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Website Relaunch</Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -231,9 +231,9 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Interactive CLI</Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -259,9 +259,9 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Watch mode in CLI</Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -385,9 +385,9 @@ const Roadmap = () => {
                       <Text variant="body-medium-2">
                         Add $refetch to useQuery
                       </Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -415,9 +415,9 @@ const Roadmap = () => {
                       <Text variant="body-medium-2">
                         Refetch on Window Focus in CLI
                       </Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -443,9 +443,9 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Refetch on Reconnect</Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -471,9 +471,9 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Refetch on Mount</Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -499,9 +499,9 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Support SSR, SSG, RSC</Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -648,9 +648,9 @@ const Roadmap = () => {
                       <Text variant="body-medium-2">
                         New subscription client
                       </Text>
-                      <Text variant="caption-1" color="neutral-faded">
+                      {/* <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text>
+                      </Text> */}
                     </View>
                   </Timeline.Item>
                 </Timeline>
