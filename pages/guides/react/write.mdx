@@ -1,4 +1,4 @@
-import Alert from "../../../components/TailwindUI/Alert";
+import Alert from "/components/Reshaped/Alert";
 
 # Sending Mutations
 
@@ -14,28 +14,25 @@ type Mutation {
 }
 ```
 
-```tsx {15} filename="src/ProfileEdit.tsx"
+```tsx {7,15} filename="src/ProfileEdit.tsx"
 import { useMutation } from "../gqty";
 
 export default function ProfileEdit() {
-  const [mutation, { isLoading }] = useMutation();
+  const [updateProfile, { isLoading }] = useMutation((mutation, inputs) => {
+    const user = mutation.updateProfile(inputs);
+
+    user.id; // Don't forget to make selections
+  });
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
 
-        const user = mutation.updateProfile({
-          newName: e.target.name.value,
-        });
-
-        user.id; // Don't forget to make selections
+        await updateProfile({ newName: e.target.name.value });
       }}
     >
-      <input type="name" name="name" />
-      <button type="submit" disabled={isLoading}>
-        Save
-      </button>
+      {/* form fields skipped for brevity */}
     </form>
   );
 }
@@ -57,7 +54,7 @@ individual selections are managed and combined automatically while rendering.
 
 See how to reuse the selection function from a related query components below.
 
-```tsx {2,8,16} filename="src/ProfileEdit.tsx"
+```tsx {2,8} filename="src/ProfileEdit.tsx"
 import { useMutation } from "../gqty";
 import { prepare } from "./Profile";
 
@@ -76,7 +73,7 @@ export default function ProfileEdit() {
         await updateProfile({ newName: e.target.name.value });
       }}
     >
-      {/* form controls ... */}
+      {/* form fields skipped for brevity */}
     </form>
   );
 }
@@ -126,8 +123,7 @@ Sometimes it is more convenient to simply refetch a few related queries rather
 than meticulously craft shared components to ensure cache updates are correctly
 propagating through normalized objects.
 
-Post-mutation refetching can be done via `onError()` and `onComplete()`
-options.
+Post-mutation refetching can be done via `onError()` and `onComplete()` options.
 
 For `onComplete()`, you may return a promise to have the mutation hold on the
 loading state until your refetch is complete.

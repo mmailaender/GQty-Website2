@@ -1,17 +1,17 @@
-import Alert from "../components/TailwindUI/Alert";
+import Alert from "/components/Reshaped/Alert";
 import Image from "next/image";
-import svgNormalization1 from "../components/concepts/cache/normalization/pic1.svg";
-import svgNormalization1Dark from "../components/concepts/cache/normalization/pic1d.svg";
-import svgNormalization2 from "../components/concepts/cache/normalization/pic2.svg";
-import svgNormalization2Dark from "../components/concepts/cache/normalization/pic2d.svg";
-import svgNormalization3 from "../components/concepts/cache/normalization/pic3.svg";
-import svgNormalization3Dark from "../components/concepts/cache/normalization/pic3d.svg";
-import svgNormalization4 from "../components/concepts/cache/normalization/pic4.svg";
-import svgNormalization4Dark from "../components/concepts/cache/normalization/pic4d.svg";
+import svgNormalization1 from "/components/concepts/cache/normalization/pic1.svg";
+import svgNormalization1Dark from "/components/concepts/cache/normalization/pic1d.svg";
+import svgNormalization2 from "/components/concepts/cache/normalization/pic2.svg";
+import svgNormalization2Dark from "/components/concepts/cache/normalization/pic2d.svg";
+import svgNormalization3 from "/components/concepts/cache/normalization/pic3.svg";
+import svgNormalization3Dark from "/components/concepts/cache/normalization/pic3d.svg";
+import svgNormalization4 from "/components/concepts/cache/normalization/pic4.svg";
+import svgNormalization4Dark from "/components/concepts/cache/normalization/pic4d.svg";
 
 # Concepts
 
-<Alert title="Intended Level: Intermediate">
+<Alert className="mt-3" title="Intended Level: Intermediate">
   This section explains some thought process and design concepts behind GQty. It
   assumes a certain degree of knowledge across multiple domains, such as the
   experience using other GraphQL clients, Web standards and cache management in
@@ -67,13 +67,21 @@ arrives, all components reaching such objects will also be updated.
 
 ## Refetching
 
-Refetching in GQty does not necessarily means a network request. A refetch first
-checks the cache freshness of accessed data, it fetches only when cache data
-needs it AND the current cache policy allows it.
+### Soft Refetches
 
-Since it is only a validity check, this allows more frequent refetching
-strategy. Window focus refetching, reconnect refetching and interval refetching
-are a good example of this behavior.
+Refetching in GQty does not necessarily means a network request. A refetch first
+checks the cache freshness of accessed data, it fetches only on cache miss
+AND the current cache policy allows it.
+
+Consider soft refetches a cache validity check instead, this allows more
+frequent refetching strategies. Our `useQuery()` hook has options for automatic
+refetches on window focus, network reconnect and even periodic attempts.
+
+### Hard Refetches
+
+Users may specify `no-cache` or `no-store` as the cache policy in core, or
+simply use `query.$refetch(true)` in React to bypass a fresh cache and forces
+a network request.
 
 ## Cache Policy
 

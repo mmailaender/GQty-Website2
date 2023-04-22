@@ -1,10 +1,17 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { DocsThemeConfig } from "nextra-theme-docs";
+import PronounciationButton from "./components/theme/PronounciationButton";
 
 const config: DocsThemeConfig = {
   primaryHue: { dark: 318, light: 318 },
-  logo: <Image src="/logo/gqty.svg" alt="GQty Logo" width={86} height={45} />,
+  logo: (
+    <div className="flex items-center">
+      <Image src="/logo/gqty.svg" alt="GQty Logo" width={86} height={45} />
+
+      <PronounciationButton />
+    </div>
+  ),
   project: {
     link: "https://github.com/gqty-dev/gqty",
   },
