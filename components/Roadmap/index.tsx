@@ -1,12 +1,4 @@
-import {
-  Button,
-  Checkbox,
-  Progress,
-  Radio,
-  Text,
-  Timeline,
-  View,
-} from "reshaped/bundle";
+import { Button, Progress, Text, Timeline, View } from "reshaped/bundle";
 import Check from "../Icons/Play/Check";
 
 const Roadmap = () => {
@@ -19,11 +11,12 @@ const Roadmap = () => {
       paddingBottom={24}
     >
       {/* Roadmap */}
+      <a id="roadmap" className="relative -top-20" />
 
       <View.Item columns={9}>
         {/* Headline */}
         <View direction="column" gap={12} paddingStart={3}>
-          <Text variant="title-2" as="h2" attributes={{ id: "roadmap" }}>
+          <Text variant="title-2" as="h2">
             Our Roadmap
           </Text>
         </View>
