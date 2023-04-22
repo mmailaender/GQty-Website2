@@ -615,7 +615,7 @@ const Roadmap = () => {
           {/* Streming */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Fetch DX</Text>
+              <Text variant="body-strong-2">Streaming</Text>
             </View>
 
             {/* Tasks */}
@@ -1005,7 +1005,7 @@ const Roadmap = () => {
           {/* DIY Extension */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Native JS Library Support</Text>
+              <Text variant="body-strong-2">Extend GQty by yourself</Text>
             </View>
 
             {/* Tasks */}
