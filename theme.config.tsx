@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
+  primaryHue: { dark: 318, light: 318 },
   logo: <Image src="/logo/gqty.svg" alt="GQty Logo" width={86} height={45} />,
   project: {
     link: "https://github.com/gqty-dev/gqty",
