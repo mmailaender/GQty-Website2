@@ -1,4 +1,4 @@
-import { View, Text } from "reshaped/bundle";
+import { Text, View } from "reshaped/bundle";
 import Member from "../Member";
 
 const Contributor = () => {
