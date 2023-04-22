@@ -27,7 +27,6 @@ vscode:
   extensions:
     - christian-kohler.npm-intellisense
     - eamodio.gitlens
-    - genuitecllc.codetogether
     - esbenp.prettier-vscode
     - christian-kohler.path-intellisense
     - aaron-bond.better-comments
@@ -38,3 +37,4 @@ vscode:
     - bradlc.vscode-tailwindcss
     - PulkitGangwar.nextjs-snippets
     - PKief.material-icon-theme
+    - TeamHub.teamhub

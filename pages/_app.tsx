@@ -2,7 +2,7 @@ import withTwindApp from "@twind/next/shim/app";
 import App from "next/app";
 import { Reshaped } from "reshaped/bundle";
 import "reshaped/bundle.css";
-import "reshaped/themes/reshaped/theme.css";
+import "themes/gqty/theme.css";
 import twindConfig from "../tailwind.config.js";
 
 export default withTwindApp(
@@ -11,7 +11,7 @@ export default withTwindApp(
     render() {
       const { Component, pageProps } = this.props;
       return (
-        <Reshaped theme="reshaped" defaultColorMode="dark">
+        <Reshaped theme="gqty" defaultColorMode="dark">
           <Component {...pageProps} />
         </Reshaped>
       );
