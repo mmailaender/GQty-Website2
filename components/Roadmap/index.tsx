@@ -1005,7 +1005,7 @@ const Roadmap = () => {
           {/* DIY Extension */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Extend GQty by yourself</Text>
+              <Text variant="body-strong-2">Extend GQty By Yourself</Text>
             </View>
 
             {/* Tasks */}
