@@ -3,7 +3,9 @@ import Alert from "/components/Reshaped/Alert";
 # `resolve()` - The Promise Interface
 
 In GQty core, the `resolve()` method gives you a promise interface to work with
-GraphQL queries, it allows the usage of Query, Mutation and Subscription.
+GraphQL.
+
+It supports all top-level types, i.e. Query, Mutation and Subscription.
 
 A simple example route `/profile` for SvelteKit would look like this.
 
@@ -31,10 +33,10 @@ export async function load({ params }) {
 }
 ```
 
-<Alert title="Subscriptions">
+<Alert title="Subscriptions?">
   The resolve function wraps GraphQL subscriptions into a promise-like
   interface. Subscriptions created via `resolve()` will be closed upon first
-  data receival (the first `next` message).
+  data receival, i.e. the first `next` message.
 </Alert>
 
 For more options, check out the [API Reference](/api-reference/core/resolve).
