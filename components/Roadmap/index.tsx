@@ -1187,6 +1187,7 @@ const Roadmap = () => {
                   rounded={true}
                   size="xlarge"
                   fullWidth={true}
+                  attributes={{ target: "_blank" }}
                   href="https://github.com/sponsors/gqty-dev"
                 >
                   Join Us
