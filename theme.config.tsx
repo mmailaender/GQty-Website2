@@ -1,10 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
-import { DocsThemeConfig } from "nextra-theme-docs";
+import { type DocsThemeConfig } from "nextra-theme-docs";
 import PronounciationButton from "./components/theme/PronounciationButton";
 
 const config: DocsThemeConfig = {
   primaryHue: { dark: 318, light: 318 },
+  banner: {
+    text: (
+      <>
+        This website covers our upcoming v3 alpha. For v2 docs, see our{" "}
+        <Link href="https://gqty.vercel.app">previous website</Link>.
+      </>
+    ),
+  },
   logo: (
     <div className="flex items-center">
       <Image src="/logo/gqty.svg" alt="GQty Logo" width={86} height={45} />
