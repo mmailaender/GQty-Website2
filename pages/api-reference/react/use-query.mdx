@@ -17,6 +17,16 @@ function useQuery(options?: Options): GeneratedSchema["query"] & {
 The cache policy to use for the current query, defaults to `default`. You can
 read more about cache policy options in [Concepts](/concepts#cache-policy).
 
+### `fetchInBackground`
+
+Allow GQty fetches to happen when the window is not currently visible.
+
+When disabled, fetch chances will be ignored when the user navigates away,
+`refetchOnWindowVisible` should be used in conjunction to refresh the contents
+when the user is back.
+
+Defaults to `true`.
+
 ### `fetchPolicy`
 
 Legacy option kept for backward compatability, ignored when `cachePolicy` is
@@ -50,29 +60,32 @@ Optional selection function to run before the first render happens, useful to
 skip the first render in Suspense mode. Encourages the isolation of [shareable
 fragments](/guides/react/write#fragments) for mutation, SSR and SSG.
 
-### `refetchOnWindowVisible`
-
-[Refetches](/concepts#refetching) the query when the window becomes visible
-again.
-
-Defaults to `true`.
-
 ### `refetchInterval`
 
-Optional [refetch](/concepts#refetching) interval in milliseconds, skip this
+Attempt a soft [refetch](/concepts#refetching) every X milliseconds, skip this
 option to disable.
 
-### `refetchIntervalInBackground`
-
-When `refetchInterval` is enabled, this option decides whether fetch stops
-when the window is not visible.
-
-Defaults to `false`.
+Defaults to `undefined`.
 
 ### `refetchOnReconnect`
 
-[Refetches](/concepts#refetching) the query when it is
+Attempt a soft [refetch](/concepts#refetching) when it is
 [online](https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event).
+
+Defaults to `true`.
+
+### `refetchOnRender`
+
+Attempt a soft [refetch](/concepts#refetching) after each and every render.
+
+Defaults to `true`.
+
+### `refetchOnWindowVisible`
+
+Attempt a soft [refetch](/concepts#refetching) when the window becomes visible
+again.
+
+Defaults to `true`.
 
 ### `retryPolicy`
 
@@ -124,3 +137,11 @@ query result.
 
 Depending on the freshness of the cache data being accessed, a fetch may or
 may not happen. Read more about refetching [here](/concepts#refetching).
+
+You may force a hard refetch by passing `true` as the first argument.
+
+```tsx
+const { $refetch } = useQuery();
+
+$refetch(true);
+```

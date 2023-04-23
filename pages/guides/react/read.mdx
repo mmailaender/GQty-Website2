@@ -1,4 +1,4 @@
-import Alert from "../../../components/TailwindUI/Alert";
+import Alert from "/components/Reshaped/Alert";
 
 # Querying Data
 
@@ -89,9 +89,9 @@ item when the actual data arrives.
   See the next section on how to send inputs.
 </Alert>
 
-### Inputs
+### Arguments
 
-Passing inputs in GQty is a simple function call.
+Querying with arguments in GQty is a simple function call.
 
 ```graphql {2} filename="schema.graphql"
 type User {
@@ -119,8 +119,8 @@ export function Profile() {
 ```
 
 When designing a GraphQL API, inputs are a great way to tell your backend to do
-some work before returning the data. Filtering, sorting and pagination are common
-use cases for queries.
+some work before returning the data. Filtering, sorting and pagination are
+common use cases for queries.
 
 You will see more examples with inputs in [`mutations`](/guides/react/write).
 
@@ -172,10 +172,13 @@ export function Profile() {
 }
 ```
 
-### Transforming on Render
+### Transform on Render
 
-Not to be confused with altering on render, re-formatting is instead a handy way
-to hand-off localization works to browsers.
+While you should avoid mutating on render, immutable transformations comes in
+handy when formatting dates and numbers.
+
+Handing off localization works to browsers, in general, reduces the complexity
+of your backend.
 
 ```graphql {2}
 type User {
@@ -258,9 +261,8 @@ just to fake a suspense.
 The correct way to use suspense is to tell GQty what to fetch via `prepare`,
 such that suspense happens at first render.
 
-```tsx {4-11, 16} filename="src/Profile.tsx"
-import { useQuery } from "../gqty";
-import { type User } from "../gqty/schema.generated";
+```tsx {3-10, 15} filename="src/Profile.tsx"
+import { useQuery, type User } from "../gqty";
 
 export const prepare = ({
   firstName,
@@ -310,7 +312,8 @@ export default function Profile() {
 ### Suspense on Error
 
 With Suspense enabled, errors during data fetch will be thrown during next
-render. This encourages [error boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary),
+render. This encourages
+[error boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary),
 where you think of the component tree in terms of suspendable layers more than
 in conditional rendering.
 
@@ -331,8 +334,7 @@ object down as props.
 
 ```tsx filename="src/Profile.tsx"
 import { type FC } from "react";
-import { useQuery } from "../gqty";
-import { type User } from "../gqty/schema.generated";
+import { useQuery, type User } from "../gqty";
 
 const Avatar: FC<{ user: User }> = ({ profilePic, name, email }) => (
   <div>
@@ -372,24 +374,33 @@ export default function Profile() {
 Besides `$state`, `useQuery()` also returns a `$refetch()` method for refetching
 selections made from this hook.
 
-```tsx {7} filename="src/Profile.tsx"
+```tsx {7-8} filename="src/Profile.tsx"
 export default function Profile() {
   const { me, $refetch } = useQuery();
 
   return (
     <>
       <h1>Hello, {me.name}!</h1>
-      <button onClick={() => $refetch()}>Reload</button>
+      <button onClick={() => $refetch()}>Reload if cache has expired</button>
+      <button onClick={() => $refetch(true)}>Reload anyways</button>
     </>
   );
 }
 ```
 
+<Alert title="Use Soft Refetches!">
+  With [soft refetches](/concepts#refetching), GQty allows aggressive refetch
+  attempts without disrupting user experience. In fact, the `useQuery()` hook
+  supports a number of [automatic
+  refetches](/api-reference/react/use-query#refetchinterval), you may not even
+  need a reload button!
+</Alert>
+
 ## Legacy Hooks
 
 There are other fetch hooks that are considered deprecated because they don't
-match the new API design approach. But they are specifically kept functional
-in the new core for certain convensional coding styles.
+match the new API design approach. But they are specifically kept functional in
+the new core for certain convensional coding styles.
 
 You may learn more about them in the API reference.
 

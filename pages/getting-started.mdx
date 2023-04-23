@@ -1,5 +1,5 @@
-import { Alert, Tabs, View, Text, Button } from "reshaped/bundle";
-import { AlertTriangle, CheckCircle } from "react-feather";
+import { Tabs, View } from "reshaped/bundle";
+import Alert from "/components/Reshaped/Alert";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,12 +7,10 @@ import Link from "next/link";
 
 To start using GQty, run `@gqty/cli` with your favourite packager.
 
-<View paddingTop={5} paddingBottom={3}>
-  <Alert title="Even Quicker Start!" icon={<CheckCircle />} color="positive">
-    Run the following command with your endpoint as an argument to skip the
-    interactive setup and jump right in!
-  </Alert>
-</View>
+<Alert className="mt-5 mb-3" severity="success" title="Even Quicker Start!">
+  Run the following command with your endpoint as an argument to skip the
+  interactive setup and jump right in!
+</Alert>
 
 <Tabs>
   <View paddingBottom={3}>
@@ -22,6 +20,7 @@ To start using GQty, run `@gqty/cli` with your favourite packager.
       <Tabs.Item value="3">pnpm</Tabs.Item>
     </Tabs.List>
   </View>
+
   <Tabs.Panel value="1">
 
     ```bash copy
@@ -61,7 +60,7 @@ fetching component!
 
 <div className="mt-5 grid gap-4 grid-cols(1 lg:2) w-full">
   <Link
-    className="inline-block rounded-lg border(& dark:gray-700) bg-gray(dark:800 hover:(200 dark:700)) p-5"
+    className="inline-block rounded-lg border(& neutral) bg(neutral-faded hover:neutral) p-5"
     href="/guides/react/read"
   >
     <div className="flex gap-2 flex-row">
@@ -75,7 +74,7 @@ fetching component!
     </p>
   </Link>
   <Link
-    className="inline-block rounded-lg border(& dark:gray-700) bg-gray(dark:800 hover:(200 dark:700)) p-5"
+    className="inline-block rounded-lg border(& neutral) bg(neutral-faded hover:neutral) p-5"
     href="/guides/core/resolve"
   >
     <div className="flex gap-2 flex-row">
@@ -89,13 +88,7 @@ fetching component!
   </Link>
 </div>
 
-<View paddingTop={5}>
-  <Alert
-    title="Didn't get what you want?"
-    icon={<AlertTriangle />}
-    color="neutral"
-  >
-    Head over to [configuration](/api-reference/configuration) or
-    [cli](/api-reference/cli) for more options!
-  </Alert>
-</View>
+<Alert className="mt-5" severity="info" title="Didn't get what you want?">
+  Head over to [configuration](/api-reference/configuration) or
+  [cli](/api-reference/cli) for more options!
+</Alert>
