@@ -11,7 +11,7 @@ const Roadmap = () => {
       paddingBottom={24}
     >
       {/* Roadmap */}
-      <a id="roadmap" className="relative -top-20" />
+      <a id="roadmap" className="absolute -top-20" />
 
       <View.Item columns={9}>
         {/* Headline */}
