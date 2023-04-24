@@ -8,6 +8,8 @@ import {
   LinkProps,
   useToast,
   ToastProps,
+  Hidden,
+  HiddenProps,
 } from "reshaped/bundle";
 import Copy from "../Icons/Play/Copy";
 import Play from "../Icons/Play/Play";
@@ -43,14 +45,19 @@ export default function HeroSection() {
         direction="column"
         align="center"
         justify="start"
-        gap={26}
+        gap={{ l: 26, s: 4 }}
         paddingTop={20}
       >
         <div className="absolute rounded-full aspect-square top-[-100px] filter blur-[200px] overflow-hidden z-0">
           <View width={90} height={40} className="bg-[#DA58B3] "></View>
         </div>
-        <View direction="column" align="center" gap={8}>
-          <View direction="column" align="center" gap={4}>
+        <View
+          direction="column"
+          align="center"
+          gap={{ l: 8, s: 4 }}
+          width="100%"
+        >
+          <View direction="column" align="center" gap={4} width="100%">
             <Text variant="display-2" align="center">
               The No-GraphQL client
             </Text>
@@ -58,24 +65,102 @@ export default function HeroSection() {
               for TypeScript
             </Text>
           </View>
+
+          {/* Desktop CTA */}
+          <Hidden hide={{ s: true, m: true, l: false, xl: false }}>
+            <View
+              paddingTop={4}
+              paddingBottom={12}
+              width="100%"
+              maxWidth="240px"
+              direction="column"
+              align="center"
+              gap={3}
+            >
+              <Button
+                color="white"
+                rounded
+                size="large"
+                fullWidth
+                href="/getting-started"
+              >
+                Get Started
+              </Button>
+              <Link
+                onClick={handleCopyClick}
+                color="inherit"
+                variant="plain"
+                icon={<Copy />}
+              >
+                npx @gqty/cli
+              </Link>
+            </View>
+          </Hidden>
+        </View>
+        {/* Images */}
+        <div className="relative">
+          <Hidden hide={{ s: true, m: true, l: false }}>
+            <View direction="row" gap={5} width="100%">
+              <View.Item columns={5}>
+                <View>
+                  <Image src="/before.png" width="484px" height="100%"></Image>
+                </View>
+              </View.Item>
+              <View.Item columns={2}>
+                <View align="center">
+                  <Image src="/arrow.svg"></Image>
+                </View>
+              </View.Item>
+              <View.Item columns={5}>
+                <View>
+                  <Image src="/after.png" width="484px" height="100%"></Image>
+                </View>
+              </View.Item>
+              <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div>
+            </View>
+          </Hidden>
+
+          <Hidden hide={{ s: false, m: false, l: true, xl: true }}>
+            <View direction="row" gap={5} width="100%">
+              <View>
+                <Image
+                  src="/before-after.png"
+                  width="588px"
+                  height="100%"
+                ></Image>
+              </View>
+
+              <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div>
+            </View>
+          </Hidden>
+        </div>
+        {/* Mob CTA */}
+        <Hidden hide={{ s: false, m: false, l: true, xl: true }}>
           <View
             paddingTop={4}
-            paddingBottom={12}
-            width="100%"
-            maxWidth="160px"
-            direction="column"
+            paddingBottom={4}
+            direction="row"
             align="center"
-            gap={3}
+            justify="center"
+            gap={6}
+            width="100%"
+            position="fixed"
+            insetBottom={0}
+            insetStart={0}
+            zIndex={1}
+            className="bg-surface-900 opacity-90 filter backdrop-blur-md"
           >
-            <Button
-              color="white"
-              rounded
-              size="large"
-              fullWidth
-              href="/getting-started"
-            >
-              Get Started
-            </Button>
+            <View.Item grow>
+              <Button
+                color="white"
+                rounded
+                size="large"
+                fullWidth
+                href="/getting-started"
+              >
+                Get Started
+              </Button>
+            </View.Item>
             <Link
               onClick={handleCopyClick}
               color="inherit"
@@ -85,27 +170,7 @@ export default function HeroSection() {
               npx @gqty/cli
             </Link>
           </View>
-        </View>
-        <div className="relative">
-          <View direction="row" gap={5} width="100%">
-            <View.Item columns={5}>
-              <View>
-                <Image src="/before.png" width="484px" height="100%"></Image>
-              </View>
-            </View.Item>
-            <View.Item columns={2}>
-              <View align="center">
-                <Image src="/arrow.svg"></Image>
-              </View>
-            </View.Item>
-            <View.Item columns={5}>
-              <View>
-                <Image src="/after.png" width="484px" height="100%"></Image>
-              </View>
-            </View.Item>
-            <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div>
-          </View>
-        </div>
+        </Hidden>
       </View>
     </>
   );

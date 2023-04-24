@@ -15,7 +15,7 @@ const Homepage = () => {
         gap={30}
         width="100%"
         maxWidth="1270px"
-        padding={[0, 20]}
+        padding={{ l: [0, 20], s: [0, 4] }}
         align="center"
       >
         <HeroSection />
