@@ -12,14 +12,14 @@ const Homepage = () => {
     <View direction="column" align="center" className="bg-surface-900">
       <View
         direction="column"
-        gap={30}
+        gap={{ l: 30, m: 16, s: 0 }}
         width="100%"
         maxWidth="1270px"
         padding={{ l: [0, 20], s: [0, 4] }}
         align="center"
       >
         <HeroSection />
-        <View direction="column" gap={30} paddingTop={5}>
+        <View direction="column" gap={30} paddingTop={{ l: 5, m: 5, s: 0 }}>
           <USPRead />
           <USPWork />
           {/* <USP

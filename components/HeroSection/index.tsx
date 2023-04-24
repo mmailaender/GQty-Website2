@@ -45,8 +45,8 @@ export default function HeroSection() {
         direction="column"
         align="center"
         justify="start"
-        gap={{ l: 26, s: 4 }}
         paddingTop={20}
+        className="h-screen"
       >
         <div className="absolute rounded-full aspect-square top-[-100px] filter blur-[200px] overflow-hidden z-0">
           <View width={90} height={40} className="bg-[#DA58B3] "></View>
@@ -56,6 +56,7 @@ export default function HeroSection() {
           align="center"
           gap={{ l: 8, s: 4 }}
           width="100%"
+          className="h-screen 2xl:h-16"
         >
           <View direction="column" align="center" gap={4} width="100%">
             <Text variant="display-2" align="center">
@@ -99,6 +100,7 @@ export default function HeroSection() {
         </View>
         {/* Images */}
         <div className="relative">
+          {/* Desktop */}
           <Hidden hide={{ s: true, m: true, l: false }}>
             <View direction="row" gap={5} width="100%">
               <View.Item columns={5}>
@@ -120,9 +122,10 @@ export default function HeroSection() {
             </View>
           </Hidden>
 
+          {/* Mobile */}
           <Hidden hide={{ s: false, m: false, l: true, xl: true }}>
             <View direction="row" gap={5} width="100%">
-              <View>
+              <View paddingBottom={{ s: 24, m: 24, l: 8, xl: 8 }}>
                 <Image
                   src="/before-after.png"
                   width="588px"
@@ -130,15 +133,14 @@ export default function HeroSection() {
                 ></Image>
               </View>
 
-              <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div>
+              <div className="absolute bottom-20 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div>
             </View>
           </Hidden>
         </div>
         {/* Mob CTA */}
         <Hidden hide={{ s: false, m: false, l: true, xl: true }}>
           <View
-            paddingTop={4}
-            paddingBottom={4}
+            padding={[4, 8]}
             direction="row"
             align="center"
             justify="center"
@@ -148,7 +150,7 @@ export default function HeroSection() {
             insetBottom={0}
             insetStart={0}
             zIndex={1}
-            className="bg-surface-900 opacity-90 filter backdrop-blur-md"
+            className="bg-surface-900 opacity-95 filter backdrop-blur-sm"
           >
             <View.Item grow>
               <Button
@@ -161,14 +163,16 @@ export default function HeroSection() {
                 Get Started
               </Button>
             </View.Item>
-            <Link
-              onClick={handleCopyClick}
-              color="inherit"
-              variant="plain"
-              icon={<Copy />}
-            >
-              npx @gqty/cli
-            </Link>
+            <View align="center">
+              <Link
+                onClick={handleCopyClick}
+                color="inherit"
+                variant="plain"
+                icon={<Copy />}
+              >
+                npx @gqty/cli
+              </Link>
+            </View>
           </View>
         </Hidden>
       </View>
