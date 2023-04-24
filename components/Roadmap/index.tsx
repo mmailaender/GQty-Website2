@@ -13,30 +13,32 @@ const Roadmap = () => {
       {/* Roadmap */}
       <a id="roadmap" className="absolute -top-20" />
 
-      <View.Item columns={9}>
-        {/* Headline */}
-        <View direction="column" gap={12} paddingStart={3}>
-          <Text variant="title-2" as="h2">
-            Our Roadmap
-          </Text>
-        </View>
-        {/* Statuses */}
-        <View direction="row" paddingTop={6} paddingBottom={6}>
-          <View.Item columns={4}>
-            <View paddingStart={3}>
-              <Text variant="body-strong-1">Shipped</Text>
-            </View>
-          </View.Item>
-          <View.Item columns={4}>
-            <View paddingStart={3}>
-              <Text variant="body-strong-1">In Progress</Text>
-            </View>
-          </View.Item>
-          <View.Item columns={4}>
-            <View paddingStart={3}>
-              <Text variant="body-strong-1">To Do</Text>
-            </View>
-          </View.Item>
+      <View.Item columns={9} attributes={{ style: { position: "sticky" } }} >
+        <View position="sticky" insetTop={16} backgroundColor="base" zIndex={1} >
+          {/* Headline */}
+          <View direction="column" gap={12} paddingStart={3}>
+            <Text variant="title-2" as="h2">
+              Our Roadmap
+            </Text>
+          </View>
+          {/* Statuses */}
+          <View direction="row" paddingTop={6} paddingBottom={6}>
+            <View.Item columns={4}>
+              <View paddingStart={3}>
+                <Text variant="body-strong-1">Shipped</Text>
+              </View>
+            </View.Item>
+            <View.Item columns={4}>
+              <View paddingStart={3}>
+                <Text variant="body-strong-1">In Progress</Text>
+              </View>
+            </View.Item>
+            <View.Item columns={4}>
+              <View paddingStart={3}>
+                <Text variant="body-strong-1">To Do</Text>
+              </View>
+            </View.Item>
+          </View>
         </View>
 
         {/* Sections */}
@@ -1124,8 +1126,8 @@ const Roadmap = () => {
         </View>
       </View.Item>
 
-      {/* Join Us Blockl*/}
-      <View.Item columns={3}>
+      {/* Join Us Block*/}
+      <View.Item columns={3} attributes={{ style: { position: "sticky", top: "64px", placeSelf: "flex-start" } }}>
         <View
           backgroundColor="neutral-faded"
           direction="column"
