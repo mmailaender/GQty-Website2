@@ -16,7 +16,13 @@ const Roadmap = () => {
 
       <View.Item columns={{ xl: 9, l: 9, m: 12, s: 12 }}>
         {/* Headline */}
-        <View direction="column" gap={12} paddingStart={3} position="relative">
+        <View
+          direction="column"
+          gap={12}
+          paddingStart={3}
+          paddingBottom={4}
+          position="relative"
+        >
           <Text variant="title-2" as="h2">
             Our Roadmap
           </Text>
@@ -24,9 +30,10 @@ const Roadmap = () => {
         {/* Statuses */}
         <View
           direction="row"
-          paddingTop={6}
-          paddingBottom={6}
-          className="sticky top-16 bg-surface-400"
+          paddingTop={4}
+          paddingBottom={4}
+          zIndex={1}
+          className="sticky top-16 bg-gradient-to-b from-surface-900 from-0% via-surface-900 to-75% opacity-95 filter backdrop-blur-xl"
         >
           <View.Item columns={4}>
             <View paddingStart={3}>
@@ -34,12 +41,12 @@ const Roadmap = () => {
             </View>
           </View.Item>
           <View.Item columns={4}>
-            <View paddingStart={3}>
+            <View paddingStart={1}>
               <Text variant="body-strong-1">In Progress</Text>
             </View>
           </View.Item>
           <View.Item columns={4}>
-            <View paddingStart={3}>
+            <View paddingStart={0}>
               <Text variant="body-strong-1">To Do</Text>
             </View>
           </View.Item>
@@ -1136,7 +1143,7 @@ const Roadmap = () => {
           backgroundColor="neutral-faded"
           direction="column"
           borderRadius="large"
-          className="bg-surface-800 border border-surface-700"
+          className="bg-surface-800 border border-surface-700 sticky top-20"
           padding={5}
         >
           <View.Item>

@@ -149,7 +149,7 @@ export default function HeroSection() {
             position="fixed"
             insetBottom={0}
             insetStart={0}
-            zIndex={1}
+            zIndex={2}
             className="bg-surface-900 opacity-95 filter backdrop-blur-sm"
           >
             <View.Item grow>
