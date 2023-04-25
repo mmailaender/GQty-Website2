@@ -4,24 +4,30 @@ import Check from "../Icons/Play/Check";
 const Roadmap = () => {
   return (
     <View
-      direction="row"
+      direction={{ xl: "row", l: "row", m: "column", s: "column" }}
       gap={12}
       align="stretch"
       width="100%"
       paddingBottom={24}
+      paddingTop={{ xl: 0, l: 0, m: 12, s: 12 }}
     >
       {/* Roadmap */}
       <a id="roadmap" className="absolute -top-20" />
 
-      <View.Item columns={9}>
+      <View.Item columns={{ xl: 9, l: 9, m: 12, s: 12 }}>
         {/* Headline */}
-        <View direction="column" gap={12} paddingStart={3}>
+        <View direction="column" gap={12} paddingStart={3} position="relative">
           <Text variant="title-2" as="h2">
             Our Roadmap
           </Text>
         </View>
         {/* Statuses */}
-        <View direction="row" paddingTop={6} paddingBottom={6}>
+        <View
+          direction="row"
+          paddingTop={6}
+          paddingBottom={6}
+          className="sticky top-16 bg-surface-400"
+        >
           <View.Item columns={4}>
             <View paddingStart={3}>
               <Text variant="body-strong-1">Shipped</Text>
@@ -46,8 +52,8 @@ const Roadmap = () => {
               <Text variant="body-strong-2">GraphQL Functionality</Text>
             </View>
 
-            {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            {/* GraphQL Functionality */}
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 <Timeline>
@@ -169,7 +175,7 @@ const Roadmap = () => {
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 <Timeline>
@@ -349,7 +355,7 @@ const Roadmap = () => {
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 <Timeline>
@@ -612,7 +618,7 @@ const Roadmap = () => {
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 <Timeline>
