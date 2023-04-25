@@ -29,7 +29,7 @@ const USPRead = () => {
               </View>
             </View.Item>
             <View
-              paddingBottom={{ xl: 8, l: 8, m: 4, s: 4 }}
+              paddingBottom={{ xl: 8, l: 8, m: 0, s: 0 }}
               paddingTop={{ xl: 0, l: 0, m: 8, s: 8 }}
             >
               <Link href={"#playground"}>

@@ -19,7 +19,11 @@ const Homepage = () => {
         align="center"
       >
         <HeroSection />
-        <View direction="column" gap={30} paddingTop={{ l: 5, m: 5, s: 0 }}>
+        <View
+          direction="column"
+          gap={{ xl: 30, l: 30, m: 16, s: 12 }}
+          paddingTop={{ l: 5, m: 5, s: 0 }}
+        >
           <USPRead />
           <USPWork />
           {/* <USP
