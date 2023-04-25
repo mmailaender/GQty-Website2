@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Skeleton, Text, View } from "reshaped/bundle";
+import { Skeleton, Text, View, Hidden, HiddenProps } from "reshaped/bundle";
 import { Direction } from "reshaped/components/View/View.types";
 import { Responsive } from "reshaped/types/global";
 
@@ -68,13 +68,15 @@ const USPRead = () => {
               height={30}
               className="absolute  top-24 left-[-16px] -rotate-45 opacity-80"
             />
-            <Image
-              src="/Hexagon.svg"
-              alt="Hexagon"
-              width={150}
-              height={150}
-              className="absolute filter blur-sm bottom-[-90px] right-[-80px] -rotate-45 opacity-80"
-            />
+            <Hidden hide={{ xl: false, l: false, m: true, s: true }}>
+              <Image
+                src="/Hexagon.svg"
+                alt="Hexagon"
+                width={150}
+                height={150}
+                className="absolute filter blur-sm bottom-[-90px] right-[-80px] -rotate-45 opacity-80"
+              />
+            </Hidden>
           </View>
         </View.Item>
       </View>
