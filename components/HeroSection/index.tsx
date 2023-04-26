@@ -45,7 +45,13 @@ export default function HeroSection() {
           align="center"
           gap={4}
           paddingTop={{ xl: 20, l: 20, m: 12, s: 8 }}
+          position="relative"
         >
+          {/* Blur */}
+          <div className="absolute rounded-full aspect-square top-[-140px] opacity-70 filter blur-3xl overflow-hidden z-0">
+            <View width={80} height={40} className="bg-[#DA58B3] "></View>
+          </div>
+
           <Text variant="display-2" align="center">
             The No-GraphQL client
           </Text>
@@ -85,7 +91,7 @@ export default function HeroSection() {
               </View>
             </View.Item>
             <View.Item columns={2}>
-              <View>
+              <View align="center">
                 <Image src="/arrow.svg" />
               </View>
             </View.Item>

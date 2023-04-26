@@ -38,7 +38,7 @@ const USPRead = () => {
             </View>
           </View>
         </View.Item>
-        <View.Item columns={{ xl: 8, l: 8, m: 10, s: 10 }}>
+        <View.Item columns={{ xl: 8, l: 8, m: 12, s: 12 }}>
           <View width="100%" height="100%" position="relative">
             <div className="absolute rounded-full aspect-square top-[-24px] right-[64px] filter blur-3xl overflow-hidden z-0">
               <View width={40} height={40} className="bg-[#DA58B3] "></View>

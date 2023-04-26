@@ -17,10 +17,7 @@ interface MyComponentProps {
 
 const Members = ({ name, image, link }) => {
   return (
-    <Actionable
-      href={link}
-      attributes={{ role: "button", target: "_blank" }}
-    >
+    <Actionable href={link} attributes={{ role: "button", target: "_blank" }}>
       <View direction="column" align="center" gap={2} position="relative">
         {/* Status ring */}
 
@@ -32,7 +29,7 @@ const Members = ({ name, image, link }) => {
           <Avatar
             src={image}
             color="neutral"
-            size={28}
+            size={{ xl: 28, l: 24, m: 20, s: 16 }}
             className="border-4  border-surface-900"
           />
         </View>
