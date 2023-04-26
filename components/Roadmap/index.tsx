@@ -1138,7 +1138,7 @@ const Roadmap = () => {
       </View.Item>
 
       {/* Join Us Blockl*/}
-      <View.Item columns={3}>
+      <View.Item columns={{ xl: 3, l: 3, m: 12, s: 12 }}>
         <View
           backgroundColor="neutral-faded"
           direction="column"
@@ -1189,9 +1189,9 @@ const Roadmap = () => {
               {/* Call to action */}
               <View direction="column" gap={2}>
                 <Button
-                  color="white"
+                  color="primary"
                   rounded={true}
-                  size="xlarge"
+                  size="large"
                   fullWidth={true}
                 >
                   Join Us
