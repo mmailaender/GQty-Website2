@@ -325,32 +325,12 @@ in conditional rendering.
 
 ## Batching
 
-GQty uses a technique called "proxy-based query batching" to batch selections
-from multiple components into one single GraphQL query, even without server
-support.
-
-To combine multiple levels of components into one single fetch, pass the query
-object down as props.
+GQty combines selections made in multiple components into one single GraphQL
+query, allowing query batching without server support.
 
 ```tsx filename="src/Profile.tsx"
 import { type FC } from "react";
 import { useQuery, type User } from "../gqty";
-
-const Avatar: FC<{ user: User }> = ({ profilePic, name, email }) => (
-  <div>
-    <img alt={profilePic.alt} src={profilePic.src} />
-    <div>{name}</div>
-    <a href={`mailto:${email}`}>{email}</a>
-  </div>
-);
-
-const FriendsList: FC<{ user: User }> = ({ friends }) => (
-  <ol>
-    {friends().map((user) => (
-      <Avatar key={user.id ?? "0"} user={user} />
-    ))}
-  </ol>
-);
 
 export default function Profile() {
   const { me } = useQuery();
@@ -358,16 +338,54 @@ export default function Profile() {
   return (
     <>
       <h1>Hello, {me.name}!</h1>
-      <Pets />
+      <MyFriendsList />
     </>
   );
 }
+
+const MyFriendsList: FC = ({ friends }) => {
+  const { me } = useQuery();
+
+  return (
+    <ol>
+      {me.friends().map((user) => (
+        <Avatar key={user.id ?? "0"} id={user.id} />
+      ))}
+    </ol>
+  );
+};
+
+const Avatar: FC<{ id: string }> = ({ id }) => {
+  const user = useQuery().user({ id });
+
+  return (
+    <div>
+      <img alt={user.profilePic.alt} src={user.profilePic.src} />
+      <div>{user.name}</div>
+      <a href={`mailto:${user.email}`}>{user.email}</a>
+    </div>
+  );
+};
 ```
 
-<Alert title="Enhanced Batching Soon™">
-  GQty has plans to add support for combining selections made in multiple
-  `useQuery()` scopes, removing the need to manually prop-drill.
-</Alert>
+GQty will combine all fields being read into one query:
+
+```graphql
+query {
+  me {
+    name
+    friends {
+      id
+      profilePic {
+        alt
+        src
+      }
+      name
+      email
+    }
+  }
+}
+```
 
 ## Refetching
 
