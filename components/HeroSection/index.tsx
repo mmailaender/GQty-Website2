@@ -113,7 +113,7 @@ export default function HeroSection() {
             gap={4}
           >
             {/* Image */}
-            <View position="relative" className="scale-150">
+            <View position="relative" className="scale-110">
               <View paddingBottom={16} maxWidth="400px">
                 <Image src="/before-after.png" width="588px" />
               </View>
