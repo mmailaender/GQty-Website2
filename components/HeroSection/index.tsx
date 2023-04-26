@@ -64,7 +64,7 @@ export default function HeroSection() {
                 <Button
                   color="white"
                   rounded
-                  size="xlarge"
+                  size="large"
                   fullWidth={true}
                   href="/getting-started"
                 >
