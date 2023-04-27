@@ -40,11 +40,11 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className="flex flex-col bg-surface-900 w-full h-screen justify-between content-center">
+      <div className="flex flex-col relative bg-surface-900 w-full h-screen justify-between content-center">
         <View
           align="center"
           gap={4}
-          paddingTop={{ xl: 20, l: 20, m: 12, s: 8 }}
+          paddingTop={{ xl: 20, l: 20, m: 12, s: 12 }}
           position="relative"
         >
           {/* Blur */}
@@ -113,41 +113,29 @@ export default function HeroSection() {
             gap={4}
           >
             {/* Image */}
-            <View position="relative" className="scale-110">
-              <View paddingBottom={16} maxWidth="400px">
+            <View position="relative">
+              <View paddingBottom={24} maxWidth="400px">
                 <Image src="/before-after.png" width="588px" />
               </View>
-              <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div>
+              <div className="absolute bottom-10 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div>
+              <Hidden hide={{ xl: true, l: true, m: false, s: false }}>
+                <div className="flex absolute bottom-10 w-full px-20 pb-12">
+                  <Button
+                    color="white"
+                    fullWidth={true}
+                    rounded
+                    size="large"
+                    href="/getting-started"
+                  >
+                    Get Started
+                  </Button>
+                </div>
+              </Hidden>
             </View>
           </View>
         </Hidden>
         {/* Mobile CTA */}
-        <Hidden hide={{ xl: true, l: true, m: false, s: false }}>
-          <View
-            direction="row"
-            justify="center"
-            align="center"
-            gap={8}
-            paddingBottom={28}
-          >
-            <View>
-              <Button
-                color="white"
-                rounded
-                size="xlarge"
-                fullWidth
-                href="/getting-started"
-              >
-                Get Started
-              </Button>
-            </View>
-          </View>
-        </Hidden>
       </div>
     </>
   );
-}
-
-{
-  /* <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-surface-900 via-surface-900"></div> */
 }

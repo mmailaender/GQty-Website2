@@ -21,10 +21,7 @@ const Members = ({ name, image, link }) => {
       <View direction="column" align="center" gap={2} position="relative">
         {/* Status ring */}
 
-        <View
-          overflow="hidden"
-          className="transform  rounded-full  bg-clip-border bg-gradient-to-tr from-[#AB087A] to-[#F937BF]   p-px"
-        >
+        <View overflow="hidden">
           {/* Avatar image */}
           <Avatar
             src={image}

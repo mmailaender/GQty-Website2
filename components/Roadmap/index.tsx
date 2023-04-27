@@ -37,17 +37,23 @@ const Roadmap = () => {
         >
           <View.Item columns={4}>
             <View>
-              <Text variant="body-strong-1">Shipped</Text>
+              <Text color="neutral-faded" variant="body-strong-2">
+                Shipped
+              </Text>
             </View>
           </View.Item>
           <View.Item columns={4}>
             <View>
-              <Text variant="body-strong-1">In Progress</Text>
+              <Text color="neutral-faded" variant="body-strong-2">
+                In Progress
+              </Text>
             </View>
           </View.Item>
           <View.Item columns={4}>
             <View>
-              <Text variant="body-strong-1">To Do</Text>
+              <Text color="neutral-faded" variant="body-strong-2">
+                To Do
+              </Text>
             </View>
           </View.Item>
         </View>
