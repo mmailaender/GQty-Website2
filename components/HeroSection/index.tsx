@@ -84,7 +84,7 @@ export default function HeroSection() {
         </View>
         {/* Desktop image */}
         <Hidden hide={{ xl: false, l: false, m: true, s: true }}>
-          <View direction="row" gap={8} paddingBottom={24} position="relative">
+          <View direction="row" gap={8} paddingTop={8} position="relative">
             <View.Item columns={5}>
               <View>
                 <Image src="/before.png" />
