@@ -30,23 +30,23 @@ const Roadmap = () => {
         {/* Statuses */}
         <View
           direction="row"
-          paddingTop={4}
-          paddingBottom={4}
+          padding={3}
           zIndex={1}
+          gap={1}
           className="sticky top-16 bg-gradient-to-b from-surface-900 from-0% via-surface-900 to-75% opacity-95 filter backdrop-blur-xl"
         >
           <View.Item columns={4}>
-            <View paddingStart={3}>
+            <View>
               <Text variant="body-strong-1">Shipped</Text>
             </View>
           </View.Item>
           <View.Item columns={4}>
-            <View paddingStart={1}>
+            <View>
               <Text variant="body-strong-1">In Progress</Text>
             </View>
           </View.Item>
           <View.Item columns={4}>
-            <View paddingStart={0}>
+            <View>
               <Text variant="body-strong-1">To Do</Text>
             </View>
           </View.Item>
@@ -774,7 +774,7 @@ const Roadmap = () => {
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 {/* <Timeline>
@@ -1011,11 +1011,11 @@ const Roadmap = () => {
           {/* DIY Extension */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Native JS Library Support</Text>
+              <Text variant="body-strong-2">Extend GQty By Yourself</Text>
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 {/* <Timeline>
