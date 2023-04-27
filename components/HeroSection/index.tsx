@@ -40,7 +40,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className=" flex flex-col relative bg-surface-900 w-full h-[91vh] justify-between content-center">
+      <div className=" flex flex-col relative bg-surface-900 w-full h-[88vh] justify-between content-center">
         <View
           align="center"
           gap={4}
