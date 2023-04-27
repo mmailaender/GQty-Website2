@@ -40,7 +40,8 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className=" flex flex-col relative bg-surface-900 w-full h-[88vh] justify-between content-center">
+      <div className=" flex flex-col relative bg-surface-900 w-full  h-[88vh] md:max-2xl:h-fit justify-between content-center">
+        {/* Headline */}
         <View
           align="center"
           gap={4}
@@ -84,7 +85,12 @@ export default function HeroSection() {
         </View>
         {/* Desktop image */}
         <Hidden hide={{ xl: false, l: false, m: true, s: true }}>
-          <View direction="row" gap={8} paddingTop={10} position="relative">
+          <View
+            direction="row"
+            gap={8}
+            paddingTop={{ xl: 32, l: 10 }}
+            position="relative"
+          >
             <View.Item columns={5}>
               <View>
                 <Image src="/before.png" />

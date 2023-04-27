@@ -12,7 +12,7 @@ const Homepage = () => {
     <View direction="column" align="center" className="bg-surface-900">
       <View
         direction="column"
-        gap={{ l: 30, m: 16, s: 0 }}
+        gap={{ xl: 24, l: 24, m: 16, s: 0 }}
         width="100%"
         maxWidth="1270px"
         padding={{ l: [0, 20], s: [0, 4] }}
