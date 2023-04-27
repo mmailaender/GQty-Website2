@@ -40,16 +40,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className="bg-primaryPink h-screen flex flex-col justify-between">
-        <div className="h-full">
-          {" "}
-          <Text>Something</Text>
-        </div>
-        <div className="bg-surface-700 h-full">
-          <Text>Else</Text>
-        </div>
-      </div>
-      <div className="invisible flex flex-col relative bg-surface-900 w-full  justify-between content-center">
+      <div className=" flex flex-col relative bg-surface-900 w-full h-[91vh] justify-between content-center">
         <View
           align="center"
           gap={4}
