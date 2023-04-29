@@ -1,16 +1,91 @@
+import { Tabs, View } from "reshaped/bundle";
 import Alert from "/components/Reshaped/Alert";
 
 # `resolve()` - The Promise Interface
 
 In GQty core, the `resolve()` method gives you a promise interface to work with
-GraphQL.
+all query types. i.e. `Query`, `Mutation` and `Subscription` are supported.
 
-It supports all top-level types, i.e. Query, Mutation and Subscription.
+For example, imagine you have this GraphQL schema at server side:
 
-A simple example route `/profile` for SvelteKit would look like this.
+```graphql filename="schema.graphql"
+type Query {
+  me: User!
+}
+
+type User {
+  firstName: String!
+  lastName: String!
+  email: String!
+  image: Image!
+  friends(first: Int, last: Int): [User!]!
+}
+
+type Image {
+  alt: String!
+  src: String!
+}
+```
+
+We can then construct our query like this:
+
+<Tabs>
+  <View paddingTop={5} paddingBottom={3}>
+    <Tabs.List>
+      <Tabs.Item value="pure">No Framework</Tabs.Item>
+      <Tabs.Item value="rsc">Server Component (RSC)</Tabs.Item>
+      <Tabs.Item value="svelte">SvelteKit</Tabs.Item>
+    </Tabs.List>
+  </View>
+
+<Tabs.Panel value="pure">
+
+```tsx
+const data = await resolved(
+  ({
+    query: {
+      me: {
+        firstName,
+        lastName,
+        email,
+        image: { src, alt },
+      },
+    },
+  }) => {}
+);
+```
+
+</Tabs.Panel>
+
+  <Tabs.Panel value="rsc">
+
+```tsx filename="app/profile/Profile.tsx"
+import { resolve } from "~/gqty";
+
+export default async function Profile() {
+  const data = await resolved(
+    ({
+      query: {
+        me: {
+          firstName,
+          lastName,
+          email,
+          image: { src, alt },
+        },
+      },
+    }) => {}
+  );
+
+  return <Avatar user={data.me} />;
+}
+```
+
+  </Tabs.Panel>
+
+  <Tabs.Panel value="svelte">
 
 ```js filename="src/routes/profile/+page.js"
-import { resolve } from "$lib/gqty";
+import { resolve } from "~/gqty";
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
@@ -33,10 +108,52 @@ export async function load({ params }) {
 }
 ```
 
+  </Tabs.Panel>
+</Tabs>
+
 <Alert title="Subscriptions?">
   The resolve function wraps GraphQL subscriptions into a promise-like
   interface. Subscriptions created via `resolve()` will be closed upon first
   data receival, i.e. the first `next` message.
+</Alert>
+
+## Customizing responses
+
+You may customize the response object by returning a new object from the
+selection function.
+
+```tsx {4}
+import { resolve } from "~/gqty";
+
+const data = await resolve(({ query: { me } }) => ({
+  fullName: `${me.firstName} ${me.lastName}`,
+}));
+```
+
+## Querying with arguments
+
+In the examples above, destrucutring syntax are used to make it looks as close
+to a GraphQL query as possible. But when the query includes arguments, you
+should instead bring it down to the function body.
+
+```tsx
+import { resolve } from "~/gqty";
+
+const selectUser = (user: User) => ({
+  id: user.id,
+  fullName: `${user.firstName} ${user.lastName}`,
+});
+
+const data = await resolve(({ query: { me } }) => ({
+  ...selectUser(me),
+  myFriends: friends({ first: 10 }).map(selectUser),
+}));
+```
+
+<Alert title="Arguments are aliased">
+  GQty automatically create alias by hashing the arguments, you can return from
+  the selection function to compose your own data shape without knowing the hash
+  ahead of time.
 </Alert>
 
 For more options, check out the [API Reference](/api-reference/core/resolve).
