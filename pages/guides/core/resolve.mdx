@@ -41,7 +41,9 @@ We can then construct our query like this:
 <Tabs.Panel value="pure">
 
 ```tsx
-const data = await resolved(
+import { resolve } from "~/gqty";
+
+const data = await resolve(
   ({
     query: {
       me: {
@@ -63,7 +65,7 @@ const data = await resolved(
 import { resolve } from "~/gqty";
 
 export default async function Profile() {
-  const data = await resolved(
+  const data = await resolve(
     ({
       query: {
         me: {
@@ -89,7 +91,7 @@ import { resolve } from "~/gqty";
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }) {
-  const { data } = await resolve(
+  const data = await resolve(
     ({
       query: {
         me: {
@@ -103,7 +105,7 @@ export async function load({ params }) {
   );
 
   return {
-    user: data?.me,
+    user: data.me,
   };
 }
 ```
@@ -113,8 +115,8 @@ export async function load({ params }) {
 
 <Alert title="Subscriptions?">
   The resolve function wraps GraphQL subscriptions into a promise-like
-  interface. Subscriptions created via `resolve()` will be closed upon first
-  data receival, i.e. the first `next` message.
+  interface. Subscriptions created via `resolve()` will be closed upon receiving
+  initial data, i.e. the first `next` message.
 </Alert>
 
 ## Customizing responses
@@ -132,9 +134,9 @@ const data = await resolve(({ query: { me } }) => ({
 
 ## Querying with arguments
 
-In the examples above, destrucutring syntax are used to make it looks as close
-to a GraphQL query as possible. But when the query includes arguments, you
-should instead bring it down to the function body.
+In the examples above, destructuring syntax are used to make it look as close to
+a GraphQL query as possible. But when the query includes arguments, you should
+instead bring it down to the function body.
 
 ```tsx
 import { resolve } from "~/gqty";
