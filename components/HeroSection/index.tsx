@@ -40,7 +40,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className=" flex flex-col relative bg-surface-900 w-full  h-[88vh] md:max-2xl:h-fit justify-between content-center">
+      <div className=" flex flex-col relative bg-surface-900 w-full  h-[88vh]  xl:h-2/6 justify-between content-center">
         {/* Headline */}
         <View
           align="center"
