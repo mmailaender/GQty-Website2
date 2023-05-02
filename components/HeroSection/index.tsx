@@ -19,7 +19,7 @@ import CheckPink from "../Icons/Play/CheckPing";
 function copyToClipboard(textToCopy: string): void {
   navigator.clipboard
     .writeText(textToCopy)
-    .then(() => {})
+    .then(() => { })
     .catch((error) => {
       console.error("Failed to copy text: ", error);
     });
@@ -79,7 +79,7 @@ export default function HeroSection() {
               variant="plain"
               icon={<Copy />}
             >
-              npx @gqty/cli
+              {npmCommand}
             </Link>
           </View>
         </View>
