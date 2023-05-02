@@ -1,4 +1,5 @@
 import { View, Text } from "reshaped/bundle";
+
 import Member from "../Member";
 
 const Contributor = () => {
@@ -25,15 +26,27 @@ const Contributor = () => {
             gap={{ xl: 5, l: 5, m: 3, s: 2 }}
           >
             <Member
+              image="/pablo.png"
+              name="Pablo"
+              link="https://github.com/PabloSzx"
+            />
+            <Member
               image="/vicary.jpeg"
               name="Vicary"
               link="https://github.com/vicary"
             />
             <Member
-              image="/pablo.png"
-              name="Pablo"
-              link="https://github.com/PabloSzx"
+              image="/micha.jpeg"
+              name="Micha Mailänder"
+              link="https://github.com/mmailaender"
             />
+            <Member
+              image="/bohdan.jpeg"
+              name="Bohdan Karpliak"
+              link="https://github.com/bohdank1995"
+            />
+            <Member image="/dechea.png" name="Dechea" link="#" />
+            <Member image="/finalytic.png" name="finalytic" link="#" />
             <Member
               image="/sam.jpeg"
               name="Sam Denty"
@@ -79,18 +92,6 @@ const Contributor = () => {
               name="Liam Martens"
               link="https://github.com/LiamMartens"
             />
-            <Member
-              image="/micha.jpeg"
-              name="Micha Mailänder"
-              link="https://github.com/mmailaender"
-            />
-            <Member
-              image="/bohdan.jpeg"
-              name="Bohdan Karpliak"
-              link="https://github.com/bohdank1995"
-            />
-            <Member image="/finalytic.png" name="finalytic" link="#" />
-            <Member image="/dechea.png" name="Dechea" link="#" />
           </View>
         </View>
       </View>

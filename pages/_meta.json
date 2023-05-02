@@ -11,11 +11,6 @@
   "getting-started": "Getting Started",
   "concepts": "Concepts",
   "guides": "Use Cases",
-  "integrations": {
-    "title": "Integrations",
-    "type": "page",
-    "display": "hidden"
-  },
   "api-reference": "API",
   "documentation": {
     "title": "Documentation",

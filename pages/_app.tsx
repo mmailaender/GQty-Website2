@@ -1,4 +1,5 @@
 import withTwindApp from "@twind/next/shim/app";
+import { Analytics } from "@vercel/analytics/react";
 import App from "next/app";
 import { Reshaped } from "reshaped/bundle";
 import "reshaped/bundle.css";
@@ -13,6 +14,7 @@ export default withTwindApp(
       return (
         <Reshaped theme="gqty" defaultColorMode="dark">
           <Component {...pageProps} />
+          <Analytics />
         </Reshaped>
       );
     }

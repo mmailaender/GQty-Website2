@@ -350,7 +350,7 @@
 --rs-color-border-critical-faded: #FBD0D4;
 --rs-color-background-page: #FFFFFF;
 --rs-color-background-page-faded: #F8F8F8;
---rs-color-background-base: #FFFFFF;
+--rs-color-background-base: #151215;
 --rs-color-background-elevated: #FFFFFF;
 --rs-color-on-background-neutral: #000;
 --rs-color-rgb-background-neutral: 223, 226, 234;
@@ -366,7 +366,7 @@
 --rs-color-rgb-background-critical-faded: 253, 231, 233;
 --rs-color-rgb-background-page: 255, 255, 255;
 --rs-color-rgb-background-page-faded: 248, 248, 248;
---rs-color-rgb-background-base: 255, 255, 255;
+--rs-color-rgb-background-base: 21, 18, 21;
 --rs-color-rgb-background-elevated: 255, 255, 255;
 					color-scheme: light;
 			}
@@ -398,7 +398,7 @@
 --rs-color-border-critical-faded: #6A1C1C;
 --rs-color-background-page: #0D1117;
 --rs-color-background-page-faded: #11171F;
---rs-color-background-base: #181C25;
+--rs-color-background-base: #151215;
 --rs-color-background-elevated: #1C212B;
 --rs-color-on-background-neutral: #fff;
 --rs-color-rgb-background-neutral: 48, 55, 74;
@@ -414,7 +414,7 @@
 --rs-color-rgb-background-critical-faded: 70, 12, 12;
 --rs-color-rgb-background-page: 13, 17, 23;
 --rs-color-rgb-background-page-faded: 17, 23, 31;
---rs-color-rgb-background-base: 24, 28, 37;
+--rs-color-rgb-background-base: 21, 18, 21;
 --rs-color-rgb-background-elevated: 28, 33, 43;
 					color-scheme: dark;
 			}

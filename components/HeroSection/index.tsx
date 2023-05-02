@@ -103,6 +103,7 @@ export default function HeroSection() {
             </View.Item>
             <View.Item columns={5}>
               <View>
+
                 <Image src="/after.png" />
               </View>
             </View.Item>
