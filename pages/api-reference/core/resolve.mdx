@@ -1,18 +1,26 @@
 # resolve
 
+The `resolve()` method is a promise interface to make GraphQL queries.
+
 ```tsx
-async function resolve(
-  fn: QueryFunction,
-  options?: Options
-): Promise<ExecutionResult>;
-```
-
-## QueryFunction
-
-A function accessing scalar needed from the schema object.
-
-```ts
-(schema: TSchema) => TData;
+// Return types are customizable in your callback
+const { foo, bar } = await resolve(
+  ({ query }) => {
+    return {
+      foo: query.foo,
+      bar: query
+        // Query with arguments
+        .bar({ baz: 1 })
+        // Array types
+        .map((item) => item.field),
+    };
+  },
+  // Optionally override client options per query
+  {
+    cachePolicy: "no-cache",
+    operationName: "FooBarQuery",
+  }
+);
 ```
 
 ## Options
@@ -22,9 +30,9 @@ A function accessing scalar needed from the schema object.
 Depending on the cache policy, fetches may happens depending on the "freshness"
 of cache data accessed in your query function.
 
-Setting this to `true` will have the `resolve()` promise wait for the fetch.
-For a complete Stale-While-Revalidate (SWR) experience, you may disable this
-option and serves what is available in the cache, and handles the fetch result
+Setting this to `true` will have the `resolve()` promise wait for the fetch. For
+a complete Stale-While-Revalidate (SWR) experience, you may disable this option
+and serves what is available in the cache, and handles the fetch result
 separately via the `onFetch()` callback.
 
 Defaults to `true`.
@@ -33,6 +41,42 @@ Defaults to `true`.
 
 The cache policy to use for the current query, defaults to `default`. You can
 read more about cache policy options in [Concepts](/concepts#cache-policy).
+
+### `extensions`
+
+A query extention object, carrying extra information to your query fetcher.
+
+```tsx
+await resolve(({ query }) => query.foo, {
+  extentions: {
+    authToken: "Bearer ...",
+  },
+});
+```
+
+```tsx {5,10} filename="gqty/index.ts"
+const queryFetcher = async ({
+  query,
+  variables,
+  operationName,
+  extensions,
+}) => {
+  const repsonse = await fetch("/graphql", {
+    method: "POST",
+    headers: {
+      authorization: extensions?.authToken,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+      operationName,
+    }),
+  });
+
+  return await response.json();
+};
+```
 
 ### `retryPolicy`
 
@@ -46,7 +90,8 @@ customize the retrying behavior, or disabling it altogether.
 | `number`                     | Enables auto retry with the default options and a custom `maxRetries` count. |
 | `{ maxRetries, retryDelay }` | Enables auto retry with custom options.                                      |
 
-When you specify retryPolicy as an object, the following properties are available.
+When you specify retryPolicy as an object, the following properties are
+available.
 
 #### `maxRetries`
 
@@ -69,8 +114,8 @@ onFetch?: (fetchPromise: Promise<unknown>) => void;
 
 ### `onSelect()`
 
-The `onSelect` callback is called when a selection is made by accessing
-the properties of query objects.
+The `onSelect` callback is called when a selection is made by accessing the
+properties of query objects.
 
 ```tsx
 onSelect?: (selection: Selection, cache?: CacheDataContainer) => void;
