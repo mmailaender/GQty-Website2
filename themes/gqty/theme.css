@@ -293,15 +293,12 @@
 --rs-unit-x8: 32px;
 --rs-unit-x9: 36px;
 --rs-unit-x10: 40px;
---rs-color-background-primary-highlighted: #7371F4;
 --rs-color-background-positive: #078549;
 --rs-color-background-positive-highlighted: #009950;
 --rs-color-background-critical: #DA0000;
 --rs-color-background-critical-highlighted: #E93535;
 --rs-color-black: #000000;
 --rs-color-white: #FFFFFF;
---rs-color-on-background-primary-highlighted: #fff;
---rs-color-rgb-background-primary-highlighted: 115, 113, 244;
 --rs-color-on-background-positive: #fff;
 --rs-color-rgb-background-positive: 7, 133, 73;
 --rs-color-on-background-positive-highlighted: #fff;
@@ -337,6 +334,7 @@
 --rs-color-background-disabled-faded: #F4F5F7;
 --rs-color-background-primary: #E767C0;
 --rs-color-background-primary-faded: #E8E7FD;
+--rs-color-background-primary-highlighted: #E34AB4;
 --rs-color-background-positive-faded: #E6FEF3;
 --rs-color-background-critical-faded: #FDE7E9;
 --rs-color-border-neutral: #BBC1D3;
@@ -362,6 +360,8 @@
 --rs-color-on-background-primary: #fff;
 --rs-color-rgb-background-primary: 231, 103, 192;
 --rs-color-rgb-background-primary-faded: 232, 231, 253;
+--rs-color-on-background-primary-highlighted: #fff;
+--rs-color-rgb-background-primary-highlighted: 227, 74, 180;
 --rs-color-rgb-background-positive-faded: 230, 254, 243;
 --rs-color-rgb-background-critical-faded: 253, 231, 233;
 --rs-color-rgb-background-page: 255, 255, 255;
@@ -385,6 +385,7 @@
 --rs-color-background-disabled-faded: #242938;
 --rs-color-background-primary: #E767C0;
 --rs-color-background-primary-faded: #1C1E55;
+--rs-color-background-primary-highlighted: #E34AB4;
 --rs-color-background-positive-faded: #01321C;
 --rs-color-background-critical-faded: #460C0C;
 --rs-color-border-neutral: #49536F;
@@ -410,6 +411,8 @@
 --rs-color-on-background-primary: #fff;
 --rs-color-rgb-background-primary: 231, 103, 192;
 --rs-color-rgb-background-primary-faded: 28, 30, 85;
+--rs-color-on-background-primary-highlighted: #fff;
+--rs-color-rgb-background-primary-highlighted: 227, 74, 180;
 --rs-color-rgb-background-positive-faded: 1, 50, 28;
 --rs-color-rgb-background-critical-faded: 70, 12, 12;
 --rs-color-rgb-background-page: 13, 17, 23;

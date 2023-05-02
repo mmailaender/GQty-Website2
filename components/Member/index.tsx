@@ -17,22 +17,16 @@ interface MyComponentProps {
 
 const Members = ({ name, image, link }) => {
   return (
-    <Actionable
-      href={link}
-      attributes={{ role: "button", target: "_blank" }}
-    >
+    <Actionable href={link} attributes={{ role: "button", target: "_blank" }}>
       <View direction="column" align="center" gap={2} position="relative">
         {/* Status ring */}
 
-        <View
-          overflow="hidden"
-          className="transform  rounded-full  bg-clip-border bg-gradient-to-tr from-[#AB087A] to-[#F937BF]   p-px"
-        >
+        <View overflow="hidden">
           {/* Avatar image */}
           <Avatar
             src={image}
             color="neutral"
-            size={28}
+            size={{ xl: 28, l: 24, m: 20, s: 16 }}
             className="border-4  border-surface-900"
           />
         </View>
