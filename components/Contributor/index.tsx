@@ -1,4 +1,5 @@
-import { Text, View } from "reshaped/bundle";
+import { View, Text } from "reshaped/bundle";
+
 import Member from "../Member";
 
 const Contributor = () => {
@@ -18,7 +19,12 @@ const Contributor = () => {
       <View direction="column" gap={4} align="center">
         <View direction="column" align="center">
           {/* 1st row */}
-          <View direction="row" align="center" justify="center" gap={5}>
+          <View
+            direction="row"
+            align="center"
+            justify="center"
+            gap={{ xl: 5, l: 5, m: 3, s: 2 }}
+          >
             <Member
               image="/pablo.png"
               name="Pablo"

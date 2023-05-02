@@ -18,6 +18,7 @@
   "editor.guides.bracketPairs": false,
   "editor.wordWrap": "off",
   "diffEditor.wordWrap": "off",
+  "blockman.n35A01DisableRecommendationDialog": true,
 
   "workbench.colorCustomizations": {
     "editor.lineHighlightBorder": "#9fced11f",

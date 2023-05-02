@@ -3,6 +3,7 @@ import Contributor from "../Contributor";
 import HeroSection from "../HeroSection";
 import Playground from "../Playground";
 import Roadmap from "../Roadmap";
+import USP from "../USP";
 import USPRead from "./USPRead";
 import USPWork from "./USPWrite";
 
@@ -11,14 +12,18 @@ const Homepage = () => {
     <View direction="column" align="center" className="bg-surface-900">
       <View
         direction="column"
-        gap={30}
+        gap={{ xl: 24, l: 24, m: 16, s: 0 }}
         width="100%"
         maxWidth="1270px"
-        padding={[0, 20]}
+        padding={{ l: [0, 20], s: [0, 4] }}
         align="center"
       >
         <HeroSection />
-        <View direction="column" gap={30} paddingTop={5}>
+        <View
+          direction="column"
+          gap={{ xl: 30, l: 30, m: 16, s: 12 }}
+          paddingTop={{ l: 5, m: 5, s: 0 }}
+        >
           <USPRead />
           <USPWork />
           {/* <USP
