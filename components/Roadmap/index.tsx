@@ -4,41 +4,58 @@ import Check from "../Icons/Play/Check";
 const Roadmap = () => {
   return (
     <View
-      direction="row"
+      direction={{ xl: "row", l: "row", m: "column", s: "column" }}
       gap={12}
       align="stretch"
       width="100%"
       paddingBottom={24}
+      paddingTop={{ xl: 0, l: 0, m: 12, s: 12 }}
     >
       {/* Roadmap */}
       <a id="roadmap" className="absolute -top-20" />
 
-      <View.Item columns={9} attributes={{ style: { position: "sticky" } }} >
-        <View position="sticky" insetTop={16} backgroundColor="base" zIndex={1} >
-          {/* Headline */}
-          <View direction="column" gap={12} paddingStart={3}>
-            <Text variant="title-2" as="h2">
-              Our Roadmap
-            </Text>
-          </View>
-          {/* Statuses */}
-          <View direction="row" paddingTop={6} paddingBottom={6}>
-            <View.Item columns={4}>
-              <View paddingStart={3}>
-                <Text variant="body-strong-1">Shipped</Text>
-              </View>
-            </View.Item>
-            <View.Item columns={4}>
-              <View paddingStart={3}>
-                <Text variant="body-strong-1">In Progress</Text>
-              </View>
-            </View.Item>
-            <View.Item columns={4}>
-              <View paddingStart={3}>
-                <Text variant="body-strong-1">To Do</Text>
-              </View>
-            </View.Item>
-          </View>
+      <View.Item columns={{ xl: 9, l: 9, m: 12, s: 12 }}>
+        {/* Headline */}
+        <View
+          direction="column"
+          gap={12}
+          paddingStart={3}
+          paddingBottom={4}
+          position="relative"
+        >
+          <Text variant="title-2" as="h2">
+            Our Roadmap
+          </Text>
+        </View>
+        {/* Statuses */}
+        <View
+          direction="row"
+          padding={3}
+          zIndex={1}
+          gap={1}
+          className="sticky top-16 bg-gradient-to-b from-surface-900 from-0% via-surface-900 to-75% opacity-95 filter backdrop-blur-xl"
+        >
+          <View.Item columns={4}>
+            <View>
+              <Text color="neutral-faded" variant="body-strong-2">
+                Shipped
+              </Text>
+            </View>
+          </View.Item>
+          <View.Item columns={4}>
+            <View>
+              <Text color="neutral-faded" variant="body-strong-2">
+                In Progress
+              </Text>
+            </View>
+          </View.Item>
+          <View.Item columns={4}>
+            <View>
+              <Text color="neutral-faded" variant="body-strong-2">
+                To Do
+              </Text>
+            </View>
+          </View.Item>
         </View>
 
         {/* Sections */}
@@ -48,8 +65,8 @@ const Roadmap = () => {
               <Text variant="body-strong-2">GraphQL Functionality</Text>
             </View>
 
-            {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            {/* GraphQL Functionality */}
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 <Timeline>
@@ -76,40 +93,139 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Scoped Query</Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
+                      <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text> */}
+                      </Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
               </View.Item>
               {/* In Progress */}
               <View.Item columns={4}>
+                {/* Placeholder */}
+              </View.Item>
+              {/* ToDo */}
+              <View.Item columns={4}>
                 <Timeline>
-                  {/* <Timeline.Item
-                  markerSlot={
-                    <View
-                      borderRadius="circular"
-                      direction="column"
-                      align="center"
-                      justify="center"
-                      overflow="hidden"
-                      className="border rounded-full border-warning"
-                      width={5}
-                      height={5}
-                    ></View>
-                  }
-                >
-                  <View
-                    direction="column"
-                    gap={1}
-                    width="100%"
-                    paddingBottom={2}
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        className="bg-surface-800 border rounded-full border-surface-500"
+                        width={5}
+                        height={5}
+                      ></View>
+                    }
                   >
-                    <Text variant="body-medium-2">Scoped Query</Text>
-                  </View>
-                </Timeline.Item> */}
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-medium-2">Directives</Text>
+                    </View>
+                  </Timeline.Item>
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        className="bg-surface-800 border rounded-full border-surface-500"
+                        width={5}
+                        height={5}
+                      ></View>
+                    }
+                  >
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-medium-2">Custom Scalars</Text>
+                    </View>
+                  </Timeline.Item>
                 </Timeline>
+              </View.Item>
+            </View>
+          </View>
+          {/* Getting Started Experience */}
+          <View padding={3} className="border rounded-lg  border-surface-800">
+            <View paddingBottom={2}>
+              <Text variant="body-strong-2">Getting Started Experience</Text>
+            </View>
+
+            {/* Tasks */}
+            <View direction="row" paddingTop={4} gap={2}>
+              {/* Done */}
+              <View.Item columns={4}>
+                <Timeline>
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        backgroundColor="primary"
+                        width={5}
+                        height={5}
+                      >
+                        <Check />
+                      </View>
+                    }
+                  >
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-medium-2">Website Relaunch</Text>
+                      <Text variant="caption-1" color="neutral-faded">
+                        Jan 26, 2022
+                      </Text>
+                    </View>
+                  </Timeline.Item>
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        backgroundColor="primary"
+                        width={5}
+                        height={5}
+                      >
+                        <Check />
+                      </View>
+                    }
+                  >
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-medium-2">Interactive CLI</Text>
+                    </View>
+                  </Timeline.Item>
+                </Timeline>
+              </View.Item>
+              {/* In Progress */}
+              <View.Item columns={4}>
+                {/* Placeholder */}
               </View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
@@ -198,9 +314,6 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Website Relaunch</Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -226,9 +339,6 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Interactive CLI</Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -254,9 +364,6 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Watch mode in CLI</Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text> */}
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -293,7 +400,11 @@ const Roadmap = () => {
               </View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
-                {/* <Timeline>
+                {/* Placeholder */}
+              </View.Item>
+              {/* In Progress */}
+              <View.Item columns={4}>
+                <Timeline>
                   <Timeline.Item
                     markerSlot={
                       <View
@@ -302,7 +413,7 @@ const Roadmap = () => {
                         align="center"
                         justify="center"
                         overflow="hidden"
-                        className="bg-surface-800 border rounded-full border-surface-500"
+                        className="border rounded-full border-warning"
                         width={5}
                         height={5}
                       ></View>
@@ -314,33 +425,16 @@ const Roadmap = () => {
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Directives</Text>
+                      <Text variant="body-medium-2">
+                        Integration examples Grafbase, Hasura, Svelte...
+                      </Text>
                     </View>
                   </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="bg-surface-800 border rounded-full border-surface-500"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">Custom Scalars</Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline> */}
+                </Timeline>
+              </View.Item>
+              {/* ToDo */}
+              <View.Item columns={4}>
+                {/* Placeholder */}
               </View.Item>
             </View>
           </View>
@@ -351,7 +445,7 @@ const Roadmap = () => {
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 <Timeline>
@@ -410,9 +504,9 @@ const Roadmap = () => {
                       <Text variant="body-medium-2">
                         Refetch on Window Focus in CLI
                       </Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
+                      <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text> */}
+                      </Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -438,9 +532,9 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Refetch on Reconnect</Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
+                      <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
-                      </Text> */}
+                      </Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -466,9 +560,6 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Refetch on Mount</Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text> */}
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -494,9 +585,31 @@ const Roadmap = () => {
                       paddingBottom={2}
                     >
                       <Text variant="body-medium-2">Support SSR, SSG, RSC</Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text> */}
+                    </View>
+                  </Timeline.Item>
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        backgroundColor="primary"
+                        width={5}
+                        height={5}
+                      >
+                        <Check />
+                      </View>
+                    }
+                  >
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-medium-2">Support SSR, SSG, RSC</Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -554,67 +667,74 @@ const Roadmap = () => {
                   </Timeline.Item>
                 </Timeline>
               </View.Item>
+
+              {/* In Progress */}
+              <View.Item columns={4}>
+                <Timeline>
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        className="border rounded-full border-warning"
+                        width={5}
+                        height={5}
+                      ></View>
+                    }
+                  >
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-medium-2">Automatic Polling</Text>
+                    </View>
+                  </Timeline.Item>
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        className="border rounded-full border-warning"
+                        width={5}
+                        height={5}
+                      ></View>
+                    }
+                  >
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-medium-2">
+                        Cache with expiry and SWR
+                      </Text>
+                    </View>
+                  </Timeline.Item>
+                </Timeline>
+              </View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
-                {/* <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="bg-surface-800 border rounded-full border-surface-500"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">Directives</Text>
-                    </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="bg-surface-800 border rounded-full border-surface-500"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">Custom Scalars</Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline> */}
+                {/* Placeholder */}
               </View.Item>
             </View>
           </View>
-          {/* Streming */}
+          {/* Streaming */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Streaming</Text>
+              <Text variant="body-strong-2">Fetch DX</Text>
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
                 <Timeline>
@@ -643,9 +763,6 @@ const Roadmap = () => {
                       <Text variant="body-medium-2">
                         New subscription client
                       </Text>
-                      {/* <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text> */}
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -763,94 +880,14 @@ const Roadmap = () => {
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
-                {/* <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        backgroundColor="primary"
-                        width={5}
-                        height={5}
-                      >
-                        <Check />
-                      </View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">
-                        New subscription client
-                      </Text>
-                      <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline> */}
+                {/* Placeholder */}
               </View.Item>
               {/* In Progress */}
               <View.Item columns={4}>
-                {/* <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">Streaming SSR</Text>
-                    </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">
-                        Cache with expiry and SWR
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline> */}
+                {/* Placeholder */}
               </View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
@@ -1004,94 +1041,14 @@ const Roadmap = () => {
             </View>
 
             {/* Tasks */}
-            <View direction="row" paddingTop={4}>
+            <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
               <View.Item columns={4}>
-                {/* <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        backgroundColor="primary"
-                        width={5}
-                        height={5}
-                      >
-                        <Check />
-                      </View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">
-                        New subscription client
-                      </Text>
-                      <Text variant="caption-1" color="neutral-faded">
-                        Jan 26, 2022
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline> */}
+                {/* Placeholder */}
               </View.Item>
               {/* In Progress */}
               <View.Item columns={4}>
-                {/* <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">Streaming SSR</Text>
-                    </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-medium-2">
-                        Cache with expiry and SWR
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline> */}
+                {/* Placeholder */}
               </View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
@@ -1126,13 +1083,13 @@ const Roadmap = () => {
         </View>
       </View.Item>
 
-      {/* Join Us Block*/}
-      <View.Item columns={3} attributes={{ style: { position: "sticky", top: "64px", placeSelf: "flex-start" } }}>
+      {/* Join Us Blockl*/}
+      <View.Item columns={{ xl: 3, l: 3, m: 12, s: 12 }}>
         <View
           backgroundColor="neutral-faded"
           direction="column"
           borderRadius="large"
-          className="bg-surface-800 border border-surface-700"
+          className="bg-surface-800 border border-surface-700 sticky top-20"
           padding={5}
         >
           <View.Item>
@@ -1180,7 +1137,7 @@ const Roadmap = () => {
                 <Button
                   color="white"
                   rounded={true}
-                  size="xlarge"
+                  size="large"
                   fullWidth={true}
                   attributes={{ target: "_blank" }}
                   href="https://github.com/sponsors/gqty-dev"

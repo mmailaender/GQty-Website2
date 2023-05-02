@@ -6332,6 +6332,7 @@ packages:
       - '@babel/core'
       - babel-plugin-macros
 
+
   /nextra-theme-docs@2.4.2(next@13.3.1)(nextra@2.4.2)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-5H6NJ38TlbgetNx9HjMmQcNpsp6GFH26TfjLVC0RWxhEPuoutSFpJ8RjWKXv6WEaWaL500CoErW0/DeXzuQGUg==}
     peerDependencies:
@@ -7519,6 +7520,7 @@ packages:
       katex: 0.16.7
       unist-util-visit: 4.1.2
     dev: false
+
 
   /rehype-pretty-code@0.9.4(shiki@0.14.2):
     resolution: {integrity: sha512-3m4aQT15n8C+UizcZL0enaahoZwCDm5K1qKQ3DGgHE7U8l/DEEEJ/hm+uDe9yyK4sxVOSfZcRIMHrpJwLQi+Rg==}
