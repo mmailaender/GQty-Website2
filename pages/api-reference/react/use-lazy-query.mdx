@@ -1,28 +1,29 @@
-# useLazyQuery()
+# useLazyQuery
 
-A wrapper hook for the core function `resolve`, designed for users who
-want more control over when the query fetches.
-
-```ts
-function useLazyQuery(
-  fn: QueryFunction,
-  options?: Options
-): [TriggerFunction, QueryState];
-```
-
-## QueryFunction
-
-The selection function to use, when the trigger function is called. Query
-variables supplied to the trigger function will be received here.
-
-This can be overridden by providing a new selection function in the trigger
-function returned.
+A wrapper hook for the core function `resolve`, designed for users who want more
+control over when the query fetches.
 
 ```tsx
-type QueryFunction = (
-  query: GeneratedSchema["query"],
-  variables?: TVariables
-) => TData;
+export default function MyComponent() {
+  const [loadData, { data, error, isCalled, isLoading }] = useLazyQuery(
+    (query) => ({
+      foo: query.foo,
+      bar: query.bar({ baz: 1 }),
+    })
+  );
+
+  return (
+    <>
+      {!isCalled && <Button onClick={loadData}>Load data</Button>}
+      {isLoading && <Spinner />}
+      {error && <ErrorMessage error={error} />}
+      <div>
+        <div>Foo: {data.foo}</div>
+        <div>Bar: {data.bar}</div>
+      </div>
+    </>
+  );
+}
 ```
 
 ## Options
@@ -91,8 +92,8 @@ Use `true` to enable [Suspense mode](/guides/react/read#suspense).
 
 ### TriggerFunction
 
-The trigger function to start fetching for query data, you may override
-the query function, query variables, fetch policy or operation name in place.
+The trigger function to start fetching for query data, you may override the
+query function, query variables, fetch policy or operation name in place.
 
 #### Signature
 
@@ -109,7 +110,8 @@ function triggerFunction(options?: {
 
 #### `data`
 
-The data returned by the query function, only available after a successful fetch.
+The data returned by the query function, only available after a successful
+fetch.
 
 #### `error`
 

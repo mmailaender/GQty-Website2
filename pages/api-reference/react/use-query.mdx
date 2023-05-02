@@ -1,4 +1,4 @@
-# useQuery()
+# useQuery
 
 ```tsx
 export default function MyComponent() {
@@ -189,5 +189,9 @@ You may force a hard refetch by passing `true` as the first argument.
 ```tsx
 const { $refetch } = useQuery();
 
+// Soft refetch
+$refetch();
+
+// Hard refetch
 $refetch(true);
 ```
