@@ -25,8 +25,8 @@ This creates a long-lived subscription to your endpoint and continues to receive
 backend updates as they happen.
 
 With normalized cache enabled in GQty, object updates received from
-subscriptions are automatically populated to components watching the same
-object via queries.
+subscriptions are automatically populated to components watching the same object
+via queries.
 
 There are two ways to design your subscriptions, having each of them with its
 own benefits and drawbacks. You should be concise about each and choose the one
@@ -34,9 +34,9 @@ best fits your application.
 
 ## Event based Subscriptions (Event Streams)
 
-Subscriptions may represent a stream of events happening on server side,
-sending a replayable history to the client. This enables interesting use cases
-of live collaborations and other real-time interactions.
+Subscriptions may represent a stream of events happening on server side, sending
+a replayable history to the client. This enables interesting use cases of live
+collaborations and other real-time interactions.
 
 Event based subscriptions are best suited to trigger further actions, such as
 fetching related updates for currently visible components when an event is
@@ -56,9 +56,9 @@ received. Event payloads should stay small.
 
 ## Entity based Subscriptions (Live Queries)
 
-One of the drawbacks that event-based subscriptions may introduce is the
-lack of ways to recover lost events after a connection drop. Even with automatic
-reconnections built-in our subscription clients, you are required to manually
+One of the drawbacks that event-based subscriptions may introduce is the lack of
+ways to recover lost events after a connection drop. Even with automatic
+reconnection built-in our subscription clients, you are required to manually
 refetch the missing events during periods of blackout.
 
 Instead of event streams, Subscriptions can also send object updates made by
@@ -69,7 +69,7 @@ and how to batch them up without overwhelming the client.
   Before jumping into subscriptions, an application may usually get away with a
   carefully controlled query polling. The correct timing to start considering
   subscriptions is when you try to aggregate a data entity from multiple sources
-  and sending updates in a fanout mannar.
+  and sending updates in a fanout manner.
 </Alert>
 
 ## Conclusion

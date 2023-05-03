@@ -314,12 +314,12 @@ export default function Profile() {
 With Suspense enabled, errors during data fetch will be thrown during next
 render. This encourages
 [error boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary),
-where you think of the component tree in terms of suspendable layers more than
+where you think of the component tree in terms of layers of Suspense more than
 in conditional rendering.
 
 <Alert className="mt-5" title="The Suspense mindset">
   Starting from React 18, it is recommended that you structure your app as
-  suspendable layers. Loading states and errors should be handled by React
+  layers of Suspense. Loading states and errors should be handled by React
   instead of repeating these internal states in every single component.
 </Alert>
 
@@ -406,7 +406,7 @@ export default function Profile() {
 }
 ```
 
-<Alert title="Use Soft Refetches!">
+<Alert title="Use Soft refetches!">
   With [soft refetches](/concepts#refetching), GQty allows aggressive refetch
   attempts without disrupting user experience. In fact, the `useQuery()` hook
   supports a number of [automatic
@@ -418,7 +418,7 @@ export default function Profile() {
 
 There are other fetch hooks that are considered deprecated because they don't
 match the new API design approach. But they are specifically kept functional in
-the new core for certain convensional coding styles.
+the new core for certain conventional coding styles.
 
 You may learn more about them in the API reference.
 

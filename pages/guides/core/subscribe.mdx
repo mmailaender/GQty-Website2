@@ -6,8 +6,8 @@ In contrast with the one-off nature of [`resolve()`](/guides/core/resolve),
 `subscribe()` is an asynchronous generator for continuous data streams.
 
 When you call `subscribe()`, it starts subscriptions and fetches for queries and
-mutations depending on the selections made. The generator then yield on
-relevant changes to the cache until it is unsubscribed.
+mutations depending on the selections made. The generator then yield on relevant
+changes to the cache until it is unsubscribed.
 
 Here is a simple example in SvelteKit:
 
@@ -76,4 +76,5 @@ subscription.
 </ol>
 ```
 
-For more options, check out the [API Reference](/api-reference/core/subscribe).
+For a complete list of available options, check out the
+[API Reference](/api-reference/core/subscribe).

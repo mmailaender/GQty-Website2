@@ -47,8 +47,8 @@ be suspended and fetched, it also decides the error boundaries of your app.
 ### Selection Batching
 
 When making selections by interacting with the cache, GQty captures what is
-being accessed, combine selections with the same context, fetching them with
-as few requests as possible.
+being accessed, combine selections with the same context, fetching them with as
+few requests as possible.
 
 <Alert className="mt-5" title="Pass query objects as props">
   In React, the `useQuery()` hook creates a new scoped context for each
@@ -67,21 +67,21 @@ arrives, all components reaching such objects will also be updated.
 
 ## Refetching
 
-### Soft Refetches
+### Soft Refetch
 
 Refetching in GQty does not necessarily means a network request. A refetch first
-checks the cache freshness of accessed data, it fetches only on cache miss
-AND the current cache policy allows it.
+checks the cache freshness of accessed data, it fetches only on cache miss AND
+the current cache policy allows it.
 
 Consider soft refetches a cache validity check instead, this allows more
 frequent refetching strategies. Our `useQuery()` hook has options for automatic
 refetches on window focus, network reconnect and even periodic attempts.
 
-### Hard Refetches
+### Hard Refetch
 
 Users may specify `no-cache` or `no-store` as the cache policy in core, or
-simply use `query.$refetch(true)` in React to bypass a fresh cache and forces
-a network request.
+simply use `query.$refetch(true)` in React to bypass a fresh cache and forces a
+network request.
 
 ## Cache Policy
 
@@ -141,7 +141,7 @@ They will be merged into the same object reference, and kept in a global store.
   alt="fig2: Cache Normalization Step 2"
 />
 
-This global store will be serialised along with the main data cache during
+This global store will be serialized along with the main data cache during
 persistence and rehydration.
 
 ### Normalized, still Reactive.
