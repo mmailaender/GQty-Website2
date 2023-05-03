@@ -1,29 +1,33 @@
-# useTransactionQuery()
+# useTransactionQuery
 
 A wrapper hook for `useQuery()`, designed for users familiar with the Apollo
 Client.
 
-## Signature
-
 ```tsx
-function useTransactionQuery<TData, TVariables>(
-  fn: QueryFunction,
-  options?: Options
-): {
-  data?: TData;
-  error?: GQtyError;
-  isCalled: boolean;
-  isLoading: boolean;
-};
-```
+export default function MyComponent() {
+  const { data, error, isLoading } = useTransactionQuery(
+    (query) => ({
+      foo: query.foo,
+      bar: query.bar({ baz: 1 }),
+    }),
+    {
+      skip: false,
+    }
+  );
 
-## QueryFunction
-
-```ts
-type QueryFunction = (
-  query: GeneratedSchema["query"],
-  variables?: TVariables
-) => TData;
+  return (
+    <div>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error: {error.message}</p>}
+      {data && (
+        <div>
+          <p>Foo: {data.foo}</p>
+          <p>Bar: {data.bar}</p>
+        </div>
+      )}
+    </div>
+  );
+}
 ```
 
 ## Options
@@ -35,8 +39,8 @@ read more about cache policy options in [Concepts](/concepts#cache-policy).
 
 ### `fetchPolicy`
 
-Legacy option kept for backward compatability, ignored when `cachePolicy` is
-in use.
+Legacy option kept for backward compatability, ignored when `cachePolicy` is in
+use.
 
 | Value               | Description                                   |
 | :------------------ | :-------------------------------------------- |
@@ -123,7 +127,8 @@ The return value is an object with the following properties.
 
 ### `data`
 
-The data returned by the query function, only available after a successful fetch.
+The data returned by the query function, only available after a successful
+fetch.
 
 ### `error`
 

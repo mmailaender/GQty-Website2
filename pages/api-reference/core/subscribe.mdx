@@ -1,18 +1,18 @@
 # subscribe
 
-```ts
-async function* subscribe<TSchema>(
-  fn: QueryFunction,
-  options?: Options
-): AsyncGenerator<ExecutionResult>;
-```
+`subscribe()` is an asynchronous generator for continuous GraphQL data streams.
 
-## QueryFunction
+```tsx
+const notifications = subscribe(
+  ({ subscription }) => subscription.newNotification
+);
 
-A function accessing scalar needed from the schema object.
+for await (const notification of notifications) {
+  console.log("Got new notification:", notification);
+}
 
-```ts
-(schema: TSchema) => TData;
+// You may unsubscribe at any point
+<button onClick={() => notifications.unsubscribe()}>Unsubscribe</button>;
 ```
 
 ## Options
@@ -21,6 +21,42 @@ A function accessing scalar needed from the schema object.
 
 The cache policy to use for queries or mutations, defaults to `default`. You can
 read more about cache policy options in [Concepts](/concepts#cache-policy).
+
+### `extensions`
+
+A query extention object, carrying extra information to your query fetcher.
+
+```tsx
+subscribe(({ subscription }) => subscription.newNotification, {
+  extentions: {
+    authToken: "Bearer ...",
+  },
+});
+```
+
+```tsx {5,10} filename="gqty/index.ts"
+const queryFetcher = async ({
+  query,
+  variables,
+  operationName,
+  extensions,
+}) => {
+  const repsonse = await fetch("/graphql", {
+    method: "POST",
+    headers: {
+      authorization: extensions?.authToken,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+      operationName,
+    }),
+  });
+
+  return await response.json();
+};
+```
 
 ### `retryPolicy`
 
@@ -34,7 +70,8 @@ customize the retrying behavior, or disabling it altogether.
 | `number`                     | Enables auto retry with the default options and a custom `maxRetries` count. |
 | `{ maxRetries, retryDelay }` | Enables auto retry with custom options.                                      |
 
-When you specify retryPolicy as an object, the following properties are available.
+When you specify retryPolicy as an object, the following properties are
+available.
 
 #### `maxRetries`
 
@@ -55,8 +92,8 @@ If omitted, the error will be thrown and active subscriptions will be closed.
 
 ### `onSelect()`
 
-The `onSelect` callback is called when a selection is made by accessing
-the properties of query objects.
+The `onSelect` callback is called when a selection is made by accessing the
+properties of query objects.
 
 ```tsx
 onSelect?: (selection: Selection, cache?: CacheDataContainer) => void;
