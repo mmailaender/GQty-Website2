@@ -21,6 +21,7 @@ type User {
   email: String!
   image: Image!
   friends(first: Int, last: Int): [User!]!
+  updatedAt: Int!
 }
 
 type Image {
@@ -158,6 +159,15 @@ const data = await resolve(({ query: { me } }) => ({
 
 ## Mutation
 
+Mutations are similar to queries, but you use the `mutation` type instead of
+`query`.
+
+```graphql filename="schema.graphql"
+type Mutation {
+  updateProfile(firstName: String, lastName: String): User!
+}
+```
+
 <Tabs>
   <View paddingTop={5} paddingBottom={3}>
     <Tabs.List>
@@ -243,6 +253,12 @@ export const actions = {
 The resolve function wraps GraphQL subscriptions into a promise-like interface.
 Subscriptions created via `resolve()` will be closed upon receiving initial
 data, i.e. the first `next` message.
+
+```graphql filename="schema.graphql"
+type Subscription {
+  onProfileUpdate: User!
+}
+```
 
 <Tabs>
   <View paddingTop={5} paddingBottom={3}>
