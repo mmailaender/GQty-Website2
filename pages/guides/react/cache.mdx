@@ -77,7 +77,7 @@ recursion lays too much burden on each update.
 #### `normalization.identity`
 
 A function that returns a unique identity of the input object, return a falsy
-value if the value is not identifyable.
+value if the value is not identifiable.
 
 ```ts
 identity(value: CacheNode): string | undefined;
@@ -106,7 +106,7 @@ to stop further recursion and use the returned value as the new node, or return
 
 | Option                     | Description                                                                                                           |
 | :------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
-| `normalization.identity`   | A function that returns a unique identity of the input object, return a falsy value if the value is not identifyable. |
+| `normalization.identity`   | A function that returns a unique identity of the input object, return a falsy value if the value is not identifiable. |
 | `normalization.onConflict` | A function to resolve object conflicts when new data is being set to the cache.                                       |
 | `normalization.schemaKeys` | An object with GraphQL object type name as keys, and their fields to be used as identity.                             |
 
@@ -140,8 +140,8 @@ rendering, persistence should really only care about what is under `query` key.
 ### Normalization and Circular References
 
 In contrast with a common belief that caches without normalization tend to be
-simplier and less error prone, there is a pitfall of circular references
-when using in tandem with optimistic updates.
+simpler and less error prone, there is a pitfall of circular references when
+using in tandem with optimistic updates.
 
 Consider the following code segment:
 
