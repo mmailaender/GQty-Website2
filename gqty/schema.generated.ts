@@ -60518,7 +60518,7 @@ export interface Query {
     dryRun?: Maybe<Scalars["Boolean"]>;
   }) => Maybe<RateLimit>;
   /**
-   * Hack to workaround https://github.com/facebook/relay/issues/112 re-exposing the root query object
+   * Workaround for re-exposing the root query object. (Refer to https://github.com/facebook/relay/issues/112 for more information.)
    */
   relay: Query;
   /**
