@@ -1,20 +1,24 @@
 import Alert from "/components/Reshaped/Alert";
 
-# useMutation()
+# useMutation
 
-There are two ways to use the useMutation() hook, proxy mode and lazy mode.
+```tsx
+export default function MyComponent() {
+  const [login, { isLoading }] = useMutation(
+    (mutation, { username, password }) => {
+      return mutation.login({ username, password });
+    }
+  );
 
-```ts
-// Proxy mode
-function useMutation(
-  options?: Options
-): [GeneratedSchema["mutation"], MutationState];
-
-// Lazy mode
-function useMutation(
-  fn: MutationFunction,
-  options?: Options
-): [TriggerFunction, MutationState];
+  return (
+    <LoginForm
+      disabled={isLoading}
+      onSubmit={() => {
+        login({ username, password });
+      }}
+    />
+  );
+}
 ```
 
 ## Options

@@ -1,13 +1,18 @@
-# useQuery()
+# useQuery
 
 ```tsx
-function useQuery(options?: Options): GeneratedSchema["query"] & {
-  $state: {
-    isLoading: boolean;
-    error?: GQtyError;
-  };
-  $refetch: () => Promise<unknown>;
-};
+export default function MyComponent() {
+  const query = useQuery({ suspense: true });
+
+  return (
+    <>
+      {query.$state.isLoading && <Spinner />}
+
+      <Avatar user={query.me} />
+      <Button onClick={() => query.$refetch()}>Reload</Button>
+    </>
+  );
+}
 ```
 
 ## Options
@@ -16,6 +21,46 @@ function useQuery(options?: Options): GeneratedSchema["query"] & {
 
 The cache policy to use for the current query, defaults to `default`. You can
 read more about cache policy options in [Concepts](/concepts#cache-policy).
+
+### `extensions`
+
+A query extention object, carrying extra information to your query fetcher.
+
+```tsx
+export default function MyComponent() {
+  const query = useQuery({
+    extentions: {
+      authToken: "Bearer ...",
+    },
+  });
+
+  return <>{query.foo}</>;
+}
+```
+
+```tsx {5,10} filename="gqty/index.ts"
+const queryFetcher = async ({
+  query,
+  variables,
+  operationName,
+  extensions,
+}) => {
+  const repsonse = await fetch("/graphql", {
+    method: "POST",
+    headers: {
+      authorization: extensions?.authToken,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      query,
+      variables,
+      operationName,
+    }),
+  });
+
+  return await response.json();
+};
+```
 
 ### `fetchInBackground`
 
@@ -29,8 +74,8 @@ Defaults to `true`.
 
 ### `fetchPolicy`
 
-Legacy option kept for backward compatability, ignored when `cachePolicy` is
-in use.
+Legacy option kept for backward compatability, ignored when `cachePolicy` is in
+use.
 
 | Value               | Description                                   |
 | :------------------ | :-------------------------------------------- |
@@ -57,8 +102,8 @@ Optional GraphQL operation name, useful for debugging and testing.
 ### `prepare`
 
 Optional selection function to run before the first render happens, useful to
-skip the first render in Suspense mode. Encourages the isolation of [shareable
-fragments](/guides/react/write#fragments) for mutation, SSR and SSG.
+skip the first render in Suspense mode. Encourages the isolation of
+[shareable fragments](/guides/react/write#fragments) for mutation, SSR and SSG.
 
 ### `refetchInterval`
 
@@ -99,7 +144,8 @@ customize the retrying behavior, or disabling it altogether.
 | `number`                     | Enables auto retry with the default options and a custom `maxRetries` count. |
 | `{ maxRetries, retryDelay }` | Enables auto retry with custom options.                                      |
 
-When you specify retryPolicy as an object, the following properties are available.
+When you specify retryPolicy as an object, the following properties are
+available.
 
 #### `maxRetries`
 
@@ -135,13 +181,17 @@ The following additional properties are also included.
 A function that refetches the query, returns a promise that resolves to the
 query result.
 
-Depending on the freshness of the cache data being accessed, a fetch may or
-may not happen. Read more about refetching [here](/concepts#refetching).
+Depending on the freshness of the cache data being accessed, a fetch may or may
+not happen. Read more about refetching [here](/concepts#refetching).
 
 You may force a hard refetch by passing `true` as the first argument.
 
 ```tsx
 const { $refetch } = useQuery();
 
+// Soft refetch
+$refetch();
+
+// Hard refetch
 $refetch(true);
 ```
