@@ -1,7 +1,18 @@
-# useSubscription()
+# useSubscription
 
 ```tsx
-function useSubscription(options?: Options): GeneratedSchema["subscription"];
+export default function MyComponent() {
+  const subscription = useSubscripion({ renderThrottleDelay: 100 });
+
+  return (
+    <>
+      Last updated:
+      <Text>
+        {new Date(subscription.onUserUpdate.timestamp).toLocaleString()}
+      </Text>
+    </>
+  );
+}
 ```
 
 ## Options
