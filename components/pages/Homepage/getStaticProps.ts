@@ -1,8 +1,8 @@
 import { GQtyError } from "gqty";
 import { type GetStaticProps } from "next";
 import { resolve, type Organization, type User } from "../../../gqty";
-import { type MemberLike } from "../components/Member";
-import { type Props as HomepageProps } from "../components/pages/homepage";
+import { type MemberLike } from "../../Member";
+import { type Props as HomepageProps } from "../homepage";
 
 export type Props = { ssg: HomepageProps };
 
