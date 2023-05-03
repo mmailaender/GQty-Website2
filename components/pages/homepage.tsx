@@ -1,4 +1,5 @@
 import { type NextPage } from "next";
+import { useSSG } from "nextra/ssg";
 import { View } from "reshaped/bundle";
 import Contributors, { type Props as ContributorsProps } from "../Contributors";
 import HeroSection from "../HeroSection";
@@ -9,7 +10,9 @@ import USPWork from "./USPWrite";
 
 export type Props = Partial<ContributorsProps & RoadmapProps>;
 
-const Homepage: NextPage<Props> = ({ contributors, sponsorship }) => {
+const Homepage: NextPage = () => {
+  const { contributors, sponsorship } = useSSG() as Props;
+
   return (
     <View direction="column" align="center" className="bg-surface-900">
       <View
