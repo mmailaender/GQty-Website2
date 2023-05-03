@@ -46,11 +46,50 @@ export default async function ProfilePage() {
 }
 ```
 
-We recommend always exporting your selection function, read more about this
-in [Querying with Suspense](/guides/react/read#suspense);
+We recommend always exporting your selection function, read more about this in
+[Querying with Suspense](/guides/react/read#suspense);
 
 <Alert className="mt-5" title="Avoid hooks on Server Components">
   Hooks and Server Components do not play well together. Until there is a way
   for a seamless implementation for both, we recommend sticking with GQty core
   at the moment.
 </Alert>
+
+## Server Actions
+
+You can create seamless post request handlers with your Server Components using
+Server Actions.
+
+```tsx filename="app/profile/update/page.tsx"
+import { resolve } from "~/gqty";
+import { redirect } from "next/navigation";
+
+async function save(data: FormData) {
+  "use server";
+
+  try {
+    await resolve(({ mutation }) => {
+      const me = mutation.updateProfile({
+        firstName: data.get("firstName"),
+        lastName: data.get("lastName"),
+      });
+
+      return { ...me };
+    });
+
+    redirect("/profile");
+  } catch (e) {
+    redirect(`/profile?error=${e.message}`);
+  }
+}
+
+export default function Form() {
+  return (
+    <form action={save}>
+      {/* Form fields skipped for brevity... */}
+
+      <input type="submit" value="save" />
+    </form>
+  );
+}
+```
