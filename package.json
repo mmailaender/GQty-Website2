@@ -32,10 +32,12 @@
     "reshaped": "file:node_modules_offline/reshaped-react-v1.14.0.tgz"
   },
   "devDependencies": {
+    "@gqty/react": "3.0.0-alpha-f9dbf6e8.0",
     "@twind/next": "^1.0.10",
     "@types/node": "^18.16.5",
     "@types/react": "^18.2.5",
     "autoprefixer": "^10.4.14",
+    "gqty": "3.0.0-alpha-f9dbf6e8.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
