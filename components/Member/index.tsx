@@ -1,21 +1,20 @@
-import {
-  View,
-  Text,
-  Avatar,
-  Tooltip,
-  TooltipProps,
-  Actionable,
-  ActionableProps,
-} from "reshaped/bundle";
-import type * as G from "reshaped/types/global";
+import { type FunctionComponent } from "react";
+import { Actionable, Avatar, Text, View } from "reshaped/bundle";
 
-interface MyComponentProps {
+export type MemberLike = {
+  id: string;
   name: string;
   image: string;
   link: string;
-}
+};
 
-const Members = ({ name, image, link }) => {
+export type Props = {
+  name: string;
+  image: string;
+  link: string;
+};
+
+const Member: FunctionComponent<Props> = ({ name, image, link }) => {
   return (
     <Actionable href={link} attributes={{ role: "button", target: "_blank" }}>
       <View direction="column" align="center" gap={2} position="relative">
@@ -46,7 +45,7 @@ const Members = ({ name, image, link }) => {
             borderRadius="medium"
           >
             <Text
-              variant="body-medium-2"
+              variant="caption-1"
               align="center"
               className="text-surface-900"
             >
@@ -59,4 +58,4 @@ const Members = ({ name, image, link }) => {
   );
 };
 
-export default Members;
+export default Member;

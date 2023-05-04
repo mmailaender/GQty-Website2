@@ -1,7 +1,23 @@
+import { type FunctionComponent } from "react";
 import { Button, Progress, Text, Timeline, View } from "reshaped/bundle";
 import Check from "../Icons/Play/Check";
 
-const Roadmap = () => {
+export type Props = {
+  sponsorship: {
+    totalCount: number;
+    totalRecurringMonthlyPriceInCents: number;
+  };
+};
+
+const priceFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  currencyDisplay: "narrowSymbol",
+});
+
+const Roadmap: FunctionComponent<Props> = ({
+  sponsorship: { totalCount, totalRecurringMonthlyPriceInCents },
+}) => {
   return (
     <View
       direction={{ xl: "row", l: "row", m: "column", s: "column" }}
@@ -101,9 +117,7 @@ const Roadmap = () => {
                 </Timeline>
               </View.Item>
               {/* In Progress */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
                 <Timeline>
@@ -224,9 +238,7 @@ const Roadmap = () => {
                 </Timeline>
               </View.Item>
               {/* In Progress */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
                 <Timeline>
@@ -399,9 +411,7 @@ const Roadmap = () => {
                 </Timeline>
               </View.Item>
               {/* ToDo */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
               {/* In Progress */}
               <View.Item columns={4}>
                 <Timeline>
@@ -433,9 +443,7 @@ const Roadmap = () => {
                 </Timeline>
               </View.Item>
               {/* ToDo */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
             </View>
           </View>
           {/* Fetch DX */}
@@ -722,9 +730,7 @@ const Roadmap = () => {
                 </Timeline>
               </View.Item>
               {/* ToDo */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
             </View>
           </View>
           {/* Streaming */}
@@ -882,13 +888,9 @@ const Roadmap = () => {
             {/* Tasks */}
             <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
               {/* In Progress */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
                 <Timeline>
@@ -1043,13 +1045,9 @@ const Roadmap = () => {
             {/* Tasks */}
             <View direction="row" paddingTop={4} gap={2}>
               {/* Done */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
               {/* In Progress */}
-              <View.Item columns={4}>
-                {/* Placeholder */}
-              </View.Item>
+              <View.Item columns={4}>{/* Placeholder */}</View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
                 <Timeline>
@@ -1106,7 +1104,11 @@ const Roadmap = () => {
                 <View direction="row" gap={1} align="baseline" paddingTop={3}>
                   <View.Item columns={6}>
                     <View>
-                      <Text variant="title-2">$214</Text>
+                      <Text variant="title-2">
+                        {priceFormatter.format(
+                          totalRecurringMonthlyPriceInCents / 100
+                        )}
+                      </Text>
                     </View>
                   </View.Item>
                   <View.Item columns={6}>
@@ -1145,7 +1147,7 @@ const Roadmap = () => {
                   Join Us
                 </Button>
                 <Text variant="caption-1" color="neutral-faded" align="center">
-                  3 people funded
+                  {totalCount} people funded
                 </Text>
               </View>
             </View>
