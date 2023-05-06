@@ -1,13 +1,18 @@
+import { type NextPage } from "next";
+import { useSSG } from "nextra/ssg";
 import { View } from "reshaped/bundle";
-import Contributor from "../Contributor";
+import Contributors, { type Props as ContributorsProps } from "../Contributors";
 import HeroSection from "../HeroSection";
 import Playground from "../Playground";
-import Roadmap from "../Roadmap";
-import USP from "../USP";
+import Roadmap, { type Props as RoadmapProps } from "../Roadmap";
 import USPRead from "./USPRead";
 import USPWork from "./USPWrite";
 
-const Homepage = () => {
+export type Props = Partial<ContributorsProps & RoadmapProps>;
+
+const Homepage: NextPage = () => {
+  const { contributors, sponsorship } = useSSG() as Props;
+
   return (
     <View direction="column" align="center" className="bg-surface-900">
       <View
@@ -27,24 +32,24 @@ const Homepage = () => {
           <USPRead />
           <USPWork />
           {/* <USP
-          direction="row"
-          title="Read"
-          content="Simply read from the query object, and GQty fetches missing data on-the-fly!"
-        />
-        <USP
-          direction="row-reverse"
-          title="Write"
-          content="You have full control when mutations are sent, with optimistic updates and more!"
-        />
-        <USP
-          direction="row"
-          title="Performance optimized"
-          content="Normalized cache built-In, which you can also use quite easily for state
-        management!"
-        /> */}
+              direction="row"
+              title="Read"
+              content="Simply read from the query object, and GQty fetches missing data on-the-fly!"
+            />
+            <USP
+              direction="row-reverse"
+              title="Write"
+              content="You have full control when mutations are sent, with optimistic updates and more!"
+            />
+            <USP
+              direction="row"
+              title="Performance optimized"
+              content="Normalized cache built-In, which you can also use quite easily for state
+            management!"
+            /> */}
           <Playground />
-          <Contributor />
-          <Roadmap />
+          <Contributors contributors={contributors} />
+          <Roadmap sponsorship={sponsorship} />
         </View>
       </View>
     </View>
