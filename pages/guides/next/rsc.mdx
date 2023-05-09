@@ -33,16 +33,9 @@ export const prepare = ({
 };
 
 export default async function ProfilePage() {
-  const { data, errors } = await resolve(({ query: { me } }) => {
-    prepare(me);
-  });
+  const user = await resolve(({ query: { me } }) => prepare(me));
 
-  // Error boundaries
-  if (errors) {
-    throw GQtyError.fromGraphQLErrors(errors);
-  }
-
-  return <Profile user={data?.me} />;
+  return <Profile user={user} />;
 }
 ```
 
