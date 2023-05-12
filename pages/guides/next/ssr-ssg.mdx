@@ -2,9 +2,9 @@ import Alert from "/components/Reshaped/Alert";
 
 # SSR & SSG
 
-GQty handles Server Side Rendering (SSR) and Static Site Generation (SSG) out
-of the box. Although these two concepts differs a little bit in Next.js,
-data fetching in GQty is very much the same thing.
+GQty handles Server Side Rendering (SSR) and Static Site Generation (SSG) out of
+the box. Although these two concepts differs a little bit in Next.js, data
+fetching in GQty is very much the same thing.
 
 When fetching data at server side, you use `prepareReactRender` and
 `useHydrateCache`.
@@ -12,10 +12,10 @@ When fetching data at server side, you use `prepareReactRender` and
 The following example shows a simple page in Next.js 13.
 
 ```tsx filename="pages/user/[id].tsx"
+import { type FC } from "react";
 import { type PropsWithServerCache } from "@gqty/react";
 import { useRouter } from "next/router";
 import { prepareReactRender, useHydrateCache, useQuery } from "../gqty";
-import Profile from "../components/Profile";
 
 type Props = PropsWithServerCache<{
   // Other page props here.
@@ -23,9 +23,8 @@ type Props = PropsWithServerCache<{
 
 // For SSR, just use `getServerSideProps` instead of `getStaticProps`.
 export const getStaticProps = async (context) => {
-  const { user } = useQuery();
   const { cacheSnapshot } = await prepareReactRender(
-    <Profile user={user({ id: context.params.id })} />
+    <UserProfile id={context.params.id} />
   );
 
   return {
@@ -35,18 +34,24 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export default function Page({ cacheSnapshot }: Props) {
+export default function ProfilePage({ cacheSnapshot }: Props) {
   const router = useRouter();
-  const { user } = useQuery();
 
   useHydrateCache({ cacheSnapshot });
 
+  return <UserProfile id={router.query.id} />;
+}
+
+const UserProfile: FC<{ id: string }> = ({ id }) => {
+  const user = useQuery().user({ id });
+
   return (
     <>
-      <Profile user={user({ id: router.query.id })} />
+      <img alt={"Avatar of " + user.name} src={user.profileImage} />
+      <p>{user.name}</p>
     </>
   );
-}
+};
 ```
 
 <Alert title="Suspense is supported">
@@ -60,11 +65,11 @@ export default function Page({ cacheSnapshot }: Props) {
 `prepareReactRender` renders your app twice for data fetching, which is
 necessary without a separate selection function.
 
-When your app has grown out of the period of rapid iteration, it is a good
-idea to start factoring out selection functions and skip the first render.
+When your app has grown out of the period of rapid iteration, it is a good idea
+to start factoring out selection functions and skip the first render.
 
-See [Suspense on Data Fetching](/guides/react/read#suspense-on-data-fetching)
-on how to export a reusable selection function.
+See [Suspense on Data Fetching](/guides/react/read#suspense-on-data-fetching) on
+how to export a reusable selection function.
 
 ```tsx filename="pages/user/[id].tsx"
 import { resolve } from "../gqty";
