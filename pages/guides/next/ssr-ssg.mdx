@@ -12,10 +12,10 @@ When fetching data at server side, you use `prepareReactRender` and
 The following example shows a simple page in Next.js 13.
 
 ```tsx filename="pages/user/[id].tsx"
+import { type FC } from "react";
 import { type PropsWithServerCache } from "@gqty/react";
 import { useRouter } from "next/router";
 import { prepareReactRender, useHydrateCache, useQuery } from "../gqty";
-import Profile from "../components/Profile";
 
 type Props = PropsWithServerCache<{
   // Other page props here.
@@ -23,9 +23,8 @@ type Props = PropsWithServerCache<{
 
 // For SSR, just use `getServerSideProps` instead of `getStaticProps`.
 export const getStaticProps = async (context) => {
-  const { user } = useQuery();
   const { cacheSnapshot } = await prepareReactRender(
-    <Profile user={user({ id: context.params.id })} />
+    <UserProfile id={context.params.id} />
   );
 
   return {
@@ -35,18 +34,24 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export default function Page({ cacheSnapshot }: Props) {
+export default function ProfilePage({ cacheSnapshot }: Props) {
   const router = useRouter();
-  const { user } = useQuery();
 
   useHydrateCache({ cacheSnapshot });
 
+  return <UserProfile id={router.query.id} />;
+}
+
+const UserProfile: FC<{ id: string }> = ({ id }) => {
+  const user = useQuery().user({ id });
+
   return (
     <>
-      <Profile user={user({ id: router.query.id })} />
+      <img alt={"Avatar of " + user.name} src={user.profileImage} />
+      <p>{user.name}</p>
     </>
   );
-}
+};
 ```
 
 <Alert title="Suspense is supported">
