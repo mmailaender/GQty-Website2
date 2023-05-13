@@ -77,11 +77,13 @@ Consider soft refetches a cache validity check instead, this allows more
 frequent refetching strategies. Our `useQuery()` hook has options for automatic
 refetches on window focus, network reconnect and even periodic attempts.
 
+To manually trigger a soft refetch, use `useQuery().$refetch(false)` in React.
+
 ### Hard Refetch
 
 Users may specify `no-cache` or `no-store` as the cache policy in core, or
-simply use `query.$refetch(true)` in React to bypass a fresh cache and forces a
-network request.
+simply use `useQuery().$refetch(true)` in React to bypass a fresh cache and
+forces a network request.
 
 ## Cache Policy
 
