@@ -76,18 +76,18 @@ import { resolve } from "../gqty";
 import { prepare } from "./components/Profile";
 
 export const getStaticProps = async (context) => {
-  const { data } = await resolve(({ query: { user } }) =>
+  const user = await resolve(({ query: { user } }) =>
     prepare(user({ id: context.params.id }))
   );
 
   return {
     props: {
-      data,
+      user,
     },
   };
 };
 
-export default function Page({ data }) {
+export default function Page({ user }) {
   // ... Skipped for brevity
 }
 ```
