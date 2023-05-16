@@ -70,8 +70,8 @@ devDependencies:
     specifier: ^5.0.4
     version: 5.0.4
   vercel:
-    specifier: ^29.3.0
-    version: 29.3.0(@types/node@18.16.10)
+    specifier: ^29.3.1
+    version: 29.3.1(@types/node@18.16.10)
 
 packages:
 
@@ -8512,8 +8512,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vercel@29.3.0(@types/node@18.16.10):
-    resolution: {integrity: sha512-6YKCh+okPVcAOqNq9V3mK1j8kdVgNm4F7PTweVrtupEAX1F1V0cntcbtGbLAdGaONTA6PHxmeik9LnplInSW0Q==}
+  /vercel@29.3.1(@types/node@18.16.10):
+    resolution: {integrity: sha512-mvl745tjMRdlAzema2s72Hg1o9g6pgqRsGyID59HJqviPJj5+R/k42OQuWVwGR4wQtPT4lDijINusJruR7jPvQ==}
     engines: {node: '>= 14'}
     hasBin: true
     requiresBuild: true
