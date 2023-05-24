@@ -35,7 +35,7 @@
     "@gqty/react": "3.0.0-alpha-f9dbf6e8.0",
     "@twind/next": "^1.0.10",
     "@types/node": "^18.16.14",
-    "@types/react": "^18.2.6",
+    "@types/react": "^18.2.7",
     "autoprefixer": "^10.4.14",
     "gqty": "3.0.0-alpha-f9dbf6e8.0",
     "postcss": "^8.4.23",
