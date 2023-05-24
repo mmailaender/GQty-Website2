@@ -25,7 +25,7 @@ const config: DocsThemeConfig = {
     link: "https://github.com/gqty-dev/gqty",
   },
   chat: {
-    link: "https://discord.gg/NZ9U3XjW",
+    link: "https://discord.gg/Y5zSsGsPZB",
   },
   darkMode: false,
   nextThemes: {
