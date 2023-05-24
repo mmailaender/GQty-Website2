@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:themes": "reshaped theming --output themes"
+    "build:themes": "reshaped theming --output themes",
+    "vercel:link": "vercel link --yes --token $VERCEL_TOKEN --scope gqty",
+    "vercel:pull": "vercel env pull --token $VERCEL_TOKEN --scope gqty"
   },
   "repository": {
     "type": "git",

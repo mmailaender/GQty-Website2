@@ -4,9 +4,9 @@ tasks:
       pnpm config set auto-install-peers true
     init: |
       pnpm i
-      vercel login --github
-      vercel env pull
     command: |
+      pnpm vercel:link
+      pnpm vercel:pull
       pnpm dev
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
