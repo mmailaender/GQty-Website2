@@ -25,6 +25,13 @@
     "editor.lineHighlightBackground": "#1073cf2d"
   },
 
+  // Intellisense - Complete function calls: .map(x => x)
+  "javascript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.completeFunctionCalls": true,
+
+  // Custom VScode Icon Theme
+  "workbench.iconTheme": "material-icon-theme",
+
   // MDX IntelliSense
   "mdx.experimentalLanguageServer": true
 }
