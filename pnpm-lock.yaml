@@ -34,8 +34,8 @@ dependencies:
 
 devDependencies:
   '@gqty/react':
-    specifier: 3.0.0-alpha-f9dbf6e8.0
-    version: 3.0.0-alpha-f9dbf6e8.0(gqty@3.0.0-alpha-f9dbf6e8.0)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 3.0.0-alpha-4a2eebdf.0
+    version: 3.0.0-alpha-4a2eebdf.0(gqty@3.0.0-alpha-4a2eebdf.0)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@13.4.3)(react@18.2.0)(twind@0.16.19)(typescript@5.0.4)
@@ -49,8 +49,8 @@ devDependencies:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.23)
   gqty:
-    specifier: 3.0.0-alpha-f9dbf6e8.0
-    version: 3.0.0-alpha-f9dbf6e8.0(graphql@16.6.0)
+    specifier: 3.0.0-alpha-4a2eebdf.0
+    version: 3.0.0-alpha-4a2eebdf.0(graphql@16.6.0)
   postcss:
     specifier: ^8.4.23
     version: 8.4.23
@@ -1516,11 +1516,11 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@gqty/react@3.0.0-alpha-f9dbf6e8.0(gqty@3.0.0-alpha-f9dbf6e8.0)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-bhH82S0yp42vr324fjs5gZS1jB8uzv/UgaScw6lbS9q+VhHQWyQy3/BGsuWWH5hd/ufqHXNGmeIR0/qTekBrvA==}
+  /@gqty/react@3.0.0-alpha-4a2eebdf.0(gqty@3.0.0-alpha-4a2eebdf.0)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-O7+nTepRJH2llHROIwEQpoCamv4WNKuKGjr3uKX7+flJuPBPX96SMCkVsAig10ovx0EYCXkfhM+x8kf//inHaw==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
-      gqty: ^3.0.0-alpha-f9dbf6e8.0
+      gqty: ^3.0.0-alpha-4a2eebdf.0
       graphql: '*'
       graphql-sse: ^2.1.0
       graphql-ws: ^5.11.3
@@ -1533,7 +1533,7 @@ packages:
         optional: true
     dependencies:
       '@react-hookz/web': 23.0.0(react-dom@18.2.0)(react@18.2.0)
-      gqty: 3.0.0-alpha-f9dbf6e8.0(graphql@16.6.0)
+      gqty: 3.0.0-alpha-4a2eebdf.0(graphql@16.6.0)
       graphql: 16.6.0
       multidict: 1.0.6
       p-debounce: 4.0.0
@@ -4616,8 +4616,8 @@ packages:
       responselike: 2.0.1
     dev: true
 
-  /gqty@3.0.0-alpha-f9dbf6e8.0(graphql@16.6.0):
-    resolution: {integrity: sha512-t9sTsVlew3FIcjxCWjzKz9/wElRpVT+z1vxBaocu0wps5f34Np/3I+VQhg0nekNXtOq61J3m9Jq3RWc/n7lYwA==}
+  /gqty@3.0.0-alpha-4a2eebdf.0(graphql@16.6.0):
+    resolution: {integrity: sha512-/nHzpybcfe1lOA0sof34fKK4lIZfmlDwGEyjRm+csI5Fqrqn1+wjzhbxJGWv3/7VSG4fttBpxg4h7hikCsb5MA==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
       graphql: '*'
@@ -5627,7 +5627,7 @@ packages:
     dev: true
 
   /media-typer@0.3.0:
-    resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
+    resolution: {integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=}
     engines: {node: '>= 0.6'}
     dev: true
 
