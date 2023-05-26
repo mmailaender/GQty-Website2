@@ -7,6 +7,7 @@ import Playground from "../Playground";
 import Roadmap, { type Props as RoadmapProps } from "../Roadmap";
 import USPRead from "./USPRead";
 import USPWork from "./USPWrite";
+import VideoSection from "../VideoSection";
 
 export type Props = Partial<ContributorsProps & RoadmapProps>;
 
@@ -52,6 +53,7 @@ const Homepage: NextPage = () => {
           <Roadmap sponsorship={sponsorship} />
         </View>
       </View>
+      <VideoSection/>
     </View>
   );
 };
