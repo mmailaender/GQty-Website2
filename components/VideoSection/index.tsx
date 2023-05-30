@@ -26,17 +26,24 @@ const VideoSection = () => {
       </div>
 
        {/* content */}
-      <div className=" max-w-[1108px] w-full grid grid-cols-12 gap-6 pt-20">
+      <div className=" max-w-[1108px] w-full grid grid-cols-12 gap-6 pt-14 pb-14">
 
         {/* course title */}
-        <div className="col-start-1 col-span-3">
-          <View gap={3}>
+        <div className="col-start-1 col-span-3 pt-6">
+          <View gap={1}>
           <Text variant="featured-1" weight="bold" >GQty Basics</Text>
           <Text variant="body-2" weight="medium" className="text-surface-200" >9 Tutorials</Text>
           </View>
         </div>
-
-        <div className=" col-start-5 col-span-8"><Tutorial/></div>
+        
+        {/* tutorials */}
+        <div className=" col-start-5 col-span-8">
+          <div className="flex flex-col divide-y divide-surface-700 gap-6">
+           <Tutorial/>
+           <Tutorial/>
+           <Tutorial/>
+          </div>
+        </div>
      
       </div>
 

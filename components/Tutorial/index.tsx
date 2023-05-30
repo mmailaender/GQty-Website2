@@ -14,14 +14,14 @@ import VideoBox from "../VideoBox";
 const Tutorial = () => {
   return (
     <>    
-    <div className="grid grid-cols-8 gap-6">
+    <div className="grid grid-cols-8 gap-6 pt-6 ">
       {/* video */}
       <div className="col-start-1 col-span-3">
         <VideoBox/>
       </div>
 
       {/* info */}
-      <div className="col-start-4 col-span-5 h-full">
+      <div className="col-start-4 col-span-5 h-full py-2">
         <div className="flex flex-col justify-between h-full">
           {/* upper part */}
           <div className="flex flex-col gap-1">
@@ -37,9 +37,9 @@ const Tutorial = () => {
 
           {/* lower part */}
           <div>
-            <View direction="row" align="center" gap={2} >
-              <Icon svg={<Clock/>} size={5}/>
-              <Text variant="body-2" weight="bold" className="text-surface-200">2 mins</Text>
+            <View direction="row" align="center" gap={1} >
+              <Icon svg={<Clock/>} size={4}/>
+              <Text variant="body-3" weight="bold" className="text-surface-200">2 mins</Text>
             </View>
           </div>
         </div>
