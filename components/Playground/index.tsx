@@ -19,23 +19,23 @@ const Playground = () => {
     >
       <View direction="row" className="absolute opacity-50 filter blur-sm">
         <Text
-          variant="display-3"
+          variant="title-4"
           className="bg-clip-text text-transparent bg-gradient-to-r from-[#AB087A] to-[#F937BF]"
         >
           Play
         </Text>
-        <Text as="span" variant="display-3">
+        <Text as="span" variant="title-4">
           ground
         </Text>
       </View>
       <View direction="row">
         <Text
-          variant="display-3"
+          variant="title-4"
           className="bg-clip-text text-transparent bg-gradient-to-r from-[#AB087A] to-[#F937BF]"
         >
           Play
         </Text>
-        <Text as="span" variant="display-3">
+        <Text as="span" variant="title-4">
           ground
         </Text>
       </View>

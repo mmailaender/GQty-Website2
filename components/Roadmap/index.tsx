@@ -39,7 +39,7 @@ const Roadmap: FunctionComponent<Props> = ({
           paddingBottom={4}
           position="relative"
         >
-          <Text variant="title-2" as="h2">
+          <Text variant="featured-2" weight="bold" as="h2">
             Our Roadmap
           </Text>
         </View>
@@ -53,21 +53,21 @@ const Roadmap: FunctionComponent<Props> = ({
         >
           <View.Item columns={4}>
             <View>
-              <Text color="neutral-faded" variant="body-strong-2">
+              <Text color="neutral-faded" variant="body-1" weight="bold">
                 Shipped
               </Text>
             </View>
           </View.Item>
           <View.Item columns={4}>
             <View>
-              <Text color="neutral-faded" variant="body-strong-2">
+              <Text color="neutral-faded" variant="body-1" weight="bold">
                 In Progress
               </Text>
             </View>
           </View.Item>
           <View.Item columns={4}>
             <View>
-              <Text color="neutral-faded" variant="body-strong-2">
+              <Text color="neutral-faded" variant="body-1" weight="bold">
                 To Do
               </Text>
             </View>
@@ -78,7 +78,7 @@ const Roadmap: FunctionComponent<Props> = ({
         <View direction="column" gap={2}>
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">GraphQL Functionality</Text>
+              <Text variant="body-2" weight="bold">GraphQL Functionality</Text>
             </View>
 
             {/* GraphQL Functionality */}
@@ -108,7 +108,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Scoped Query</Text>
+                      <Text variant="body-3" weight="medium">Scoped Query</Text>
                       <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
                       </Text>
@@ -141,7 +141,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Directives</Text>
+                      <Text variant="body-3" weight="medium">Directives</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -164,7 +164,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Custom Scalars</Text>
+                      <Text variant="body-3" weight="medium">Custom Scalars</Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -174,7 +174,7 @@ const Roadmap: FunctionComponent<Props> = ({
           {/* Getting Started Experience */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Getting Started Experience</Text>
+              <Text variant="body-2" weight="bold">Getting Started Experience</Text>
             </View>
 
             {/* Tasks */}
@@ -204,7 +204,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Website Relaunch</Text>
+                      <Text variant="body-3" weight="medium">Website Relaunch</Text>
                       <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
                       </Text>
@@ -232,7 +232,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Interactive CLI</Text>
+                      <Text variant="body-3" weight="medium">Interactive CLI</Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -262,7 +262,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Directives</Text>
+                      <Text variant="body-3" weight="medium">Directives</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -285,7 +285,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Custom Scalars</Text>
+                      <Text variant="body-3" weight="medium">Custom Scalars</Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -295,7 +295,7 @@ const Roadmap: FunctionComponent<Props> = ({
           {/* Getting Started Experience */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Getting Started Experience</Text>
+              <Text variant="body-2" weight="bold">Getting Started Experience</Text>
             </View>
 
             {/* Tasks */}
@@ -325,7 +325,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Website Relaunch</Text>
+                      <Text variant="body-3" weight="medium">Website Relaunch</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -350,7 +350,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Interactive CLI</Text>
+                      <Text variant="body-3" weight="medium">Interactive CLI</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -375,7 +375,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Watch mode in CLI</Text>
+                      <Text variant="body-3" weight="medium">Watch mode in CLI</Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -403,7 +403,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">
+                      <Text variant="body-3" weight="medium">
                         Integration examples Grafbase, Hasura, Svelte...
                       </Text>
                     </View>
@@ -435,7 +435,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">
+                      <Text variant="body-3" weight="medium">
                         Integration examples Grafbase, Hasura, Svelte...
                       </Text>
                     </View>
@@ -449,7 +449,7 @@ const Roadmap: FunctionComponent<Props> = ({
           {/* Fetch DX */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Fetch DX</Text>
+              <Text variant="body-2" weight="bold">Fetch DX</Text>
             </View>
 
             {/* Tasks */}
@@ -479,7 +479,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">
+                      <Text variant="body-3" weight="medium">
                         Add $refetch to useQuery
                       </Text>
                       {/* <Text variant="caption-1" color="neutral-faded">
@@ -509,7 +509,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">
+                      <Text variant="body-3" weight="medium">
                         Refetch on Window Focus in CLI
                       </Text>
                       <Text variant="caption-1" color="neutral-faded">
@@ -539,7 +539,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Refetch on Reconnect</Text>
+                      <Text variant="body-3" weight="medium">Refetch on Reconnect</Text>
                       <Text variant="caption-1" color="neutral-faded">
                         Jan 26, 2022
                       </Text>
@@ -567,7 +567,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Refetch on Mount</Text>
+                      <Text variant="body-3" weight="medium">Refetch on Mount</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -592,7 +592,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Support SSR, SSG, RSC</Text>
+                      <Text variant="body-3" weight="medium">Support SSR, SSG, RSC</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -617,7 +617,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Support SSR, SSG, RSC</Text>
+                      <Text variant="body-3" weight="medium">Support SSR, SSG, RSC</Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -645,7 +645,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Automatic Polling</Text>
+                      <Text variant="body-3" weight="medium">Automatic Polling</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -668,7 +668,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">
+                      <Text variant="body-3" weight="medium">
                         Cache with expiry and SWR
                       </Text>
                     </View>
@@ -699,7 +699,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Automatic Polling</Text>
+                      <Text variant="body-3" weight="medium">Automatic Polling</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -722,7 +722,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">
+                      <Text variant="body-3" weight="medium">
                         Cache with expiry and SWR
                       </Text>
                     </View>
@@ -736,7 +736,7 @@ const Roadmap: FunctionComponent<Props> = ({
           {/* Streaming */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Fetch DX</Text>
+              <Text variant="body-2" weight="bold">Fetch DX</Text>
             </View>
 
             {/* Tasks */}
@@ -766,7 +766,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">
+                      <Text variant="body-3" weight="medium">
                         New subscription client
                       </Text>
                     </View>
@@ -796,7 +796,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Streaming SSR</Text>
+                      <Text variant="body-3" weight="medium">Streaming SSR</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -819,7 +819,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">
+                      <Text variant="body-3" weight="medium">
                         Cache with expiry and SWR
                       </Text>
                     </View>
@@ -882,7 +882,7 @@ const Roadmap: FunctionComponent<Props> = ({
           {/* Native JS Library Support */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Native JS Library Support</Text>
+              <Text variant="body-2" weight="bold">Native JS Library Support</Text>
             </View>
 
             {/* Tasks */}
@@ -914,7 +914,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">React Native Hermes</Text>
+                      <Text variant="body-3" weight="medium">React Native Hermes</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -937,7 +937,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Svelte SvelteKit</Text>
+                      <Text variant="body-3" weight="medium">Svelte SvelteKit</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -960,7 +960,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Preact with Signals</Text>
+                      <Text variant="body-3" weight="medium">Preact with Signals</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -983,7 +983,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Vue Nuxt</Text>
+                      <Text variant="body-3" weight="medium">Vue Nuxt</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -1006,7 +1006,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Fresh</Text>
+                      <Text variant="body-3" weight="medium">Fresh</Text>
                     </View>
                   </Timeline.Item>
                   <Timeline.Item
@@ -1029,7 +1029,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Solid.js</Text>
+                      <Text variant="body-3" weight="medium">Solid.js</Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -1039,7 +1039,7 @@ const Roadmap: FunctionComponent<Props> = ({
           {/* DIY Extension */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-strong-2">Extend GQty By Yourself</Text>
+              <Text variant="body-2" weight="bold">Extend GQty By Yourself</Text>
             </View>
 
             {/* Tasks */}
@@ -1071,7 +1071,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       width="100%"
                       paddingBottom={2}
                     >
-                      <Text variant="body-medium-2">Plugin System</Text>
+                      <Text variant="body-3" weight="medium">Plugin System</Text>
                     </View>
                   </Timeline.Item>
                 </Timeline>
@@ -1095,7 +1095,7 @@ const Roadmap: FunctionComponent<Props> = ({
               {/* Card title */}
               <View direction="column" gap={1}>
                 <Text variant="caption-1">Funding goal</Text>
-                <Text variant="title-2">Working full time on GQty</Text>
+                <Text variant="featured-2" weight="bold">Working full time on GQty</Text>
               </View>
 
               {/* Progress section */}
@@ -1104,7 +1104,7 @@ const Roadmap: FunctionComponent<Props> = ({
                 <View direction="row" gap={1} align="baseline" paddingTop={3}>
                   <View.Item columns={6}>
                     <View>
-                      <Text variant="title-2">
+                      <Text variant="featured-2" weight="bold">
                         {priceFormatter.format(
                           totalRecurringMonthlyPriceInCents / 100
                         )}

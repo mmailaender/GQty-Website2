@@ -11,7 +11,7 @@ const Contributors: NextPage<Props> = ({ contributors, ...props }) => {
     <View gap={12}>
       <View align="center" justify="start">
         <Text
-          variant="display-3"
+          variant="title-4"
           align="center"
           as="h2"
           attributes={{ id: "contributors" }}

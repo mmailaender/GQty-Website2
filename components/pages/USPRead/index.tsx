@@ -21,7 +21,7 @@ const USPRead = () => {
           <View direction="column" height="100%">
             <View.Item grow>
               <View direction="column" paddingTop={5} gap={6}>
-                <Text variant="title-1">Read</Text>
+                <Text variant="featured-1" weight="bold">Read</Text>
                 <Text variant="body-1" className="text-surface-200">
                   Fetch data by writing simple type-based orientated code, and
                   GQty creates the GraphQL query on the fly.
