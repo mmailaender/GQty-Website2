@@ -235,10 +235,61 @@ const Roadmap: FunctionComponent<Props> = ({
                       <Text variant="body-3" weight="medium">Interactive CLI</Text>
                     </View>
                   </Timeline.Item>
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        backgroundColor="primary"
+                        width={5}
+                        height={5}
+                      >
+                        <Check />
+                      </View>
+                    }
+                  >
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-3" weight="medium">Watch mode in CLI</Text>
+                    </View>
+                  </Timeline.Item>
                 </Timeline>
               </View.Item>
               {/* In Progress */}
-              <View.Item columns={4}>{/* Placeholder */}</View.Item>
+              <View.Item columns={4}> <Timeline>
+                  <Timeline.Item
+                    markerSlot={
+                      <View
+                        borderRadius="circular"
+                        direction="column"
+                        align="center"
+                        justify="center"
+                        overflow="hidden"
+                        className="border rounded-full border-warning"
+                        width={5}
+                        height={5}
+                      ></View>
+                    }
+                  >
+                    <View
+                      direction="column"
+                      gap={1}
+                      width="100%"
+                      paddingBottom={2}
+                    >
+                      <Text variant="body-3" weight="medium">
+                        Integration examples Grafbase, Hasura, Svelte...
+                      </Text>
+                    </View>
+                  </Timeline.Item>
+                </Timeline></View.Item>
               {/* ToDo */}
               <View.Item columns={4}>
                 <Timeline>
@@ -292,160 +343,7 @@ const Roadmap: FunctionComponent<Props> = ({
               </View.Item>
             </View>
           </View>
-          {/* Getting Started Experience */}
-          <View padding={3} className="border rounded-lg  border-surface-800">
-            <View paddingBottom={2}>
-              <Text variant="body-2" weight="bold">Getting Started Experience</Text>
-            </View>
-
-            {/* Tasks */}
-            <View direction="row" paddingTop={4}>
-              {/* Done */}
-              <View.Item columns={4}>
-                <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        backgroundColor="primary"
-                        width={5}
-                        height={5}
-                      >
-                        <Check />
-                      </View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-3" weight="medium">Website Relaunch</Text>
-                    </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        backgroundColor="primary"
-                        width={5}
-                        height={5}
-                      >
-                        <Check />
-                      </View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-3" weight="medium">Interactive CLI</Text>
-                    </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        backgroundColor="primary"
-                        width={5}
-                        height={5}
-                      >
-                        <Check />
-                      </View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-3" weight="medium">Watch mode in CLI</Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline>
-              </View.Item>
-              {/* In Progress */}
-              <View.Item columns={4}>
-                <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-3" weight="medium">
-                        Integration examples Grafbase, Hasura, Svelte...
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline>
-              </View.Item>
-              {/* ToDo */}
-              <View.Item columns={4}>{/* Placeholder */}</View.Item>
-              {/* In Progress */}
-              <View.Item columns={4}>
-                <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-3" weight="medium">
-                        Integration examples Grafbase, Hasura, Svelte...
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline>
-              </View.Item>
-              {/* ToDo */}
-              <View.Item columns={4}>{/* Placeholder */}</View.Item>
-            </View>
-          </View>
+        
           {/* Fetch DX */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
@@ -676,58 +574,9 @@ const Roadmap: FunctionComponent<Props> = ({
                 </Timeline>
               </View.Item>
 
-              {/* In Progress */}
+              {/* To Do */}
               <View.Item columns={4}>
-                <Timeline>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-3" weight="medium">Automatic Polling</Text>
-                    </View>
-                  </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-3" weight="medium">
-                        Cache with expiry and SWR
-                      </Text>
-                    </View>
-                  </Timeline.Item>
-                </Timeline>
+               
               </View.Item>
               {/* ToDo */}
               <View.Item columns={4}>{/* Placeholder */}</View.Item>
@@ -736,7 +585,7 @@ const Roadmap: FunctionComponent<Props> = ({
           {/* Streaming */}
           <View padding={3} className="border rounded-lg  border-surface-800">
             <View paddingBottom={2}>
-              <Text variant="body-2" weight="bold">Fetch DX</Text>
+              <Text variant="body-2" weight="bold">Streaming</Text>
             </View>
 
             {/* Tasks */}
@@ -799,31 +648,7 @@ const Roadmap: FunctionComponent<Props> = ({
                       <Text variant="body-3" weight="medium">Streaming SSR</Text>
                     </View>
                   </Timeline.Item>
-                  <Timeline.Item
-                    markerSlot={
-                      <View
-                        borderRadius="circular"
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        overflow="hidden"
-                        className="border rounded-full border-warning"
-                        width={5}
-                        height={5}
-                      ></View>
-                    }
-                  >
-                    <View
-                      direction="column"
-                      gap={1}
-                      width="100%"
-                      paddingBottom={2}
-                    >
-                      <Text variant="body-3" weight="medium">
-                        Cache with expiry and SWR
-                      </Text>
-                    </View>
-                  </Timeline.Item>
+               
                 </Timeline>
               </View.Item>
               {/* ToDo */}
