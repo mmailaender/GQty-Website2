@@ -3,16 +3,11 @@ import {
   Text,
   View,
   Button,
-  ButtonProps,
   Link,
-  LinkProps,
   useToast,
-  ToastProps,
-  Hidden,
-  HiddenProps,
+  Hidden
 } from "reshaped/bundle";
 import Copy from "../Icons/Play/Copy";
-import Play from "../Icons/Play/Play";
 import React from "react";
 import CheckPink from "../Icons/Play/CheckPing";
 
@@ -27,7 +22,6 @@ function copyToClipboard(textToCopy: string): void {
 
 export default function HeroSection() {
   const npmCommand = "npx @gqty/cli";
-  const [color, setColor] = React.useState("inverted");
   const toast = useToast();
   const handleCopyClick = () => {
     copyToClipboard(npmCommand);
@@ -53,7 +47,7 @@ export default function HeroSection() {
             <View width={80} height={40} className="bg-[#DA58B3] "></View>
           </div>
 
-          <Text variant="display-2" align="center">
+          <Text variant="title-3" align="center">
             The No-GraphQL client
           </Text>
           <Text variant="featured-2" align="center">
