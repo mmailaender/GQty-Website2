@@ -21,6 +21,12 @@
     "url": "https://github.com/gqty-dev/gqty/issues"
   },
   "homepage": "https://gqty.dev",
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
   "dependencies": {
     "@stackblitz/sdk": "^1.9.0",
     "@vercel/analytics": "^1.0.1",

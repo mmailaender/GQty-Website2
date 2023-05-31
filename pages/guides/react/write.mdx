@@ -1,4 +1,7 @@
 import Alert from "/components/Reshaped/Alert";
+import Image from "next/image";
+import svgOptimisticUpdate from "/components/images/guides/react/write/optimistic-update.svg";
+import svgOptimisticUpdateDark from "/components/images/guides/react/write/optimistic-update-dark.svg";
 
 # Sending Mutations
 
@@ -103,13 +106,16 @@ Object.assign(user, {
 
 This chart shows the flow of data when performing optimistic updates.
 
-```mermaid
-graph LR
-  B(ProfileEdit.tsx) -- optimistic update --> C((Cache))
-  B -- fetch --> D((Server))
-  C -- update --> A(Profile.tsx)
-  D -- update --> C
-```
+<Image
+  alt="Diagram: Optimistic Update"
+  src={svgOptimisticUpdate}
+  className="dark:hidden my-8"
+/>
+<Image
+  alt="Diagram: Optimistic Update"
+  src={svgOptimisticUpdateDark}
+  className="hidden dark:block my-8"
+/>
 
 <Alert className="mt-5" title="Always refetch on errors">
   Successful mutations will overwrite your changes with new data, while failed
