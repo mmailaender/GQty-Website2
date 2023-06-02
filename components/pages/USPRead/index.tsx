@@ -21,8 +21,8 @@ const USPRead = () => {
           <View direction="column" height="100%">
             <View.Item grow>
               <View direction="column" paddingTop={5} gap={6}>
-                <Text variant="featured-1" weight="bold">Read</Text>
-                <Text variant="body-1" className="text-surface-200">
+                <Text className="lg:text-2xl md:text-xl sm:text-lg" weight="bold">Read</Text>
+                <Text className="text-surface-200 text-base">
                   Fetch data by writing simple type-based orientated code, and
                   GQty creates the GraphQL query on the fly.
                 </Text>
@@ -33,7 +33,7 @@ const USPRead = () => {
               paddingTop={{ xl: 0, l: 0, m: 8, s: 8 }}
             >
               <Link href={"#playground"}>
-                <Text variant="body-strong-1">Try this feature →</Text>
+                <Text className="text-base">Try this feature →</Text>
               </Link>
             </View>
           </View>

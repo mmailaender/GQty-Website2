@@ -54,9 +54,9 @@ const USPWrite = () => {
           <View direction="column" height="100%">
             <View.Item grow>
               <View direction="column" paddingTop={5} gap={6}>
-                <Text variant="featured-1" weight="bold">Write</Text>
+                <Text className="lg:text-2xl md:text-xl sm:text-lg" weight="bold">Write</Text>
                 <View>
-                  <Text variant="body-1" className="text-surface-200">
+                  <Text className="text-surface-200 text-base">
                     Create, Update, Delete? Call the function - that’s it...
                     <br />
                     Including Optimistic Response!
@@ -69,7 +69,7 @@ const USPWrite = () => {
               paddingTop={{ xl: 0, l: 0, m: 8, s: 8 }}
             >
               <Link href={"#playground"}>
-                <Text variant="body-strong-1">Try this feature →</Text>
+                <Text className="text-base">Try this feature →</Text>
               </Link>
             </View>
           </View>

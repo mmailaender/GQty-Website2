@@ -33,12 +33,20 @@ const Homepage: NextPage = () => {
         >
           <USPRead />
           <USPWork />
-          <Playground />
-          <Contributors contributors={contributors} />
-          <Roadmap sponsorship={sponsorship} />
+          
+          </View>
         </View>
-      </View>
-      <VideoSection />
+
+        <VideoSection />
+        <View direction="column"
+          gap={{ xl: 30, l: 30, m: 16, s: 12 }}
+          paddingTop={{ l: 12, m: 12, s: 8 }}
+          paddingInline={{ l: 20, s: 4 }}>
+        <Contributors contributors={contributors} />
+          <Roadmap sponsorship={sponsorship} />
+          </View>
+      
+     
     </View>
   );
 };

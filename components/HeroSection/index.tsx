@@ -47,10 +47,10 @@ export default function HeroSection() {
             <View width={80} height={40} className="bg-[#DA58B3] "></View>
           </div>
 
-          <Text variant="title-3" align="center">
+          <Text className="lg:text-6xl md:5xl sm:text-4xl" weight="bold" align="center">
             The No-GraphQL client
           </Text>
-          <Text variant="featured-2" align="center">
+          <Text className="text-lg" align="center">
             for TypeScript
           </Text>
           <View paddingTop={4} align="center" gap={3}>

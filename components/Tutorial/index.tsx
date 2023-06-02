@@ -31,7 +31,7 @@ const Tutorial = () => {
             <Text variant="caption-1" weight="medium" className="text-surface-200">445 VIEWS</Text>
             </View>
             <View>
-              <Text variant="featured-3" weight="bold">Guide how to implement GQty in your project</Text>
+              <Text className="lg:text-xl md:text-lg sm:text-lg" weight="bold">Guide how to implement GQty in your project</Text>
             </View>
           </div>
 
@@ -39,7 +39,7 @@ const Tutorial = () => {
           <div>
             <View direction="row" align="center" gap={1} >
               <Icon svg={<Clock/>} size={4}/>
-              <Text variant="body-3" weight="bold" className="text-surface-200">2 mins</Text>
+              <Text  weight="bold" className="text-surface-200 text-sm">2 mins</Text>
             </View>
           </div>
         </div>
