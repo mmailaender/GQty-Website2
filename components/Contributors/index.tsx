@@ -9,7 +9,7 @@ export type Props = {
 const Contributors: NextPage<Props> = ({ contributors, ...props }) => {
   return (
     <View gap={12}>
-      <View align="center" justify="start">
+      <View align="center" justify="start" paddingTop={20}>
         <Text
           className="lg:text-5xl md:text-4xl sm:text-3xl"
           weight="bold"

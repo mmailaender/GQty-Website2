@@ -39,7 +39,7 @@ const Roadmap: FunctionComponent<Props> = ({
           paddingBottom={4}
           position="relative"
         >
-          <Text variant="featured-2" weight="bold" as="h2">
+          <Text className="text-2xl md:text-xl" weight="bold" as="h2">
             Our Roadmap
           </Text>
         </View>
@@ -919,8 +919,8 @@ const Roadmap: FunctionComponent<Props> = ({
             <View height="100%" justify="start" gap={8}>
               {/* Card title */}
               <View direction="column" gap={1}>
-                <Text variant="caption-1">Funding goal</Text>
-                <Text variant="featured-2" weight="bold">Working full time on GQty</Text>
+                <Text className="text-sm">Funding goal</Text>
+                <Text className="text-2xl md:text-xl" weight="bold">Working full time on GQty</Text>
               </View>
 
               {/* Progress section */}
@@ -929,7 +929,7 @@ const Roadmap: FunctionComponent<Props> = ({
                 <View direction="row" gap={1} align="baseline" paddingTop={3}>
                   <View.Item columns={6}>
                     <View>
-                      <Text variant="featured-2" weight="bold">
+                      <Text className="lg:text-xl" weight="bold">
                         {priceFormatter.format(
                           totalRecurringMonthlyPriceInCents / 100
                         )}

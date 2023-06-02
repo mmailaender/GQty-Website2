@@ -40,14 +40,15 @@ const Member: FunctionComponent<Props> = ({ name, image, link }) => {
           className="opacity-0 hover:opacity-100 transform transition-all duration-400 scale-75 hover:scale-110 hover:-translate-y-10 "
         >
           <View
-            padding={[2, 4]}
+            paddingInline={4}
+            paddingBlock={2}
             className="bg-surface-50"
             borderRadius="medium"
           >
             <Text
-              variant="caption-1"
+              className="text-base text-surface-900"
               align="center"
-              className="text-surface-900"
+              
             >
               {name}
             </Text>
