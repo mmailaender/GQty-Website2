@@ -24,7 +24,7 @@ const USP = ({ direction, title, content }: WriteProps) => {
             </View.Item>
             <View paddingBottom={8}>
               <Link href={"#playground"}>
-                <Text variant="body-strong-1">Try this feature →</Text>
+                <Text className="text-base">Try this feature →</Text>
               </Link>
             </View>
           </View>

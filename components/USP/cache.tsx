@@ -16,7 +16,7 @@ export default function Cache() {
             </Text>
           </View>
           <View direction="column" paddingBottom={8} justify="end">
-            <Text variant="body-strong-1">Try this feature →</Text>
+            <Text className="text-base">Try this feature →</Text>
           </View>
         </View.Item>
         <View.Item columns={8}>
