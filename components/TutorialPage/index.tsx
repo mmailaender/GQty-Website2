@@ -93,7 +93,9 @@ const TutorialPage = () => {
          
         </div>
       </div>
-      <div className="grid grid-cols-10 gap-6 w-full">
+
+      {/* Description section */}
+      <div className="grid grid-cols-10 gap-6 w-full pb-16">
         <div className="col-start-3 col-span-6 w-full pt-10 auto-cols-min">
 
           <div className="flex flex-row justify-between gap-5">
