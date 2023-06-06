@@ -5,6 +5,12 @@ import Clock from "../Icons/Play/Clock";
 import VideoBox from "../VideoBox";
 import PlayIcon from "../Icons/Play/Play";
 import LockIcon from "../Icons/Play/Lock";
+import { Unlock } from "react-feather";
+import Camera from "../Icons/Play/Camera";
+import Infinity from "../Icons/Play/Infinity";
+import User from "../Icons/Play/User";
+import Chat from "../Icons/Play/Chat";
+import Security from "../Icons/Play/Security";
 
 // sdk.embedProjectId("playground", "nextjs-2jqmx4", {
 //   forceEmbedLayout: true,
@@ -72,26 +78,77 @@ const TutorialPage = () => {
         {/* Video */}
         <div className="col-start-2 col-span-8">
         <Scrim
-  backgroundSlot={
-    <View aspectRatio={16 / 9}>
-       <iframe  className="w-full aspect-video h-[480px] bg-black/90" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=1s&ab_channel=RickAstley">
+          backgroundSlot={
+          <View aspectRatio={16 / 9}>
+            <iframe  className="w-full aspect-video h-[480px] bg-black/90" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=1s&ab_channel=RickAstley">
           
-          </iframe>
-    </View>
-  }
->
-       <View aspectRatio={1/1} >
-    <Button rounded={true} size="large" variant="ghost" icon={<PlayIcon/>} ></Button>
-    </View>
-       </Scrim>
+            </iframe>
+           </View>
+           }
+           >
+        <View aspectRatio={1/1} >
+          <Button rounded={true} size="large" variant="ghost" icon={<PlayIcon/>} ></Button>
+         </View>
+        </Scrim>
          
         </div>
-
       </div>
-       
+      <div className="grid grid-cols-10 gap-6 w-full">
+        <div className="col-start-3 col-span-6 w-full pt-10 auto-cols-min">
+
+          <div className="flex flex-row justify-between gap-5">
+            <div className="flex flex-col gap-12">
+          {/* Decription  one*/}
+          <div className="flex flex-col gap-6">
+         <Text className="text-xl" weight="bold">What will you learn</Text>
+         <div>
+          <div className="pb-3">
+            <Text className="text-base text-surface-200">Short description that will explain about what this course is to provide clarity for users</Text>
+          </div>
+         <ul className="list-disc"></ul>
+         <li className="text-base text-surface-200">Point one</li>
+         <li className="text-base text-surface-200">Point two</li>
+         <li className="text-base text-surface-200">Point three</li>
+         </div>
+         </div>
+
+         {/* Decription  two*/}
+         <div className="flex flex-col gap-6">
+         <Text className="text-xl" weight="bold">Couse Includes</Text>
+         <div className="flex flex-col gap-1">
+         <View direction="row" align="center" gap={2}>
+          <Icon size={4} svg={<Camera/>}/> <Text className="text-base text-surface-200">2.5 hours Hight Quality Video Tutorials</Text>
+         </View>
+         <View direction="row" align="center" gap={2}>
+          <Icon size={4} svg={<Infinity/>}/> <Text className="text-base text-surface-200">Full-time Access</Text>
+         </View>
+         <View direction="row" align="center" gap={2}>
+          <Icon size={4} svg={<User/>}/> <Text className="text-base text-surface-200">1 hour call with Mentor</Text>
+         </View>
+         <View direction="row" align="center" gap={2}>
+          <Icon size={4} svg={<Chat/>}/> <Text className="text-base text-surface-200">Access to Chat</Text>
+         </View>
+         <View direction="row" align="center" gap={2}>
+          <Icon size={4} svg={<Security/>}/> <Text className="text-base text-surface-200">14 days money-back Guarantee</Text>
+         </View>
+         </div>
+         </div>
+
+         </div>
+         {/* Actions */}
+           <div className="flex flex-col gap-4">
+             <Button icon={<LockIcon/>} color="white" size="large" rounded>Unlock Course</Button>
+             <Text align="center" className="text-xl" weight="bold">$79.99</Text>
+           </div>
+         </div>
+         
+        </div>
+      </div>
      </div>
-     
+    
+       
   </div>
+
     </>
 
   );
