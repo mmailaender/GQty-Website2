@@ -37,12 +37,15 @@ const Homepage: NextPage = () => {
           
           </View>
         </View>
-
+        <View paddingTop={32}>
         <VideoSection />
+        </View>
         <View direction="column"
           gap={{ xl: 30, l: 30, m: 16, s: 12 }}
-          paddingTop={{ l: 12, m: 12, s: 8 }}
-          paddingInline={{ l: 20, s: 4 }}>
+          width="100%"
+        maxWidth="1270px"
+        paddingInline={{ l: 20, s: 4 }}
+        paddingBottom={{ l: 0, s: 0 }}>
         <Contributors contributors={contributors} />
           <Roadmap sponsorship={sponsorship} />
           </View>

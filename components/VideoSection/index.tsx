@@ -13,7 +13,7 @@ const VideoSection = () => {
   return (
     <>    
     <div className=" flex flex-col w-full bg-surface-800 items-center justify-center pt-20">
-      <div className=" max-w-[1108px]  lg:grid lg:grid-cols-12 md:flex md:flex-col sm:flex sm:flex-col gap-6">
+      <div className="lg:grid lg:grid-cols-12 md:flex md:flex-col sm:flex sm:flex-col gap-6">
 
         {/* title */}
         <div className="col-start-4 col-span-6">
@@ -26,7 +26,7 @@ const VideoSection = () => {
       </div>
 
        {/* content */}
-      <div className=" max-w-[1108px] w-full lg:grid lg:grid-cols-12 md:flew md:flex-col gap-6 pt-14 pb-14">
+      <div className=" max-w-[1170px] w-full lg:grid lg:grid-cols-12 md:flew md:flex-col gap-6 pt-14 pb-14">
 
         {/* course title */}
         <div className="col-start-1 lg:col-span-3 md:flex sm:flew md:w-full sm:w-full pt-4 lg:px-8 md:px-20 sm:px-4">
