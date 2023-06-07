@@ -3,7 +3,7 @@ import sdk from "@stackblitz/sdk";
 import Check from "../Icons/Play/Check";
 import Clock from "../Icons/Play/Clock";
 import PlayIcon from "../Icons/Play/Play";
-import LockIcon from "../Icons/Play/Lock";
+import Lock from "../Icons/Play/Lock";
 
 // sdk.embedProjectId("playground", "nextjs-2jqmx4", {
 //   forceEmbedLayout: true,
@@ -30,7 +30,7 @@ const VideoSectionPremium = () => {
            }
            >
         <View  align="center" gap={4} justify="center">
-          <Icon svg={<LockIcon/>} size={10} />
+          <Icon svg={<Lock/>} size={10} color="primary"/>
           <Text variant="body-2" weight="bold">Unlock to start watching the Course</Text>
          </View>
         </Scrim>

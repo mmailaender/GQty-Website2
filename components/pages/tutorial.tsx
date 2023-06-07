@@ -13,17 +13,10 @@ import Chat from "../Icons/Play/Chat";
 import Security from "../Icons/Play/Security";
 import VideoSectionPremium from "../VideoSectionPremium";
 
-// sdk.embedProjectId("playground", "nextjs-2jqmx4", {
-//   forceEmbedLayout: true,
-//   openFile: "src/components/Query.tsx",
-//   hideExplorer: true,
-//   hideNavigation: true,
-// });
-
-const TutorialPage = () => {
-  return (
-    <>    
-    <div className="w-full flex justify-start">
+const tutorial = () => {
+    return (
+        <div>
+             <div className="w-full flex justify-start">
      {/* Title & Navigation */}
       <div className="w-[260px] bg-surface-900 h-[900px] flex flex-col gap-8 px-2 pt-6 pb-2 border-r-1 border-surface-800 justify-between">
         <div className="flex flex-col gap-8">
@@ -159,10 +152,8 @@ const TutorialPage = () => {
     
        
   </div>
+        </div>
+    );
+}
 
-    </>
-
-  );
-};
-
-export default TutorialPage;
+export default tutorial;
