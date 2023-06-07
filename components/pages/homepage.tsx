@@ -8,7 +8,7 @@ import Roadmap, { type Props as RoadmapProps } from "../Roadmap";
 import USPRead from "./USPRead";
 import USPWork from "./USPWrite";
 import VideoSection from "../VideoSection";
-import TutorialPage from "../TutorialPage";
+
 
 export type Props = Partial<ContributorsProps & RoadmapProps>;
 
@@ -49,7 +49,7 @@ const Homepage: NextPage = () => {
         <Contributors contributors={contributors} />
           <Roadmap sponsorship={sponsorship} />
           </View>
-          <TutorialPage/>
+         
       
      
     </View>
