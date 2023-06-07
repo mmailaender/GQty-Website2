@@ -19,17 +19,19 @@ const tutorial = () => {
         <div>
              <div className="w-full flex justify-start">
      {/* Title & Navigation */}
+    <div className="fixed left-0 h-[92vh]">
     <TutorialNav/>
+    </div>
      
-     <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full ml-60">
 
       {/* Video Section */}
      <VideoSectionPremium/>
 
       {/* Description section */}
-      <div className="grid grid-cols-10 gap-6 w-full pb-16">
+      <div className="grid grid-cols-10 gap-6 w-full pb-16 bg-surface-900">
         {/* Content Area */}
-        <div className="col-start-3 col-span-6 w-full pt-10">
+        <div className="col-start-3 col-span-6 w-full pt-10 ">
 
           <div className="flex flex-row gap-10">
 

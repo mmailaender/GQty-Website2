@@ -1,8 +1,4 @@
 import { View, Text, Icon, IconProps, Tabs, TabsProps, Image, ImageProps, Button } from "reshaped/bundle";
-import sdk from "@stackblitz/sdk";
-import Check from "../Icons/Play/Check";
-import Clock from "../Icons/Play/Clock";
-import VideoBox from "../VideoBox";
 import PlayIcon from "../Icons/Play/Play";
 import Lock from "../Icons/Play/Lock";
 
