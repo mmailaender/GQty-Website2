@@ -30,7 +30,7 @@ const VideoSectionPremium = () => {
            }
            >
         <View  align="center" gap={4} justify="center">
-          <Icon svg={<Lock/>} size={10} color="primary"/>
+          <Icon svg={<Lock/>} size={10} color="neutral"/>
           <Text variant="body-2" weight="bold">Unlock to start watching the Course</Text>
          </View>
         </Scrim>
