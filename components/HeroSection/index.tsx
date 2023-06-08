@@ -47,7 +47,7 @@ export default function HeroSection() {
             <View width={80} height={40} className="bg-[#DA58B3] "></View>
           </div>
 
-          <Text className="lg:text-6xl md:5xl sm:text-4xl" weight="bold" align="center">
+          <Text variant={{l:"title-4", m:"title-5", s:"title-5"}} weight="bold" align="center">
             The No-GraphQL client
           </Text>
           <Text className="text-lg" align="center">
