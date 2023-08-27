@@ -38,8 +38,8 @@ dependencies:
 
 devDependencies:
   '@gqty/react':
-    specifier: 3.0.0-canary-20230826063452.ee5f83b6
-    version: 3.0.0-canary-20230826063452.ee5f83b6(gqty@3.0.0-canary-20230826063452.ee5f83b6)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 3.0.0-canary-20230827064833.09a6a4ad
+    version: 3.0.0-canary-20230827064833.09a6a4ad(gqty@3.0.0-canary-20230826063452.ee5f83b6)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@13.4.19)(react@18.2.0)(twind@0.16.19)(typescript@5.2.2)
@@ -1520,11 +1520,11 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@gqty/react@3.0.0-canary-20230826063452.ee5f83b6(gqty@3.0.0-canary-20230826063452.ee5f83b6)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-H2zJ2jEREZYWQKO6ylYuUz6xyZRS3nKTOl2KMKjgdTObAis8L9w10o+EnN0zIQX4zLr14Kig0j2DnkWdICXi1Q==}
+  /@gqty/react@3.0.0-canary-20230827064833.09a6a4ad(gqty@3.0.0-canary-20230826063452.ee5f83b6)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-0YJSB3kfSDvztOP+pPM9IhlQNxSkWKF7B4gk63YQBTlIh7vIRCa3nmO+QbNrdC2Sv1JWUXohRW4KV4ZLVNkQhg==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
-      gqty: ^3.0.0-canary-20230826063452.ee5f83b6
+      gqty: ^3.0.0-canary-20230827064833.09a6a4ad
       graphql: '*'
       graphql-sse: ^2.1.0
       graphql-ws: ^5.11.3
