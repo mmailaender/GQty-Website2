@@ -37,7 +37,7 @@
     "@types/node": "^18.17.11",
     "@types/react": "^18.2.17",
     "autoprefixer": "^10.4.15",
-    "gqty": "3.0.0-canary-20230826063452.ee5f83b6",
+    "gqty": "3.0.0-canary-20230827064833.09a6a4ad",
     "postcss": "^8.4.28",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
