@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^1.0.10
     version: 1.0.10(next@13.4.19)(react@18.2.0)(twind@0.16.19)(typescript@5.2.2)
   '@types/node':
-    specifier: ^18.17.12
-    version: 18.17.12
+    specifier: ^18.17.13
+    version: 18.17.13
   '@types/react':
     specifier: ^18.2.17
     version: 18.2.17
@@ -75,7 +75,7 @@ devDependencies:
     version: 5.2.2
   vercel:
     specifier: ^29.4.0
-    version: 29.4.0(@types/node@18.17.12)
+    version: 29.4.0(@types/node@18.17.13)
 
 packages:
 
@@ -386,6 +386,7 @@ packages:
   /@babel/plugin-proposal-async-generator-functions@7.20.7(@babel/core@7.21.8):
     resolution: {integrity: sha512-xMbiLsn/8RK7Wq7VeVytytS2L6qE69bXPB10YCmMdDZbKF4okCqY74pI/jJQ/8U0b/F6NrT2+14b8/P9/3AMGA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -401,6 +402,7 @@ packages:
   /@babel/plugin-proposal-class-properties@7.18.6(@babel/core@7.21.8):
     resolution: {integrity: sha512-cumfXOF0+nzZrrN8Rf0t7M+tF6sZc7vhQwYQck9q1/5w2OExlD+b4v4RpMJFaV1Z7WcDRgO6FqvxqxGlwo+RHQ==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -414,6 +416,7 @@ packages:
   /@babel/plugin-proposal-class-static-block@7.21.0(@babel/core@7.21.8):
     resolution: {integrity: sha512-XP5G9MWNUskFuP30IfFSEFB0Z6HzLIUcjYM4bYOPHXl7eiJ9HFv8tWj6TXTN5QODiEhDZAeI4hLok2iHFFV4hw==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-static-block instead.
     peerDependencies:
       '@babel/core': ^7.12.0
     dependencies:
@@ -428,6 +431,7 @@ packages:
   /@babel/plugin-proposal-dynamic-import@7.18.6(@babel/core@7.21.8):
     resolution: {integrity: sha512-1auuwmK+Rz13SJj36R+jqFPMJWyKEDd7lLSdOj4oJK0UTgGueSAtkrCvz9ewmgyU/P941Rv2fQwZJN8s6QruXw==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-dynamic-import instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -439,6 +443,7 @@ packages:
   /@babel/plugin-proposal-export-namespace-from@7.18.9(@babel/core@7.21.8):
     resolution: {integrity: sha512-k1NtHyOMvlDDFeb9G5PhUXuGj8m/wiwojgQVEhJ/fsVsMCpLyOP4h0uGEjYJKrRI+EVPlb5Jk+Gt9P97lOGwtA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -450,6 +455,7 @@ packages:
   /@babel/plugin-proposal-json-strings@7.18.6(@babel/core@7.21.8):
     resolution: {integrity: sha512-lr1peyn9kOdbYc0xr0OdHTZ5FMqS6Di+H0Fz2I/JwMzGmzJETNeOFq2pBySw6X/KFL5EWDjlJuMsUGRFb8fQgQ==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-json-strings instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -461,6 +467,7 @@ packages:
   /@babel/plugin-proposal-logical-assignment-operators@7.20.7(@babel/core@7.21.8):
     resolution: {integrity: sha512-y7C7cZgpMIjWlKE5T7eJwp+tnRYM89HmRvWM5EQuB5BoHEONjmQ8lSNmBUwOyy/GFRsohJED51YBF79hE1djug==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-logical-assignment-operators instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -472,6 +479,7 @@ packages:
   /@babel/plugin-proposal-nullish-coalescing-operator@7.18.6(@babel/core@7.21.8):
     resolution: {integrity: sha512-wQxQzxYeJqHcfppzBDnm1yAY0jSRkUXR2z8RePZYrKwMKgMlE8+Z6LUno+bd6LvbGh8Gltvy74+9pIYkr+XkKA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -483,6 +491,7 @@ packages:
   /@babel/plugin-proposal-numeric-separator@7.18.6(@babel/core@7.21.8):
     resolution: {integrity: sha512-ozlZFogPqoLm8WBr5Z8UckIoE4YQ5KESVcNudyXOR8uqIkliTEgJ3RoketfG6pmzLdeZF0H/wjE9/cCEitBl7Q==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -494,6 +503,7 @@ packages:
   /@babel/plugin-proposal-object-rest-spread@7.20.7(@babel/core@7.21.8):
     resolution: {integrity: sha512-d2S98yCiLxDVmBmE8UjGcfPvNEUbA1U5q5WxaWFUGRzJSVAZqm5W6MbPct0jxnegUZ0niLeNX+IOzEs7wYg9Dg==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -508,6 +518,7 @@ packages:
   /@babel/plugin-proposal-optional-catch-binding@7.18.6(@babel/core@7.21.8):
     resolution: {integrity: sha512-Q40HEhs9DJQyaZfUjjn6vE8Cv4GmMHCYuMGIWUnlxH6400VGxOuwWsPt4FxXxJkC/5eOzgn0z21M9gMT4MOhbw==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-catch-binding instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -519,6 +530,7 @@ packages:
   /@babel/plugin-proposal-optional-chaining@7.21.0(@babel/core@7.21.8):
     resolution: {integrity: sha512-p4zeefM72gpmEe2fkUr/OnOXpWEf8nAgk7ZYVqqfFiyIG7oFfVZcCrU64hWn5xp4tQ9LkV4bTIa5rD0KANpKNA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -531,6 +543,7 @@ packages:
   /@babel/plugin-proposal-private-methods@7.18.6(@babel/core@7.21.8):
     resolution: {integrity: sha512-nutsvktDItsNn4rpGItSNV2sz1XwS+nfU0Rg8aCx3W3NOKVzdMjJRu0O5OkgDp3ZGICSTbgRpxZoWsxoKRvbeA==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -544,6 +557,7 @@ packages:
   /@babel/plugin-proposal-private-property-in-object@7.21.0(@babel/core@7.21.8):
     resolution: {integrity: sha512-ha4zfehbJjc5MmXBlHec1igel5TJXXLDDRbuJ4+XT2TJcyD9/V1919BA8gMvsdHcNMBy4WBUBiRb3nw/EQUtBw==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -559,6 +573,7 @@ packages:
   /@babel/plugin-proposal-unicode-property-regex@7.18.6(@babel/core@7.21.8):
     resolution: {integrity: sha512-2BShG/d5yoZyXZfVePH91urL5wTG6ASZU9M4o03lKK8u8UW1y08OMttBSOADTcJrnPMpvDXRG3G8fyLh4ovs8w==}
     engines: {node: '>=4'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -2058,7 +2073,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 18.17.12
+      '@types/node': 18.17.13
       '@types/responselike': 1.0.0
     dev: true
 
@@ -2085,7 +2100,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.17.12
+      '@types/node': 18.17.13
     dev: true
 
   /@types/hast@2.3.4:
@@ -2122,7 +2137,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.17.12
+      '@types/node': 18.17.13
     dev: true
 
   /@types/mdast@3.0.11:
@@ -2154,7 +2169,7 @@ packages:
   /@types/node-fetch@2.6.3:
     resolution: {integrity: sha512-ETTL1mOEdq/sxUtgtOhKjyB2Irra4cjxksvcMUR5Zr4n+PxVhsCD9WS46oPbHL3et9Zde7CNRr+WUNlcHvsX+w==}
     dependencies:
-      '@types/node': 18.17.12
+      '@types/node': 18.17.13
       form-data: 3.0.1
     dev: true
 
@@ -2162,8 +2177,8 @@ packages:
     resolution: {integrity: sha512-qelS/Ra6sacc4loe/3MSjXNL1dNQ/GjxNHVzuChwMfmk7HuycRLVQN2qNY3XahK+fZc5E2szqQSKUyAF0E+2bg==}
     dev: true
 
-  /@types/node@18.17.12:
-    resolution: {integrity: sha512-d6xjC9fJ/nSnfDeU0AMDsaJyb1iHsqCSOdi84w4u+SlN/UgQdY5tRhpMzaFYsI4mnpvgTivEaQd0yOUhAtOnEQ==}
+  /@types/node@18.17.13:
+    resolution: {integrity: sha512-SlLPDDe6YQl1JnQQy4hgsuJeo5q5c1TBU4be4jeBLXsqpjoDbfb0HesSfhMwnaxfSJ4txtfzJzW5/x/43fkkfQ==}
     dev: true
 
   /@types/prop-types@15.7.5:
@@ -2179,7 +2194,7 @@ packages:
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.17.12
+      '@types/node': 18.17.13
     dev: true
 
   /@types/scheduler@0.16.3:
@@ -2219,7 +2234,7 @@ packages:
       outdent: 0.8.0
     dev: true
 
-  /@vanilla-extract/integration@6.2.1(@types/node@18.17.12):
+  /@vanilla-extract/integration@6.2.1(@types/node@18.17.13):
     resolution: {integrity: sha512-+xYJz07G7TFAMZGrOqArOsURG+xcYvqctujEkANjw2McCBvGEK505RxQqOuNiA9Mi9hgGdNp2JedSa94f3eoLg==}
     dependencies:
       '@babel/core': 7.21.8
@@ -2233,8 +2248,8 @@ packages:
       lodash: 4.17.21
       mlly: 1.2.0
       outdent: 0.8.0
-      vite: 4.3.3(@types/node@18.17.12)
-      vite-node: 0.28.5(@types/node@18.17.12)
+      vite: 4.3.3(@types/node@18.17.13)
+      vite-node: 0.28.5(@types/node@18.17.13)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -2361,10 +2376,10 @@ packages:
       - supports-color
     dev: true
 
-  /@vercel/remix-builder@1.8.10(@types/node@18.17.12):
+  /@vercel/remix-builder@1.8.10(@types/node@18.17.13):
     resolution: {integrity: sha512-DXOjz/4HUawFojrbK9AQq1sjA2YxGbG8/bTTwSdqdYJZv0QgeK1vkOioxLmQP5qzZ7DQNK+LgSn9oMrX3Bq/lA==}
     dependencies:
-      '@remix-run/dev': /@vercel/remix-run-dev@1.16.1(@types/node@18.17.12)
+      '@remix-run/dev': /@vercel/remix-run-dev@1.16.1(@types/node@18.17.13)
       '@vercel/build-utils': 6.7.3
       '@vercel/nft': 0.22.5
       '@vercel/static-config': 2.0.17
@@ -2387,7 +2402,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@vercel/remix-run-dev@1.16.1(@types/node@18.17.12):
+  /@vercel/remix-run-dev@1.16.1(@types/node@18.17.13):
     resolution: {integrity: sha512-b+gIUNqW9JwPKHSfGs0ylMk9U80dbvEmkjczNmyWvO7r1tz8O9dEmTUmbJ22/aRPPJQ/aEYosqP7UNJtDvieqw==}
     engines: {node: '>=14'}
     hasBin: true
@@ -2408,7 +2423,7 @@ packages:
       '@babel/types': 7.21.5
       '@npmcli/package-json': 2.0.0
       '@remix-run/server-runtime': 1.16.1
-      '@vanilla-extract/integration': 6.2.1(@types/node@18.17.12)
+      '@vanilla-extract/integration': 6.2.1(@types/node@18.17.13)
       arg: 5.0.2
       cacache: 15.3.0
       chalk: 4.1.2
@@ -8749,7 +8764,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vercel@29.4.0(@types/node@18.17.12):
+  /vercel@29.4.0(@types/node@18.17.13):
     resolution: {integrity: sha512-sVfg87dhF3q6Nhrr5zv2oaOU1zQQd+MlsjhdNkB9MfrQyXqluAdHKiNz0+g/+wJeh/y7sUhWk2/XJb5CDlF70w==}
     engines: {node: '>= 14'}
     hasBin: true
@@ -8762,7 +8777,7 @@ packages:
       '@vercel/node': 2.14.3
       '@vercel/python': 3.1.60
       '@vercel/redwood': 1.1.15
-      '@vercel/remix-builder': 1.8.10(@types/node@18.17.12)
+      '@vercel/remix-builder': 1.8.10(@types/node@18.17.13)
       '@vercel/ruby': 1.3.76
       '@vercel/static-build': 1.3.32
     transitivePeerDependencies:
@@ -8833,7 +8848,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite-node@0.28.5(@types/node@18.17.12):
+  /vite-node@0.28.5(@types/node@18.17.13):
     resolution: {integrity: sha512-LmXb9saMGlrMZbXTvOveJKwMTBTNUH66c8rJnQ0ZPNX+myPEol64+szRzXtV5ORb0Hb/91yq+/D3oERoyAt6LA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -8845,7 +8860,7 @@ packages:
       picocolors: 1.0.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.3.3(@types/node@18.17.12)
+      vite: 4.3.3(@types/node@18.17.13)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8856,7 +8871,7 @@ packages:
       - terser
     dev: true
 
-  /vite@4.3.3(@types/node@18.17.12):
+  /vite@4.3.3(@types/node@18.17.13):
     resolution: {integrity: sha512-MwFlLBO4udZXd+VBcezo3u8mC77YQk+ik+fbc0GZWGgzfbPP+8Kf0fldhARqvSYmtIWoAJ5BXPClUbMTlqFxrA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -8881,7 +8896,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.17.12
+      '@types/node': 18.17.13
       esbuild: 0.17.6
       postcss: 8.4.29
       rollup: 3.21.3
