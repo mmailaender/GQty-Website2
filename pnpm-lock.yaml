@@ -39,7 +39,7 @@ dependencies:
 devDependencies:
   '@gqty/react':
     specifier: 3.0.0-canary-20230908181012.f9c5703c
-    version: 3.0.0-canary-20230908181012.f9c5703c(gqty@3.0.0-canary-20230827064833.09a6a4ad)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 3.0.0-canary-20230908181012.f9c5703c(gqty@3.0.0-canary-20230908181012.f9c5703c)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@13.4.19)(react@18.2.0)(twind@0.16.19)(typescript@5.2.2)
@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^10.4.15
     version: 10.4.15(postcss@8.4.29)
   gqty:
-    specifier: 3.0.0-canary-20230827064833.09a6a4ad
-    version: 3.0.0-canary-20230827064833.09a6a4ad(graphql@16.6.0)
+    specifier: 3.0.0-canary-20230908181012.f9c5703c
+    version: 3.0.0-canary-20230908181012.f9c5703c(graphql@16.6.0)
   postcss:
     specifier: ^8.4.29
     version: 8.4.29
@@ -1535,7 +1535,7 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@gqty/react@3.0.0-canary-20230908181012.f9c5703c(gqty@3.0.0-canary-20230827064833.09a6a4ad)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
+  /@gqty/react@3.0.0-canary-20230908181012.f9c5703c(gqty@3.0.0-canary-20230908181012.f9c5703c)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-qagRcXfcOk7VishfAJqC306NW9ZJJVcXb8/JuQZGugCFSOevP8MTcH1ejDFanDKuUphY+ebr5nkxp3lReCxz5Q==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
@@ -1552,7 +1552,7 @@ packages:
         optional: true
     dependencies:
       '@react-hookz/web': 23.0.0(react-dom@18.2.0)(react@18.2.0)
-      gqty: 3.0.0-canary-20230827064833.09a6a4ad(graphql@16.6.0)
+      gqty: 3.0.0-canary-20230908181012.f9c5703c(graphql@16.6.0)
       graphql: 16.6.0
       multidict: 1.0.6
       p-debounce: 4.0.0
@@ -4692,8 +4692,8 @@ packages:
       responselike: 2.0.1
     dev: true
 
-  /gqty@3.0.0-canary-20230827064833.09a6a4ad(graphql@16.6.0):
-    resolution: {integrity: sha512-fXQzYq8DKpwy84EUTeGgzWxC2wZ7SD660q2F58SLMv6rD5PZrgTJ3D+Qij1DOivRGmHvMqqV2G2KwwiqBq96FQ==}
+  /gqty@3.0.0-canary-20230908181012.f9c5703c(graphql@16.6.0):
+    resolution: {integrity: sha512-isuDiyOE30kEpN5ZXSMf2ZkYTVqVoXvKobfLThMR176oBpz7HCO2NoyR+o9JwCH3NXmSN2XMPbYZX5Yq4dIqjw==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
       graphql: '*'
