@@ -248,6 +248,11 @@ export const actions = {
 
 </Tabs>
 
+<Alert title="Pure functions only">
+  Input values must not change between invocations, the provided function will
+  be called a second time to access the fetched data from the cache.
+</Alert>
+
 ## Subscription
 
 The resolve function wraps GraphQL subscriptions into a promise-like interface.
