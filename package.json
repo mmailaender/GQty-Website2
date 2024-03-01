@@ -37,7 +37,7 @@
     "@twind/next": "^1.0.10",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.17",
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.18",
     "gqty": "3.0.0-canary-20240227051357.31625d5d4a71d8327366003ed5c41affc605f80a",
     "postcss": "^8.4.35",
     "prettier": "^2.8.8",
