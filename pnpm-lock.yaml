@@ -45,7 +45,7 @@ devDependencies:
     version: 3.0.0-canary-20240227051357.31625d5d4a71d8327366003ed5c41affc605f80a(gqty@3.0.0-canary-20240227051357.31625d5d4a71d8327366003ed5c41affc605f80a)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@twind/next':
     specifier: ^1.0.10
-    version: 1.0.10(next@13.5.6)(react@18.2.0)(twind@0.16.19)(typescript@5.3.3)
+    version: 1.0.10(next@13.5.6)(react@18.2.0)(twind@0.16.19)(typescript@5.4.2)
   '@types/node':
     specifier: ^20.11.25
     version: 20.11.25
@@ -72,10 +72,10 @@ devDependencies:
     version: 3.4.1
   twind:
     specifier: ^0.16.19
-    version: 0.16.19(typescript@5.3.3)
+    version: 0.16.19(typescript@5.4.2)
   typescript:
-    specifier: ^5.3.3
-    version: 5.3.3
+    specifier: ^5.4.2
+    version: 5.4.2
   vercel:
     specifier: ^29.4.0
     version: 29.4.0(@types/node@20.11.25)
@@ -2064,7 +2064,7 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@twind/next@1.0.10(next@13.5.6)(react@18.2.0)(twind@0.16.19)(typescript@5.3.3):
+  /@twind/next@1.0.10(next@13.5.6)(react@18.2.0)(twind@0.16.19)(typescript@5.4.2):
     resolution: {integrity: sha512-6ctrS10JoZNK2NSj8UZ01qsPNIdEF04xZqTAuSLovD+UrMqYo3XYkT2OHovOxSkI+I3Pclx34wdfNWNK+C/+jQ==}
     engines: {node: '>=10.13'}
     peerDependencies:
@@ -2078,8 +2078,8 @@ packages:
     dependencies:
       next: 13.5.6(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
-      twind: 0.16.19(typescript@5.3.3)
-      typescript: 5.3.3
+      twind: 0.16.19(typescript@5.4.2)
+      typescript: 5.4.2
     dev: true
 
   /@types/acorn@4.0.6:
@@ -8533,7 +8533,7 @@ packages:
   /tslib@2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
 
-  /twind@0.16.19(typescript@5.3.3):
+  /twind@0.16.19(typescript@5.4.2):
     resolution: {integrity: sha512-/9H7I/Xzji6UZ+x1V8/llcQSAI0bINqpZtvAqqTzuU/qAdzRCnrpaME8x57k8tUu2KbosjSQE85sSwcLBGD1DQ==}
     engines: {node: '>=10.13'}
     peerDependencies:
@@ -8545,7 +8545,7 @@ packages:
       csstype: 3.1.2
       htmlparser2: 6.1.0
       style-vendorizer: 2.2.3
-      typescript: 5.3.3
+      typescript: 5.4.2
     dev: true
 
   /type-check@0.3.2:
@@ -8579,8 +8579,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+  /typescript@5.4.2:
+    resolution: {integrity: sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
