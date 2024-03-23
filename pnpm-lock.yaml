@@ -42,7 +42,7 @@ dependencies:
 devDependencies:
   '@gqty/react':
     specifier: 3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b
-    version: 3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b(gqty@3.0.0-canary-20240316164118.6cb6eccabe76290d9a0f5007d62c683142f56846)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b(gqty@3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@13.5.6)(react@18.2.0)(twind@0.16.19)(typescript@5.4.3)
@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^10.4.19
     version: 10.4.19(postcss@8.4.38)
   gqty:
-    specifier: 3.0.0-canary-20240316164118.6cb6eccabe76290d9a0f5007d62c683142f56846
-    version: 3.0.0-canary-20240316164118.6cb6eccabe76290d9a0f5007d62c683142f56846(graphql@16.6.0)
+    specifier: 3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b
+    version: 3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b(graphql@16.6.0)
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
@@ -1538,7 +1538,7 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@gqty/react@3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b(gqty@3.0.0-canary-20240316164118.6cb6eccabe76290d9a0f5007d62c683142f56846)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
+  /@gqty/react@3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b(gqty@3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-7WE2RxElC5qXoLwqlAqGptYHBn3TcAmay84OvAsN44Du0tfLeRnKm11rpWGubnXnBdECPHVDYus/0SV6TlRBQw==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
@@ -1555,7 +1555,7 @@ packages:
         optional: true
     dependencies:
       '@react-hookz/web': 23.0.0(react-dom@18.2.0)(react@18.2.0)
-      gqty: 3.0.0-canary-20240316164118.6cb6eccabe76290d9a0f5007d62c683142f56846(graphql@16.6.0)
+      gqty: 3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b(graphql@16.6.0)
       graphql: 16.6.0
       multidict: 1.0.7
       p-debounce: 4.0.0
@@ -4752,8 +4752,8 @@ packages:
       responselike: 2.0.1
     dev: true
 
-  /gqty@3.0.0-canary-20240316164118.6cb6eccabe76290d9a0f5007d62c683142f56846(graphql@16.6.0):
-    resolution: {integrity: sha512-wMOTsGklMD4zGqCP11UhV2Ac4pinLLbMuTQrHJ5T1wcTYoJTSekjuFrHBvUyRegPShi24io+zro8ZZ2pU9VeSg==}
+  /gqty@3.0.0-canary-20240323163802.523cb551b8748b8e3095b34c362ebb0a6d72498b(graphql@16.6.0):
+    resolution: {integrity: sha512-Zl9MV7r34S6EmKjWa8c6/Klrq2EQedOeilU0i8HqhAAj29MIH+/EmndfURkWhghRqNAMJVUhxc92rbjxC8/HXg==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
       graphql: '*'
@@ -4774,7 +4774,7 @@ packages:
       just-memoize: 2.2.0
       just-safe-get: 4.2.0
       just-safe-set: 4.2.1
-      multidict: 1.0.6
+      multidict: 1.0.7
       object-hash: 3.0.0
       p-defer: 3.0.0
       p-lazy: 3.1.0
@@ -6366,10 +6366,6 @@ packages:
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
-    dev: true
-
-  /multidict@1.0.6:
-    resolution: {integrity: sha512-URJf4Q7p/rYDSUt4rIo4PyAxSMQaG27YBNE6CFaEJ1HSxr1WeYaXe/b4Kv9dp2842qWjz/LYCWg9SpNXkGZ4Ww==}
     dev: true
 
   /multidict@1.0.7:
