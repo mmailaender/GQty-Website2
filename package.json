@@ -33,7 +33,7 @@
     "reshaped": "file:node_modules_offline/reshaped-react-v1.14.0.tgz"
   },
   "devDependencies": {
-    "@gqty/react": "3.0.0-canary-20240422104813.c0b3f9157fd0df2a8507f1f690307faf162d05c8",
+    "@gqty/react": "3.0.0-canary-20240422144552.30d99e9e301d2bee1dde848cce06417252e519e5",
     "@twind/next": "^1.0.10",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.17",
