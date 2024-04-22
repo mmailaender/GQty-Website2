@@ -42,7 +42,7 @@ dependencies:
 devDependencies:
   '@gqty/react':
     specifier: 3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d
-    version: 3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d(gqty@3.0.0-canary-20240421134412.1a2885208acc18cf07bdc63db42c54618fcfabe9)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d(gqty@3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@13.5.6)(react@18.2.0)(twind@0.16.19)(typescript@5.4.5)
@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^10.4.19
     version: 10.4.19(postcss@8.4.38)
   gqty:
-    specifier: 3.0.0-canary-20240421134412.1a2885208acc18cf07bdc63db42c54618fcfabe9
-    version: 3.0.0-canary-20240421134412.1a2885208acc18cf07bdc63db42c54618fcfabe9(graphql@16.6.0)
+    specifier: 3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d
+    version: 3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d(graphql@16.6.0)
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
@@ -1538,7 +1538,7 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@gqty/react@3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d(gqty@3.0.0-canary-20240421134412.1a2885208acc18cf07bdc63db42c54618fcfabe9)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
+  /@gqty/react@3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d(gqty@3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Bih+UZB/2q8Q2k8XMxWPfRb8UgFqwVOLEuxsDY8OIGxA5M19S3ZqB9T3K+DTNcs9HpkjSPXKo2L1PbtNtUApMw==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
@@ -1555,7 +1555,7 @@ packages:
         optional: true
     dependencies:
       '@react-hookz/web': 23.0.0(react-dom@18.2.0)(react@18.2.0)
-      gqty: 3.0.0-canary-20240421134412.1a2885208acc18cf07bdc63db42c54618fcfabe9(graphql@16.6.0)
+      gqty: 3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d(graphql@16.6.0)
       graphql: 16.6.0
       multidict: 1.0.7
       p-debounce: 4.0.0
@@ -4756,8 +4756,8 @@ packages:
       responselike: 2.0.1
     dev: true
 
-  /gqty@3.0.0-canary-20240421134412.1a2885208acc18cf07bdc63db42c54618fcfabe9(graphql@16.6.0):
-    resolution: {integrity: sha512-wQoQzpqikc5wX+IOBeZhLzy30KLpzgqaVsssVBGZkTxTHsBn6I94qrKwuUaU5vvaexhqBoWgrNmkcCBGDdwJXg==}
+  /gqty@3.0.0-canary-20240421212501.11742720475e08ca483b953251eec67e499b9d6d(graphql@16.6.0):
+    resolution: {integrity: sha512-xUYYkdTvZPuVYHuMrAsJXXt2Yev6c8FVMlK8Tc8YGU6FlXdbV00R88LrKCLOzbf2DTiCLZMVIzgzwZCITj/XUQ==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
       graphql: '*'
