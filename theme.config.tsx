@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
   banner: {
     text: (
       <>
-        This website covers our upcoming v3 alpha. For v2 docs, see our{" "}
+        This website covers the upcoming v3 alpha. For v2 docs, see our{" "}
         <Link href="https://gqty.vercel.app">previous website</Link>.
       </>
     ),

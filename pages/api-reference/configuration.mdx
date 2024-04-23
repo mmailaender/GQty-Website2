@@ -1,7 +1,7 @@
 # Configuration
 
-We aim to minimize the necessity of this page, relying on auto-detection
-and interactive setup for most cases.
+We aim to minimize the necessity of this page, relying on auto-detection and
+interactive setup for most cases.
 
 If you think your use case is possible without a configuration file, tell us on
 Discord or GitHub!
@@ -13,7 +13,8 @@ found:
 
 1. A `gqty` property in your `package.json`, or
 1. `.gqtyrc` in JSON or YAML format, or
-1. `.gqtyrc.json`, `.gqtyrc.yaml`, `.gqtyrc.yml`, `.gqtyrc.js` or `.gqtyrc.cjs`, or
+1. `.gqtyrc.json`, `.gqtyrc.yaml`, `.gqtyrc.yml`, `.gqtyrc.js` or `.gqtyrc.cjs`,
+   or
 1. files above, but inside `.config/`, or
 1. A `gqty.config.js` or `gqty.config.cjs` CommonJS module exporting an object.
 
@@ -94,21 +95,21 @@ Defaults to `graphql-ws` if subscription types are found during introspection.
 
 Generate Javascript code instead of TypeScript.
 
+When enabled, `enumStyle` will be set to `string` regardless of the user
+configuration.
+
 Defaults to `true` if `typescript` is not found in `dependencies`.
 
-### `enumsAsStrings` `<boolean>`
+### `enumStyle` `<string>`
 
-Define enums as a string union instead of enums objects, cannot be used in
-tandem with `enumsAsConst`.
+Dictates generated types for enums, the default is `enum`.
 
-Defaults to `false`.
-
-### `enumsAsConst` `<boolean>`
-
-Define enums as const types instead of enums objects, cannot be used in
-tandem with `enumsAsStrings`.
-
-Defaults to `false`.
+| Value       | Description                                            |
+| ----------- | ------------------------------------------------------ |
+| `assertion` | Generates enums as const assertion objects.            |
+| `const`     | Generates enums as TypeScript enums with const prefix. |
+| `enum`      | Generates enums as normal TypeScript enums.            |
+| `string`    | Generates enums as string unions.                      |
 
 ### `transformSchema` `<function>`
 
