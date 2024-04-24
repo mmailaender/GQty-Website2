@@ -40,7 +40,7 @@
     "autoprefixer": "^10.4.19",
     "gqty": "3.0.0-canary-20240423080303.f9d39b08fe39e3f3e67d4627bbf8d6d06a2bc57b",
     "postcss": "^8.4.38",
-    "prettier": "^2.8.8",
+    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.3",
     "twind": "^0.16.19",
