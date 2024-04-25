@@ -41,8 +41,8 @@ dependencies:
 
 devDependencies:
   '@gqty/react':
-    specifier: 3.0.0-canary-20240425065538.29e2b272ac10fbb2047165d541029988c0aab68d
-    version: 3.0.0-canary-20240425065538.29e2b272ac10fbb2047165d541029988c0aab68d(gqty@3.0.0-canary-20240423080303.f9d39b08fe39e3f3e67d4627bbf8d6d06a2bc57b)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 3.0.0-canary-20240425080806.83b1de5d094cbb2c89e05e0985b7e2b593773004
+    version: 3.0.0-canary-20240425080806.83b1de5d094cbb2c89e05e0985b7e2b593773004(gqty@3.0.0-canary-20240423080303.f9d39b08fe39e3f3e67d4627bbf8d6d06a2bc57b)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@13.5.6)(react@18.2.0)(twind@0.16.19)(typescript@5.4.5)
@@ -137,11 +137,11 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@gqty/react@3.0.0-canary-20240425065538.29e2b272ac10fbb2047165d541029988c0aab68d(gqty@3.0.0-canary-20240423080303.f9d39b08fe39e3f3e67d4627bbf8d6d06a2bc57b)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-aQdFuCXdukxcHvUUb2qUajyGiHHe+H+t0JK8VLa5cG6sujUFY0VONviaC1/vUlc0VwRp4AVHNgtLg3lKKnK/5Q==}
+  /@gqty/react@3.0.0-canary-20240425080806.83b1de5d094cbb2c89e05e0985b7e2b593773004(gqty@3.0.0-canary-20240423080303.f9d39b08fe39e3f3e67d4627bbf8d6d06a2bc57b)(graphql@16.6.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-xfA7fWO7Nm4DfFuJSmCn9A3b2gtJ04kt+2B5QIhtF87j3WTN/tyxCQ+xHShhotC+LMZgIKRk3/KyeCtT5I2OSA==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
-      gqty: ^3.0.0-canary-20240425065538.29e2b272ac10fbb2047165d541029988c0aab68d
+      gqty: ^3.0.0-canary-20240425080806.83b1de5d094cbb2c89e05e0985b7e2b593773004
       graphql: '*'
       graphql-sse: ^2.5.3
       graphql-ws: ^5.16.0
