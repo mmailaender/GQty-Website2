@@ -35,7 +35,7 @@
   "devDependencies": {
     "@gqty/react": "3.0.0-canary-20240501161705.dbe4e276c8f03ad7850cc18cc0fa9c9199e8522c",
     "@twind/next": "^1.0.10",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
     "autoprefixer": "^10.4.19",
     "gqty": "3.0.0-canary-20240430170454.dcdd4ce3b3d79b8e846df7c92a559a334ab5b7e2",
