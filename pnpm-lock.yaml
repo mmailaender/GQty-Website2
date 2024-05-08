@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@stackblitz/sdk':
-    specifier: ^1.9.0
-    version: 1.9.0
+    specifier: ^1.10.0
+    version: 1.10.0
   '@vercel/analytics':
     specifier: ^1.2.2
     version: 1.2.2(next@13.5.6)(react@18.3.1)
@@ -536,8 +536,8 @@ packages:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
     dev: true
 
-  /@stackblitz/sdk@1.9.0:
-    resolution: {integrity: sha512-3m6C7f8pnR5KXys/Hqx2x6ylnpqOak6HtnZI6T5keEO0yT+E4Spkw37VEbdwuC+2oxmjdgq6YZEgiKX7hM1GmQ==}
+  /@stackblitz/sdk@1.10.0:
+    resolution: {integrity: sha512-IcvE9Xifo2c4/f+yNqjFM/OW5VTBPLed3TxsQ+n8n81Py358IqD5w0IYfFgV5gbDjp2g5H5YK2/Shls/kQNTWQ==}
     dev: false
 
   /@swc/helpers@0.5.2:
