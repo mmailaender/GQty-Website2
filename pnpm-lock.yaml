@@ -42,7 +42,7 @@ dependencies:
 devDependencies:
   '@gqty/react':
     specifier: 3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189
-    version: 3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189(gqty@3.0.0-canary-20240508184150.0af8d6c76929fe86643919c0a35bbcd876bb9913)(graphql@16.6.0)(react-dom@18.3.1)(react@18.3.1)
+    version: 3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189(gqty@3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189)(graphql@16.6.0)(react-dom@18.3.1)(react@18.3.1)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@13.5.6)(react@18.3.1)(twind@0.16.19)(typescript@5.4.5)
@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^10.4.19
     version: 10.4.19(postcss@8.4.38)
   gqty:
-    specifier: 3.0.0-canary-20240508184150.0af8d6c76929fe86643919c0a35bbcd876bb9913
-    version: 3.0.0-canary-20240508184150.0af8d6c76929fe86643919c0a35bbcd876bb9913(graphql@16.6.0)
+    specifier: 3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189
+    version: 3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189(graphql@16.6.0)
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
@@ -137,7 +137,7 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@gqty/react@3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189(gqty@3.0.0-canary-20240508184150.0af8d6c76929fe86643919c0a35bbcd876bb9913)(graphql@16.6.0)(react-dom@18.3.1)(react@18.3.1):
+  /@gqty/react@3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189(gqty@3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189)(graphql@16.6.0)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-anwqvaZ05OfYygAPBKw7RHBXiUZ8kxAodn4dbNU3WErTnTO3vkNFsa6sJQLPo/0AvRpku45ODrsmqsVhPumlUA==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
@@ -154,7 +154,7 @@ packages:
         optional: true
     dependencies:
       '@react-hookz/web': 23.1.0(react-dom@18.3.1)(react@18.3.1)
-      gqty: 3.0.0-canary-20240508184150.0af8d6c76929fe86643919c0a35bbcd876bb9913(graphql@16.6.0)
+      gqty: 3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189(graphql@16.6.0)
       graphql: 16.6.0
       multidict: 1.0.9
       p-debounce: 4.0.0
@@ -2379,8 +2379,8 @@ packages:
   /fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  /frail-map@1.0.9:
-    resolution: {integrity: sha512-cE+tIn3GW9a6AA9vVzTIUcZpC2CyTAJqCEgxzrGhEYP/G50tTrhIWRDYfYLaFC6Ht1lQDwfvABeZ8XbWTqtr2Q==}
+  /frail-map@1.0.10:
+    resolution: {integrity: sha512-aawqlQUlg9ye61T879jXUoii8lNNHVZJyRL6XBbcNZ4Yu2MZfcQj1Q6yKpC7cAn5xUPMcVSsQ+Yql/AFcrfp9w==}
     dev: true
 
   /fs-extra@11.1.0:
@@ -2527,8 +2527,8 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
-  /gqty@3.0.0-canary-20240508184150.0af8d6c76929fe86643919c0a35bbcd876bb9913(graphql@16.6.0):
-    resolution: {integrity: sha512-CY+G1lK734/LJ5u0dM/pIz6tzE1WUOFt4GStppV4RYqJaVJlTFlQuPlfH/f/DeHYzAUYXsMPmjMc+4CFkFvo/A==}
+  /gqty@3.0.0-canary-20240509110332.c4700435b1e1dcb9103e1586c4486f2bf30e9189(graphql@16.6.0):
+    resolution: {integrity: sha512-kkLXRWwmJTUSBIbwBaOEub4WcAE+R6vTV/mDRyIwfrW8wKB5L8D8L64PfMXPrazeuqdETA/w/x3seK1Gp9o6Hg==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
       graphql: '*'
@@ -2543,14 +2543,14 @@ packages:
         optional: true
     dependencies:
       flatted: 3.3.1
-      frail-map: 1.0.9
+      frail-map: 1.0.10
       graphql: 16.6.0
       just-extend: 6.2.0
       just-has: 2.3.0
       just-memoize: 2.2.0
       just-safe-get: 4.2.0
       just-safe-set: 4.2.1
-      multidict: 1.0.8
+      multidict: 1.0.9
       object-hash: 3.0.0
       p-defer: 3.0.0
     dev: true
@@ -3848,10 +3848,6 @@ packages:
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
-    dev: true
-
-  /multidict@1.0.8:
-    resolution: {integrity: sha512-E0gRcVabUVp4P5DKNCUoVmfCr7dDFQStxKg8Ia+vxrgcDDLFOa78skhfpZBYyH7SptZTh8gVg3AbBEyRq8UqcQ==}
     dev: true
 
   /multidict@1.0.9:
