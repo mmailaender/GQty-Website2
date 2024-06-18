@@ -3,9 +3,10 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import App from "next/app";
 import { Reshaped } from "reshaped/bundle";
-import "reshaped/bundle.css";
-import "themes/gqty/theme.css";
 import twindConfig from "../tailwind.config.js";
+
+import "reshaped/bundle.css";
+import "../themes/gqty/theme.css";
 
 export default withTwindApp(
   twindConfig,

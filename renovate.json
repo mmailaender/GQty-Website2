@@ -5,13 +5,13 @@
   "ignorePaths": ["**/node_modules/**"],
   "packageRules": [
     {
-      "matchPackagePrefixes": ["@types/", "@graphql-ez/"],
-      "automerge": true
+      "automerge": true,
+      "matchPackagePrefixes": ["@types/", "@graphql-ez/"]
     },
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchCurrentVersion": "!/^0/",
       "automerge": true,
+      "matchCurrentVersion": "!/^0/",
+      "matchUpdateTypes": ["minor", "patch"],
       "platformAutomerge": true
     }
   ],
