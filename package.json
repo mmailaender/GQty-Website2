@@ -38,7 +38,7 @@
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "autoprefixer": "^10.4.19",
-    "gqty": "^3.1.1",
+    "gqty": "^3.2.0",
     "postcss": "^8.4.39",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
