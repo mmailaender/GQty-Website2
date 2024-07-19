@@ -41,8 +41,8 @@ dependencies:
 
 devDependencies:
   '@gqty/react':
-    specifier: ^3.0.1
-    version: 3.0.1(gqty@3.2.0)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^3.0.2
+    version: 3.0.2(gqty@3.2.0)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@14.2.5)(react@18.3.1)(twind@0.16.19)(typescript@5.5.3)
@@ -137,11 +137,11 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@gqty/react@3.0.1(gqty@3.2.0)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-BMf/NxTGCiYbvagDW/+581Wf2/n0z3KCCTDuQYpRg45e5We4xspA1IxfYYoitX67zGimOLCVTn1x8iF/7LeBDA==}
+  /@gqty/react@3.0.2(gqty@3.2.0)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-4TFSNGiMB/wJgDQun4ge9hnOdCHYd9bTrFxX9HEAbGgjBCR+fuU+S3g6Y2CAfjd660K3XwoK5Noixy6IFkODJw==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
-      gqty: ^3.0.1
+      gqty: workspace:^
       graphql: '*'
       graphql-sse: ^2.5.3
       graphql-ws: ^5.16.0
