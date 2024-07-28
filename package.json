@@ -35,7 +35,7 @@
   "devDependencies": {
     "@gqty/react": "^3.0.2",
     "@twind/next": "^1.0.10",
-    "@types/node": "^20.14.12",
+    "@types/node": "^20.14.13",
     "@types/react": "^18.3.3",
     "autoprefixer": "^10.4.19",
     "gqty": "^3.2.0",
