@@ -42,7 +42,7 @@ dependencies:
 devDependencies:
   '@gqty/react':
     specifier: ^3.0.4
-    version: 3.0.4(gqty@3.2.0)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
+    version: 3.0.4(gqty@3.2.1)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@14.2.5)(react@18.3.1)(twind@0.16.19)(typescript@5.5.4)
@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^10.4.20
     version: 10.4.20(postcss@8.4.41)
   gqty:
-    specifier: ^3.2.0
-    version: 3.2.0(graphql@16.8.2)
+    specifier: ^3.2.1
+    version: 3.2.1(graphql@16.8.2)
   postcss:
     specifier: ^8.4.41
     version: 8.4.41
@@ -137,7 +137,7 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@gqty/react@3.0.4(gqty@3.2.0)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1):
+  /@gqty/react@3.0.4(gqty@3.2.1)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-k11VlRxxHVnItfuQLAK34AaB0aRUwKFZeMNJNI5vjLR7TaLBfuOzFO0XDI/LqfmXau++660gh/CgtxlytPJaog==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
@@ -154,7 +154,7 @@ packages:
         optional: true
     dependencies:
       '@react-hookz/web': 23.1.0(react-dom@18.3.1)(react@18.3.1)
-      gqty: 3.2.0(graphql@16.8.2)
+      gqty: 3.2.1(graphql@16.8.2)
       graphql: 16.8.2
       multidict: 1.0.9
       p-debounce: 4.0.0
@@ -2597,8 +2597,8 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
-  /gqty@3.2.0(graphql@16.8.2):
-    resolution: {integrity: sha512-cJnyBLuOU65qwFhqP4drsjMSiw55I31egPTMkmmD+OvFEOEffDgrZeiMOggqKHMcMW4DOS3f0tpPpXvNwIlQYQ==}
+  /gqty@3.2.1(graphql@16.8.2):
+    resolution: {integrity: sha512-cCxdWi/7IH7hkuChftvemRfxlUXewhXRZS2PYvBipBrHfnrgoPZPwqAQ3cHkoYb1YO3iw/rLMPLI5tLyHtTL4Q==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
       graphql: '*'
