@@ -45,7 +45,7 @@ devDependencies:
     version: 3.0.4(gqty@3.2.1)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
   '@twind/next':
     specifier: ^1.0.10
-    version: 1.0.10(next@14.2.15)(react@18.3.1)(twind@0.16.19)(typescript@5.6.2)
+    version: 1.0.10(next@14.2.15)(react@18.3.1)(twind@0.16.19)(typescript@5.6.3)
   '@types/node':
     specifier: ^20.16.6
     version: 20.16.6
@@ -72,10 +72,10 @@ devDependencies:
     version: 3.4.13
   twind:
     specifier: ^0.16.19
-    version: 0.16.19(typescript@5.6.2)
+    version: 0.16.19(typescript@5.6.3)
   typescript:
-    specifier: ^5.6.2
-    version: 5.6.2
+    specifier: ^5.6.3
+    version: 5.6.3
   vercel:
     specifier: ^37.6.3
     version: 37.6.3
@@ -617,7 +617,7 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@twind/next@1.0.10(next@14.2.15)(react@18.3.1)(twind@0.16.19)(typescript@5.6.2):
+  /@twind/next@1.0.10(next@14.2.15)(react@18.3.1)(twind@0.16.19)(typescript@5.6.3):
     resolution: {integrity: sha512-6ctrS10JoZNK2NSj8UZ01qsPNIdEF04xZqTAuSLovD+UrMqYo3XYkT2OHovOxSkI+I3Pclx34wdfNWNK+C/+jQ==}
     engines: {node: '>=10.13'}
     peerDependencies:
@@ -631,8 +631,8 @@ packages:
     dependencies:
       next: 14.2.15(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
-      twind: 0.16.19(typescript@5.6.2)
-      typescript: 5.6.2
+      twind: 0.16.19(typescript@5.6.3)
+      typescript: 5.6.3
     dev: true
 
   /@types/acorn@4.0.6:
@@ -5600,7 +5600,7 @@ packages:
   /tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
-  /twind@0.16.19(typescript@5.6.2):
+  /twind@0.16.19(typescript@5.6.3):
     resolution: {integrity: sha512-/9H7I/Xzji6UZ+x1V8/llcQSAI0bINqpZtvAqqTzuU/qAdzRCnrpaME8x57k8tUu2KbosjSQE85sSwcLBGD1DQ==}
     engines: {node: '>=10.13'}
     peerDependencies:
@@ -5612,7 +5612,7 @@ packages:
       csstype: 3.1.3
       htmlparser2: 6.1.0
       style-vendorizer: 2.2.3
-      typescript: 5.6.2
+      typescript: 5.6.3
     dev: true
 
   /type-fest@1.4.0:
@@ -5626,8 +5626,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript@5.6.2:
-    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+  /typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
