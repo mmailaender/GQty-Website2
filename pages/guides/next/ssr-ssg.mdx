@@ -55,9 +55,9 @@ const UserProfile: FC<{ id: string }> = ({ id }) => {
 ```
 
 <Alert title="Suspense is supported">
-  The hook `prepareReactRender` uses
-  [`react-ssr-prepass`](https://github.com/FormidableLabs/react-ssr-prepass),
-  under the hood, so it already works with Suspense.
+  Under the hood, `prepareReactRender` uses `react-dom/server` since React 18,
+  and [`react-ssr-prepass`](https://github.com/FormidableLabs/react-ssr-prepass)
+  on older versions.
 </Alert>
 
 ## Performance Optimization
