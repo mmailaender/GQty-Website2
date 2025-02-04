@@ -41,8 +41,8 @@ dependencies:
 
 devDependencies:
   '@gqty/react':
-    specifier: ^3.0.5
-    version: 3.0.5(gqty@3.2.2)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^3.1.0
+    version: 3.1.0(gqty@3.2.2)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@14.2.23)(react@18.3.1)(twind@0.16.19)(typescript@5.7.3)
@@ -137,15 +137,16 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@gqty/react@3.0.5(gqty@3.2.2)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-oGulGAVDyCmeUBh5phpBzZuMl73SYY12ENSfccYYoJ9QXijmIMfEn5Xg01C5knQUQWEpakMJPAQJVhGNpCoI/Q==}
+  /@gqty/react@3.1.0(gqty@3.2.2)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-MFGFmAvDi+N4KX2WUSSiFMGzv5fdmrWd0naVxRRDff/+CeNjXHCmwAKi5B2aezuSXrh+rENh/+6ZlZgB3ffOIg==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
-      gqty: ^3.2.2
+      gqty: ^3.3.0
       graphql: '*'
-      graphql-sse: ^2.5.3
-      graphql-ws: ^5.16.0
-      react: ^16.14.0 || ^17 || ^18
+      graphql-sse: ^2.5.4
+      graphql-ws: ^5.16.2
+      react: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       graphql-sse:
         optional: true
@@ -159,11 +160,11 @@ packages:
       p-debounce: 4.0.0
       p-defer: 3.0.0
       react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
       react-ssr-prepass: 1.5.0(react@18.3.1)
-      use-sync-external-store: 1.2.2(react@18.3.1)
+      use-sync-external-store: 1.4.0(react@18.3.1)
     transitivePeerDependencies:
       - js-cookie
-      - react-dom
     dev: true
 
   /@headlessui/react@1.7.19(react-dom@18.3.1)(react@18.3.1):
@@ -5832,10 +5833,10 @@ packages:
       punycode: 2.3.1
     dev: true
 
-  /use-sync-external-store@1.2.2(react@18.3.1):
-    resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
+  /use-sync-external-store@1.4.0(react@18.3.1):
+    resolution: {integrity: sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     dependencies:
       react: 18.3.1
     dev: true
