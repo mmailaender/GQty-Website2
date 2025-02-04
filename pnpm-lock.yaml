@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^1.0.10
     version: 1.0.10(next@14.2.23)(react@18.3.1)(twind@0.16.19)(typescript@5.7.3)
   '@types/node':
-    specifier: ^22.13.0
-    version: 22.13.0
+    specifier: ^22.13.1
+    version: 22.13.1
   '@types/react':
     specifier: ^18.3.18
     version: 18.3.18
@@ -718,8 +718,8 @@ packages:
     resolution: {integrity: sha512-3oJbGBUWuS6ahSnEq1eN2XrCyf4YsWI8OyCvo7c64zQJNplk3mO84t53o8lfTk+2ji59g5ycfc6qQ3fdHliHuA==}
     dev: true
 
-  /@types/node@22.13.0:
-    resolution: {integrity: sha512-ClIbNe36lawluuvq3+YYhnIN2CELi+6q8NpnM7PYp4hBn/TatfboPgVSm2rwKRfnV2M+Ty9GWDFI64KEe+kysA==}
+  /@types/node@22.13.1:
+    resolution: {integrity: sha512-jK8uzQlrvXqEU91UxiK5J7pKHyzgnI1Qnl0QDHIgVGuolJhRb9EEl28Cj9b3rGR8B2lhFCtvIm5os8lFnO/1Ew==}
     dependencies:
       undici-types: 6.20.0
     dev: true
