@@ -42,7 +42,7 @@ dependencies:
 devDependencies:
   '@gqty/react':
     specifier: ^3.1.0
-    version: 3.1.0(gqty@3.2.2)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
+    version: 3.1.0(gqty@3.3.0)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1)
   '@twind/next':
     specifier: ^1.0.10
     version: 1.0.10(next@14.2.23)(react@18.3.1)(twind@0.16.19)(typescript@5.7.3)
@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^10.4.20
     version: 10.4.20(postcss@8.5.1)
   gqty:
-    specifier: ^3.2.2
-    version: 3.2.2(graphql@16.8.2)
+    specifier: ^3.3.0
+    version: 3.3.0(graphql@16.8.2)
   postcss:
     specifier: ^8.5.1
     version: 8.5.1
@@ -137,7 +137,7 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@gqty/react@3.1.0(gqty@3.2.2)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1):
+  /@gqty/react@3.1.0(gqty@3.3.0)(graphql@16.8.2)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-MFGFmAvDi+N4KX2WUSSiFMGzv5fdmrWd0naVxRRDff/+CeNjXHCmwAKi5B2aezuSXrh+rENh/+6ZlZgB3ffOIg==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
@@ -154,7 +154,7 @@ packages:
         optional: true
     dependencies:
       '@react-hookz/web': 23.1.0(react-dom@18.3.1)(react@18.3.1)
-      gqty: 3.2.2(graphql@16.8.2)
+      gqty: 3.3.0(graphql@16.8.2)
       graphql: 16.8.2
       multidict: 1.0.9
       p-debounce: 4.0.0
@@ -2436,8 +2436,8 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /flatted@3.3.1:
-    resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
+  /flatted@3.3.2:
+    resolution: {integrity: sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA==}
     dev: true
 
   /flexsearch@0.7.43:
@@ -2606,13 +2606,13 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
-  /gqty@3.2.2(graphql@16.8.2):
-    resolution: {integrity: sha512-J/BoQ4EKI0Tk1U8KXQ7vmpQ8pEdZF62NDjoJ72/Yg+0BUnJkq6AcmOCPmnQqaEE/DP9JZ3GJQYfU1fPFu9dCHA==}
+  /gqty@3.3.0(graphql@16.8.2):
+    resolution: {integrity: sha512-5ky4L771GcW2LDPR/k/5lYxn8f440K3oiB4Gglf29mqTgVNjD7V+K+4eiaJRGvduR7gSiaBD6hkFMGoLaYshnw==}
     engines: {node: ^12.20.0 || >=14.13.0}
     peerDependencies:
       graphql: '*'
-      graphql-sse: ^2.5.3
-      graphql-ws: ^5.16.0
+      graphql-sse: ^2.5.4
+      graphql-ws: ^5.16.2
     peerDependenciesMeta:
       graphql:
         optional: true
@@ -2622,7 +2622,7 @@ packages:
         optional: true
     dependencies:
       debounce-microtasks: 0.1.8
-      flatted: 3.3.1
+      flatted: 3.3.2
       frail-map: 1.0.10
       graphql: 16.8.2
       just-extend: 6.2.0
